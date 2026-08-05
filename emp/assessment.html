@@ -105,8 +105,10 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .feedback-status { font-size:11px; margin-bottom:6px; min-height:14px; }
 .feedback-status.ok { color:#1a7a4a; }
 .feedback-status.err { color:#c0392b; }
-.feedback-btn { padding:7px 16px; background:var(--navy); color:var(--white); border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; cursor:pointer; }
+.feedback-btn { padding:7px 16px; background:var(--navy); color:var(--white); border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; cursor:pointer; transition:background .2s; min-width:98px; }
 .feedback-btn:hover { background:var(--dteal); }
+.feedback-btn:disabled { cursor:default; opacity:.85; }
+.feedback-btn.sent { background:#1a7a4a; }
 footer { background:var(--navy); color:rgba(255,255,255,.45); font-size:12px; text-align:center; padding:20px; font-weight:300; }
 footer a { color:var(--lteal); text-decoration:none; }
 </style>
@@ -300,7 +302,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     </div>
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
-      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>13–15</td><td>Includes multiple primary AND secondary data sources (a genuine range of types), clearly relevant and correctly labelled, with sustained analysis that explicitly identifies patterns, trends and interconnections and consistently cites specific, accurate figures/data as evidence.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>10–12</td><td>Includes several primary AND secondary data sources, relevant and appropriately labelled. Analysis refers consistently to the data and identifies at least one pattern or trend in each set.</td></tr><tr><td><strong>C (Sound)</strong></td><td>6–9</td><td>Includes at least one primary AND one secondary data source relevant to the inquiry question; presentation is inconsistent. Analysis makes general reference to the data without close detail.</td></tr><tr><td><strong>D (Basic)</strong></td><td>3–5</td><td>Includes data from only one of primary or secondary sources (not both), OR data present but lacking clear labelling or relevance. Analysis largely describes rather than analyses the data.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1–2</td><td>Primary and/or secondary data is attempted but very limited, missing, or largely irrelevant; analysis is minimal and rarely refers to the data.</td></tr></table>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>13–15</td><td>Includes primary AND secondary sources across a genuine range of types (e.g. surveys, measurements, photographs, council data), clearly relevant and labelled, with sustained analysis that identifies patterns and trends across sources, consistently citing specific, accurate figures as evidence.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>10–12</td><td>Includes primary AND secondary sources, relevant and appropriately labelled. Analysis refers consistently to the data and identifies at least one pattern or trend in each set.</td></tr><tr><td><strong>C (Sound)</strong></td><td>6–9</td><td>Includes at least one primary AND one secondary data source relevant to the inquiry question; presentation is inconsistent. Analysis makes general reference to the data without close detail.</td></tr><tr><td><strong>D (Basic)</strong></td><td>3–5</td><td>Includes data from only one of primary or secondary sources (not both), OR data present but lacking clear labelling or relevance. Analysis largely describes rather than analyses the data.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1–2</td><td>Primary and/or secondary data is attempted but very limited, missing, or largely irrelevant; analysis is minimal and rarely refers to the data.</td></tr></table>
     </div>
   </div>
   <div id="custodianship" class="tab-panel">
@@ -325,7 +327,7 @@ footer a { color:var(--lteal); text-decoration:none; }
       <div class="grade-panels">
       <div class="grade-panel active c-panel" data-grade="c">
         <div class="grade-badge c">C (Sound), 3 marks</div>
-        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Identifies an example and describes, in general terms, its link to management or wellbeing, with a credible source.</p>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Identifies an example and describes, in general terms, its link to management or wellbeing, with an accurate credible source.</p>
         <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Aboriginal people used cultural burning to manage land. This is a sustainable way to look after Country (Darkinjung LALC, n.d.).”</div></div>
       </div>
       <div class="grade-panel  b-panel" data-grade="b">
@@ -341,7 +343,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     </div>
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
-      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Identifies a specific example of Custodianship (named practice, knowledge, or Traditional Owner statement) and explains its link to both sustainable management and Community wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Identifies a specific example of Custodianship and explains its link to management or wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies an example of Custodianship and describes, in general terms, its link to management or wellbeing, with a credible source.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Identifies a superficial or generic example of Custodianship, with an unclear link to management or wellbeing for the site.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes a minimal or unrelated attempt to reference Custodianship.</td></tr></table>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Identifies a specific example of Custodianship (named practice, knowledge, or Traditional Owner statement) and explains its link to both sustainable management and Community wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Identifies a specific example of Custodianship and explains its link to management or wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies an example of Custodianship and describes, in general terms, its link to management or wellbeing, with an accurate credible source.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Identifies a superficial or generic example of Custodianship, with an unclear link to management or wellbeing for the site.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes a minimal or unrelated attempt to reference Custodianship.</td></tr></table>
     </div>
   </div>
   <div id="solutions" class="tab-panel">
@@ -382,7 +384,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     </div>
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
-      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>9–10</td><td>Identifies at least three realistic, specific management options using precise geographical terminology. Assesses the preferred option against all three criteria with sustained, well-reasoned judgements supported by evidence from the Findings.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>7–8</td><td>Identifies at least three suitable options using relevant terminology. Assesses the preferred option against the three criteria with thorough reasoning, referring to the Findings.</td></tr><tr><td><strong>C (Sound)</strong></td><td>5–6</td><td>Identifies at least two suitable options using relevant terminology. Assesses the preferred option against the three criteria with general reasoning that does not draw specifically on the Findings.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2–4</td><td>Identifies one or two options using basic terminology. Assessment against the criteria is attempted but generic or only partially addresses each one.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Attempts to identify a management option, but it is unsuitable, unrealistic or not clearly linked to the issue; assessment against the criteria is minimal or absent.</td></tr></table>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>9–10</td><td>Identifies at least three realistic, specific management options using precise geographical terminology. Assesses the preferred option against all three criteria with sustained judgements, well supported by evidence from the Findings.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>7–8</td><td>Identifies at least three suitable options using relevant terminology. Assesses the preferred option against the three criteria with thorough reasoning, referring to the Findings.</td></tr><tr><td><strong>C (Sound)</strong></td><td>5–6</td><td>Identifies at least two suitable options using relevant terminology. Assesses the preferred option against the three criteria with general reasoning, without drawing on the Findings.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2–4</td><td>Identifies one or two options using basic terminology. Assessment against the criteria is generic or incomplete.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Attempts to identify a management option, but it is unsuitable, unrealistic or not clearly linked to the issue; assessment against the criteria is minimal or absent.</td></tr></table>
     </div>
   </div>
   <div id="conclusion" class="tab-panel">
@@ -480,8 +482,11 @@ function sendFeedback(e, form) {
   e.preventDefault();
   var statusEl = form.querySelector('.feedback-status');
   var btn = form.querySelector('.feedback-btn');
-  statusEl.textContent = 'Sending...'; statusEl.className = 'feedback-status';
+  var originalLabel = 'Send feedback';
   btn.disabled = true;
+  btn.classList.remove('sent');
+  btn.textContent = 'Sending…';
+  statusEl.textContent = ''; statusEl.className = 'feedback-status';
   var payload = {
     name: form.name.value, class: form.class.value, message: form.message.value,
     page: location.href, _subject: 'EMP site feedback — Stage 5 Geography', _captcha: 'false'
@@ -489,9 +494,15 @@ function sendFeedback(e, form) {
   fetch('https://formsubmit.co/ajax/michelle.perkins@spcc.nsw.edu.au', {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
   }).then(function(r){ return r.json(); }).then(function(){
-    statusEl.textContent = 'Thanks — feedback sent.'; statusEl.className = 'feedback-status ok'; form.reset(); btn.disabled = false;
+    btn.textContent = 'Sent ✓';
+    btn.classList.add('sent');
+    statusEl.textContent = 'Thanks — feedback sent.'; statusEl.className = 'feedback-status ok';
+    form.reset();
+    setTimeout(function(){ btn.disabled = false; btn.textContent = originalLabel; btn.classList.remove('sent'); }, 2500);
   }).catch(function(){
-    statusEl.textContent = 'Could not send — please tell your teacher directly.'; statusEl.className = 'feedback-status err'; btn.disabled = false;
+    btn.textContent = originalLabel;
+    btn.disabled = false;
+    statusEl.textContent = 'Could not send — please tell your teacher directly.'; statusEl.className = 'feedback-status err';
   });
   return false;
 }
