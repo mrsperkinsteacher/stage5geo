@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Year 9 Geography | Environmental Change and Management</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --clay:#A6512D; --sage:#4F6B4A; --gold:#D9A544; }
-  * { box-sizing:border-box; }
-  body { font-family:-apple-system,"Segoe UI",Arial,sans-serif; margin:0; color:#2b241e; background:#fff; }
-  .top { background:var(--clay); color:#fff; padding:2.2rem 1rem; text-align:center; }
-  .top .kicker { font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; opacity:.85; color:var(--gold); }
-  .top h1 { margin:.4rem 0 .2rem; font-size:2rem; }
-  .top p { margin:0; opacity:.9; }
-  main { max-width:900px; margin:0 auto; padding:1.5rem 1rem 3rem; }
-  .intro { background:#f9f2ec; border:1px solid #e6d3c3; border-radius:12px; padding:1.2rem 1.4rem; margin:1.5rem 0; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; margin-top:1.5rem; }
-  .card { border:1px solid #e6d3c3; border-radius:12px; padding:1.2rem 1.3rem; }
-  .card.assessment { border:2px solid var(--clay); background:#fdf8f4; }
-  .card h2 { margin:0 0 .3rem; font-size:1.1rem; color:var(--clay); }
-  .card .tag { font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); font-weight:700; }
-  .card p { font-size:.92rem; margin:.5rem 0 .9rem; }
-  .card ul { margin:.3rem 0 .9rem; padding-left:1.1rem; font-size:.9rem; }
-  .card a.btn { display:inline-block; background:var(--clay); color:#fff; text-decoration:none; padding:.5rem 1.1rem; border-radius:8px; font-size:.9rem; font-weight:600; }
-  .eq { border-left:4px solid var(--gold); padding:.2rem 0 .2rem 1rem; margin:1.2rem 0; font-style:italic; color:#444; }
-  .note { font-size:.85rem; color:#7a6a5c; margin-top:1.5rem; text-align:center; }
-  footer { text-align:center; font-size:.85rem; color:#777; padding:2rem 1rem; border-top:1px solid #eee; margin-top:1rem; }
+  :root {
+    --navy:#3d2b1f; --teal:#5c8a5c; --lteal:#b7d4ae; --dteal:#3f6b45;
+    --cream:#f7f2ea; --yellow:#d9a544; --white:#ffffff; --text:#2b241e;
+    --muted:#7a6a5c; --border:#e6d9c8; --clay:#a6512d;
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'DM Sans', sans-serif; background:var(--cream); color:var(--text); min-height:100vh; display:flex; flex-direction:column; }
+  header { background:var(--navy); padding:0; position:relative; overflow:hidden; }
+  header::before { content:''; position:absolute; top:-60px; right:-80px; width:320px; height:320px; background:var(--clay); opacity:.18; border-radius:50%; }
+  header::after { content:''; position:absolute; bottom:-40px; left:40px; width:180px; height:180px; background:var(--yellow); opacity:.1; border-radius:50%; }
+  .header-inner { max-width:900px; margin:0 auto; padding:48px 32px 40px; position:relative; z-index:1; }
+  .header-label { font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--yellow); margin-bottom:12px; }
+  header h1 { font-family:'DM Serif Display', serif; font-size:clamp(28px,4vw,44px); color:var(--white); line-height:1.15; margin-bottom:10px; }
+  header h1 em { color:var(--yellow); font-style:italic; }
+  .header-sub { font-size:15px; color:var(--lteal); font-weight:300; }
+  main { flex:1; max-width:900px; margin:0 auto; padding:52px 24px 80px; width:100%; }
+  .section-label { font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+  .intro { background:var(--white); border:1.5px solid var(--border); border-radius:16px; padding:24px 28px; margin-bottom:36px; font-size:14px; font-weight:300; line-height:1.7; color:var(--text); }
+  .intro strong { color:var(--navy); font-weight:600; }
+  .tile-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:20px; }
+  .tile { background:var(--white); border:1.5px solid var(--border); border-radius:18px; padding:32px 28px; text-decoration:none; color:var(--text); display:flex; flex-direction:column; gap:14px; transition:box-shadow .2s,border-color .2s,transform .2s; cursor:pointer; }
+  .tile:hover { box-shadow:0 8px 28px rgba(61,43,31,.12); border-color:var(--teal); transform:translateY(-3px); }
+  .tile-tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; background:var(--navy); color:var(--yellow); padding:4px 10px; border-radius:6px; align-self:flex-start; }
+  .tile h2 { font-family:'DM Serif Display', serif; font-size:22px; color:var(--navy); line-height:1.2; }
+  .tile p { font-size:13.5px; color:var(--muted); font-weight:300; line-height:1.6; flex:1; }
+  .tile-arrow { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--dteal); margin-top:4px; }
+  .tile-arrow svg { transition:transform .2s; }
+  .tile:hover .tile-arrow svg { transform:translateX(4px); }
+  .tile-due { font-size:11px; font-weight:600; color:var(--navy); background:#f5ece0; border:1px solid var(--yellow); border-radius:6px; padding:5px 10px; align-self:flex-start; }
+  .tile.soon { opacity:.45; pointer-events:none; }
+  .tile.soon .tile-tag { background:#ccc; color:#666; }
+  footer { background:var(--navy); color:rgba(255,255,255,.4); font-size:12px; text-align:center; padding:20px; font-weight:300; }
+  footer a { color:var(--lteal); text-decoration:none; }
 </style>
 </head>
 <body>
-<div class="top">
-  <div class="kicker">Stage 5 Geography | Year 9</div>
-  <h1>Environmental Change and Management</h1>
-  <p>How do people manage environments that are changing — and who gets to decide what "management" means?</p>
-</div>
+
+<header>
+  <div class="header-inner">
+    <div class="header-label">Stage 5 Geography &nbsp;|&nbsp; Year 9 &nbsp;|&nbsp; Term 3, 2026</div>
+    <h1>Environmental Change <em>and Management</em></h1>
+    <p class="header-sub">How do people manage environments that are changing — and who decides what "management" means?</p>
+  </div>
+</header>
+
 <main>
-  <div class="intro">
-    <strong>About this unit.</strong> Students investigate how environments change over time and evaluate the different approaches used to manage and protect them. The unit builds towards each student completing an independent Environmental Management Plan (EMP) for a real local environmental issue on the Central Coast — collecting their own primary data on site, researching secondary data, and evaluating management options against economic, social and environmental criteria. Aboriginal Custodianship of Country is a required part of every student's plan, not an optional extra. Every page on this site is written so that a teacher who does not know the subject can pick up the lesson and teach it.
-  </div>
-  <div class="eq">Big questions this unit: What causes an environment to change? Who decides how a place should be managed, and on what basis? What does it look like to steward a place well?</div>
-  <div class="grid">
-    <div class="card assessment">
-      <div class="tag">Assessment Task 3 — 20%</div>
+  <div class="intro"><strong>About this unit.</strong> Students investigate how environments change over time and evaluate the different approaches used to manage and protect them. The unit builds towards each student completing an independent Environmental Management Plan (EMP) for a real local environmental issue on the Central Coast — collecting their own primary data on site, researching secondary data, and evaluating management options against economic, social and environmental criteria. Aboriginal Custodianship of Country is a required part of every student's plan, not an optional extra.</div>
+
+  <div class="section-label">Assessment Tasks</div>
+  <div class="tile-grid">
+
+    <a class="tile" href="assessment.html">
+      <div class="tile-tag">Assessment 3</div>
       <h2>Environmental Management Plan</h2>
-      <p>The full task, structured section by section, with the complete marking criteria for every part of the report — plus the AI use checklist for this task.</p>
-      <ul>
-        <li>Set: Wed 5 August 2026 (Week 3)</li>
-        <li>Due: Mon 14 September 2026 (Week 8)</li>
-        <li>55 marks · 1250–1750 words</li>
-      </ul>
-      <a class="btn" href="assessment.html">Open the Assessment</a>
+      <p>Choose a local environmental issue and manage it well. Steps, examples and full marking criteria for every part of the report, plus the AI use checklist.</p>
+      <div class="tile-due">Due Monday 14 September 2026</div>
+      <div class="tile-arrow">
+        Open
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <div class="tile soon">
+      <div class="tile-tag">Weekly Lessons</div>
+      <h2>Term 3 Program</h2>
+      <p>Week-by-week lesson pages for this unit are still being built.</p>
+      <div class="tile-arrow">Coming soon</div>
     </div>
+
   </div>
-  <p class="note">Weekly lesson pages for this unit are still being built — check back soon.</p>
 </main>
-<footer>Stage 5 Geography — Environmental Change and Management</footer>
+
+<footer>
+  Year 9 Geography &nbsp;|&nbsp; Environmental Change and Management &nbsp;|&nbsp; Term 3, 2026
+</footer>
+
 </body>
 </html>
