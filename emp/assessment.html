@@ -1,311 +1,505 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NH0WN47NP2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NH0WN47NP2');
+  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assessment — Environmental Management Plan | Stage 5 Geography</title>
+<title>Assessment – Environmental Management Plan | Year 9 Geography</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --clay:#A6512D; --sage:#4F6B4A; --gold:#D9A544; --ink:#2B241E; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:Arial, Helvetica, sans-serif; background:#fff; color:#2b241e; line-height:1.55; padding:24px 16px 48px; }
-  .wrap { max-width:950px; margin:0 auto; }
-  a { color:var(--sage); }
-  header.banner { background:var(--clay); color:#fff; border-radius:14px; padding:28px 30px; margin-bottom:14px; }
-  header.banner .kicker { color:var(--gold); font-size:.8rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
-  header.banner h1 { font-size:1.7rem; line-height:1.25; }
-  header.banner p.theme { margin-top:10px; color:#f3e3d6; font-size:.95rem; }
-  .backlink { display:inline-block; margin-bottom:14px; font-size:.9rem; }
-  .meta { border:1.5px solid #e6d3c3; border-radius:12px; padding:16px 20px; margin-bottom:26px; font-size:.9rem; background:#fdf8f4; }
-  .meta strong { color:var(--clay); }
-  .meta table { width:100%; border-collapse:collapse; margin-top:8px; }
-  .meta td { padding:4px 6px 4px 0; vertical-align:top; font-size:.9rem; }
-  .meta td.label { font-weight:bold; color:var(--clay); width:150px; }
-  .outcomes { border:1.5px solid #e6d3c3; border-radius:12px; padding:16px 20px; margin-bottom:26px; font-size:.88rem; background:#fff; }
-  .outcomes h3 { color:var(--sage); font-size:.85rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
-  .outcomes ul { padding-left:20px; }
-  .outcomes li { margin-bottom:6px; }
-  section.overview { border:1.5px solid #e6d3c3; border-radius:14px; padding:22px 26px; margin-bottom:26px; background:#fff; }
-  section.overview h2 { color:var(--clay); font-size:1.2rem; margin-bottom:12px; }
-  section.overview p { font-size:.95rem; margin-bottom:10px; }
-  section.overview .callout { background:#f5f7f0; border:1.5px solid #d3ddc6; border-radius:10px; padding:12px 16px; font-size:.9rem; margin:10px 0; }
-  .structure-head { margin:34px 0 14px; }
-  .structure-head h2 { color:var(--clay); font-size:1.35rem; }
-  .structure-head p { font-size:.9rem; color:#6b5d51; margin-top:4px; }
-  section.task-block { border:1.5px solid #e6d3c3; border-radius:14px; padding:24px 26px; margin-bottom:22px; background:#fff; }
-  .marks-tag { display:inline-block; background:var(--sage); color:#fff; font-weight:bold; font-size:.8rem; letter-spacing:1px; border-radius:999px; padding:4px 14px; margin-bottom:10px; }
-  section.task-block h2 { color:var(--clay); font-size:1.3rem; margin-bottom:4px; }
-  section.task-block .criterion-name { font-size:.85rem; color:var(--sage); font-style:italic; margin-bottom:14px; }
-  section.task-block h3 { color:var(--sage); font-size:.85rem; text-transform:uppercase; letter-spacing:1px; margin:16px 0 8px; }
-  section.task-block ol, section.task-block ul { padding-left:22px; }
-  section.task-block li { margin-bottom:7px; font-size:.95rem; }
-  .task-note { background:#fdf3e3; border:1.5px solid var(--gold); border-radius:10px; padding:10px 14px; font-size:.88rem; margin-top:8px; }
-  table.rubric { width:100%; border-collapse:collapse; margin-top:6px; font-size:.87rem; }
-  table.rubric th { background:var(--clay); color:#fff; text-align:left; padding:8px 10px; font-size:.8rem; }
-  table.rubric td { border-bottom:1px solid #eee; padding:8px 10px; vertical-align:top; }
-  table.rubric td.band { font-weight:bold; color:var(--clay); white-space:nowrap; }
-  table.rubric td.marks { font-weight:bold; color:var(--sage); white-space:nowrap; }
-  table.rubric tr:last-child td { border-bottom:none; }
-  .ai-tier { border-radius:10px; padding:14px 18px; margin-bottom:12px; font-size:.92rem; }
-  .ai-green { background:#eef5ea; border:1.5px solid var(--sage); }
-  .ai-amber { background:#fdf3e3; border:1.5px solid var(--gold); }
-  .ai-red { background:#fbeae7; border:1.5px solid #c9503b; }
-  .ai-tier .tier-label { font-weight:bold; text-transform:uppercase; font-size:.78rem; letter-spacing:1px; margin-bottom:6px; display:block; }
-  .ai-green .tier-label { color:var(--sage); }
-  .ai-amber .tier-label { color:#9a6a1b; }
-  .ai-red .tier-label { color:#c9503b; }
-  .ai-tier ul { padding-left:20px; margin-top:6px; }
-  .ai-tier li { margin-bottom:4px; }
-  .support { background:#f5faf7; border:1.5px dashed var(--sage); border-radius:10px; padding:14px 18px; margin-top:8px; font-size:.9rem; }
-  footer { text-align:center; font-size:.8rem; color:#8b7d6f; margin-top:30px; }
+:root {
+  --navy:#3d2b1f; --teal:#5c8a5c; --lteal:#b7d4ae; --dteal:#3f6b45;
+  --cream:#f7f2ea; --yellow:#d9a544; --amber:#d9a544; --white:#ffffff;
+  --text:#2b241e; --muted:#7a6a5c; --border:#e6d9c8; --clay:#a6512d;
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'DM Sans', sans-serif; background:var(--cream); color:var(--text); min-height:100vh; }
+a { color:var(--dteal); }
+header { background:var(--navy); position:relative; overflow:hidden; }
+header::before { content:''; position:absolute; top:-60px; right:-80px; width:320px; height:320px; background:var(--clay); opacity:.18; border-radius:50%; }
+header::after { content:''; position:absolute; bottom:-40px; left:40px; width:180px; height:180px; background:var(--yellow); opacity:.1; border-radius:50%; }
+.header-inner { max-width:960px; margin:0 auto; padding:44px 32px 36px; position:relative; z-index:1; }
+.header-label { font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+header h1 { font-family:'DM Serif Display', serif; font-size:clamp(26px,4vw,42px); color:var(--white); line-height:1.15; margin-bottom:10px; }
+header h1 em { color:var(--yellow); font-style:italic; }
+.header-sub { font-size:14px; color:var(--lteal); font-weight:300; }
+.due-badge { display:inline-block; margin-top:18px; background:var(--yellow); color:var(--navy); font-size:12px; font-weight:600; padding:6px 16px; border-radius:20px; letter-spacing:.5px; }
+.tab-nav { background:var(--dteal); position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.18); }
+.tab-nav-inner { max-width:960px; margin:0 auto; display:flex; padding:0 16px; overflow-x:auto; scrollbar-width:none; }
+.tab-nav-inner::-webkit-scrollbar { display:none; }
+.tab-btn { flex-shrink:0; background:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:500; color:rgba(255,255,255,.65); padding:14px 14px; position:relative; transition:color .2s; white-space:nowrap; }
+.tab-btn::after { content:''; position:absolute; bottom:0; left:14px; right:14px; height:3px; background:var(--yellow); border-radius:2px 2px 0 0; transform:scaleX(0); transition:transform .2s; }
+.tab-btn:hover { color:rgba(255,255,255,.9); }
+.tab-btn.active { color:var(--white); }
+.tab-btn.active::after { transform:scaleX(1); }
+.tab-mark { display:inline-block; background:rgba(255,255,255,.15); border-radius:10px; font-size:10px; padding:1px 7px; margin-left:6px; color:var(--yellow); font-weight:600; }
+main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; animation:fadeUp .3s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.part-heading { display:flex; align-items:flex-start; gap:20px; margin-bottom:32px; padding-bottom:24px; border-bottom:2px solid var(--border); flex-wrap:wrap; }
+.part-number { flex-shrink:0; width:56px; height:56px; background:var(--navy); border-radius:14px; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; font-size:22px; color:var(--yellow); }
+.part-title h2 { font-family:'DM Serif Display',serif; font-size:24px; color:var(--navy); margin-bottom:4px; }
+.part-title p { font-size:13px; color:var(--muted); font-weight:300; }
+.marks-pill { margin-left:auto; flex-shrink:0; background:var(--teal); color:var(--white); font-size:12px; font-weight:600; padding:6px 14px; border-radius:20px; align-self:center; }
+.steps { display:flex; flex-direction:column; gap:16px; margin-bottom:8px; }
+.step { background:var(--white); border-radius:14px; border:1.5px solid var(--border); padding:22px 24px; display:flex; gap:18px; align-items:flex-start; transition:box-shadow .2s,border-color .2s; }
+.step:hover { box-shadow:0 4px 18px rgba(61,43,31,.08); border-color:var(--lteal); }
+.step-num { flex-shrink:0; width:32px; height:32px; background:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:var(--white); margin-top:2px; }
+.step-body h3 { font-size:15px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+.step-body p { font-size:14px; color:var(--text); line-height:1.65; font-weight:300; }
+.step-body strong { font-weight:600; color:var(--navy); }
+.callout { border-radius:12px; padding:18px 22px; margin:20px 0; font-size:14px; line-height:1.65; font-weight:300; }
+.callout-example { background:#eef5f8; border-left:4px solid var(--dteal); color:var(--dteal); }
+.callout-tip { background:#fdf3e3; border-left:4px solid var(--yellow); color:#5a4200; }
+.callout-tip strong, .callout-example strong { font-weight:600; display:block; margin-bottom:6px; color:var(--navy); }
+.callout-warn { background:#fdf0e8; border-left:4px solid var(--clay); color:#5a2d00; }
+.callout-warn strong { font-weight:600; display:block; margin-bottom:6px; }
+.wagoll-grades { margin:32px 0; border-radius:16px; overflow:hidden; border:1.5px solid var(--border); }
+.wagoll-grades-header { background:var(--navy); padding:16px 22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.wagoll-grades-title { font-size:12px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--yellow); }
+.wagoll-rubric-note { font-size:12px; color:rgba(255,255,255,.6); font-weight:300; font-style:italic; }
+.grade-tabs { display:flex; gap:12px; padding:16px 20px; background:#2a1d14; }
+.grade-tab { flex:1; padding:14px 8px; text-align:center; cursor:pointer; font-size:14px; font-weight:700; border:2px solid transparent; border-radius:10px; font-family:'DM Sans',sans-serif; transition:all .2s; letter-spacing:.5px; background:rgba(255,255,255,.07); color:rgba(255,255,255,.45); }
+.grade-tab:hover { background:rgba(255,255,255,.14); color:rgba(255,255,255,.85); }
+.grade-tab.grade-c.active { background:#fff3cd; border-color:#f0a500; color:#7a4a00; }
+.grade-tab.grade-b.active { background:#e8f4f0; border-color:var(--teal); color:#1a4a2f; }
+.grade-tab.grade-a.active { background:#f5ece0; border-color:var(--clay); color:#6a3510; }
+.grade-panels { background:var(--white); }
+.grade-panel { display:none; padding:24px; }
+.grade-panel.active { display:block; animation:fadeUp .25s ease; }
+.grade-badge { display:inline-flex; align-items:center; gap:8px; border-radius:8px; padding:6px 14px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+.grade-badge.c { background:#fff3cd; color:#7a4a00; border:1.5px solid #f0a500; }
+.grade-badge.b { background:#e8f4f0; color:#1a4a2f; border:1.5px solid var(--teal); }
+.grade-badge.a { background:#f5ece0; color:#6a3510; border:1.5px solid var(--clay); }
+.label-example { border-radius:10px; padding:14px 16px; font-size:13.5px; line-height:1.65; font-weight:300; border:1.5px solid var(--border); background:var(--cream); }
+.label-example .label-num { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.label-example .label-text { color:var(--text); }
+.outcomes { border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; font-size:.88rem; background:var(--white); }
+.outcomes h3 { color:var(--dteal); font-size:.85rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+.outcomes ul { padding-left:20px; }
+.outcomes li { margin-bottom:6px; }
+.rubric-section { margin-bottom:28px; }
+.rubric-section-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--navy); margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--border); }
+.wagoll-table { width:100%; border-collapse:collapse; font-size:13.5px; }
+.wagoll-table th { background:var(--dteal); color:var(--white); padding:10px 14px; text-align:left; font-weight:600; font-size:12px; letter-spacing:.5px; }
+.wagoll-table td { padding:11px 14px; border-bottom:1px solid var(--border); vertical-align:top; font-weight:300; line-height:1.6; color:var(--text); }
+.wagoll-table tr:nth-child(even) td { background:#faf6ef; }
+.feedback-section { margin-top:28px; padding-top:16px; border-top:1px solid var(--border); opacity:.75; }
+.feedback-section:hover { opacity:1; transition:opacity .2s; }
+.feedback-inner { background:var(--white); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
+.feedback-inner h4 { font-size:11.5px; font-weight:600; color:var(--navy); margin-bottom:4px; }
+.feedback-inner p { font-size:11px; font-weight:300; color:var(--muted); line-height:1.5; margin-bottom:10px; }
+.feedback-fields { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-bottom:8px; }
+@media (max-width:500px) { .feedback-fields { grid-template-columns:1fr; } }
+.feedback-field label { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:3px; }
+.feedback-field input, .feedback-field textarea { width:100%; padding:6px 9px; border:1px solid var(--border); border-radius:6px; font-family:'DM Sans',sans-serif; font-size:12px; color:var(--text); background:var(--cream); outline:none; }
+.feedback-field.full { grid-column:1/-1; }
+.feedback-status { font-size:11px; margin-bottom:6px; min-height:14px; }
+.feedback-status.ok { color:#1a7a4a; }
+.feedback-status.err { color:#c0392b; }
+.feedback-btn { padding:7px 16px; background:var(--navy); color:var(--white); border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; cursor:pointer; }
+.feedback-btn:hover { background:var(--dteal); }
+footer { background:var(--navy); color:rgba(255,255,255,.45); font-size:12px; text-align:center; padding:20px; font-weight:300; }
+footer a { color:var(--lteal); text-decoration:none; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <a class="backlink" href="index.html">← Back to Environmental Change and Management</a>
-  <header class="banner">
-    <div class="kicker">Stage 5 Geography&nbsp;|&nbsp;Year 9&nbsp;|&nbsp;Assessment Task 3&nbsp;|&nbsp;20%</div>
-    <h1>Environmental Management Plan</h1>
-    <p class="theme">Choose a local environmental issue and complete an independent Environmental Management Plan, combining your own primary data collection with secondary research.</p>
-  </header>
 
-  <div class="meta">
-    <strong>Key details</strong>
-    <table>
-      <tr><td class="label">Year / Course</td><td>Year 9, Stage 5 Geography</td></tr>
-      <tr><td class="label">Date set</td><td>Wednesday 5th August 2026 (Week 3)</td></tr>
-      <tr><td class="label">Date due</td><td>Monday 14th September 2026 (Week 8)</td></tr>
-      <tr><td class="label">Weighting</td><td>20% (word limit guide: 1250–1750 words)</td></tr>
-      <tr><td class="label">Total marks</td><td>55</td></tr>
-    </table>
+<header>
+  <div class="header-inner">
+    <div class="header-label">Year 9 Geography &nbsp;|&nbsp; Term 3, 2026</div>
+    <h1>Assessment – <em>Environmental Management Plan</em></h1>
+    <p class="header-sub">Choose a local environmental issue and manage it well.</p>
+    <span class="due-badge">Due Monday 14 September 2026 at 9pm via iLearn</span>
+  </div>
+</header>
+
+<nav class="tab-nav" role="tablist">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)">Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)">Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button>
+  </div>
+</nav>
+
+<main>
+
+  <div id="overview" class="tab-panel active">
+    <div class="part-heading">
+      <div class="part-number" style="background:var(--teal);font-size:13px;font-weight:600;letter-spacing:1px;color:var(--white);">i</div>
+      <div class="part-title"><h2>What is this task?</h2><p>Read this first before you begin</p></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Choose a local environmental issue</h3><p>&lsquo;Local&rsquo; means within the Central Coast (Gosford Council) area. Somewhere outside this area needs your teacher&rsquo;s permission first, as it affects the Aboriginal Custodianship of Country section. You need to visit your site more than once for primary data collection, so local sites are usually easiest.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Decide the shape of your EMP</h3><p>It can be a broad overview of the best way to manage a location (e.g. the best way to manage coastal erosion at Shelly Beach), or a topical study comparing specific options (e.g. is a seawall the most effective option to protect the Entrance Inlet).</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Collect both primary and secondary data</h3><p><strong>Primary data</strong> is information you collect yourself &mdash; surveys, written observations, measurements, photographs. <strong>Secondary data</strong> is already published by someone else &mdash; ABS data, government reports, Council EMPs. Both are required in your Findings section.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Work through each tab in order</h3><p>Each tab above is one section of your report, worth its own marks. Open a tab, read the steps, check the example responses, then write that section.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Submit as one PDF or Word document</h3><p>Upload directly to iLearn &mdash; not shared as a Canva or Word Doc link &mdash; before 9pm on Monday 14th September 2026. All text must be real, selectable text, not an image or screenshot of text.</p></div></div>
+    </div>
+    <div class="callout callout-warn"><strong>Text must be selectable, not an image</strong>Text built in Canva, screenshots, or slides exported as flat images cannot be read or marked. Every section of your report must contain real, searchable text.</div>
+    <div class="callout callout-tip"><strong>Word counts and paragraph guides are a guide only</strong>They exist to help you not &lsquo;underwrite&rsquo; a section &mdash; they will not cost you marks on their own. You may include an appendix for supporting material; appendices do not count toward the word limit and are not marked directly.</div>
+
+    <div class="outcomes" style="margin-top:28px">
+      <h3>NESA outcomes assessed</h3>
+      <ul>
+        <li><strong>GE5-DFC-01</strong> &mdash; explains how the diverse features and characteristics of a range of places and environments change over time</li>
+        <li><strong>GE5-PRI-01</strong> &mdash; analyses the processes and interactions that transform people, places and environments</li>
+        <li><strong>GE5-PER-01</strong> &mdash; accounts for the perspectives of people and organisations on a range of geographical opportunities and challenges</li>
+        <li><strong>GE5-MAN-01</strong> &mdash; assesses different approaches to the management and protection of places and environments</li>
+        <li><strong>GE5-APC-01</strong> &mdash; analyses how Aboriginal Peoples&rsquo; Custodianship of Country supports environmental management and enhances Community wellbeing</li>
+        <li><strong>GE5-TAP-01</strong> &mdash; applies and evaluates a range of geographical tools to acquire and process geographical information</li>
+        <li><strong>GE5-COM-01</strong> &mdash; selects and applies concepts and terminology to communicate geographical information for a range of purposes, audiences and contexts</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="outcomes">
-    <h3>NESA outcomes assessed</h3>
-    <ul>
-      <li><strong>GE5-DFC-01</strong> — explains how the diverse features and characteristics of a range of places and environments change over time</li>
-      <li><strong>GE5-PRI-01</strong> — analyses the processes and interactions that transform people, places and environments</li>
-      <li><strong>GE5-PER-01</strong> — accounts for the perspectives of people and organisations on a range of geographical opportunities and challenges</li>
-      <li><strong>GE5-MAN-01</strong> — assesses different approaches to the management and protection of places and environments</li>
-      <li><strong>GE5-APC-01</strong> — analyses how Aboriginal Peoples’ Custodianship of Country supports environmental management and enhances Community wellbeing</li>
-      <li><strong>GE5-TAP-01</strong> — applies and evaluates a range of geographical tools to acquire and process geographical information</li>
-      <li><strong>GE5-COM-01</strong> — selects and applies concepts and terminology to communicate geographical information for a range of purposes, audiences and contexts</li>
-    </ul>
+  <div id="aiuse" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number" style="background:var(--yellow);font-size:13px;font-weight:600;letter-spacing:1px;color:var(--navy);">AI</div>
+      <div class="part-title"><h2>AI Use Checklist</h2><p>Applies across the whole task</p></div>
+    </div>
+    <p style="font-size:14px;font-weight:300;color:var(--muted);margin-bottom:22px;line-height:1.65">Always reference any AI you use &mdash; an APA referencing guide for this will be provided.</p>
+
+    <div class="callout" style="background:#eef5ea;border-left:4px solid var(--teal);color:#2f4a30">
+      <strong>Green &mdash; AI can be used for any part of this assessment</strong>
+      Generating exemplars and comparisons &middot; Feedback and editing &middot; Image generation
+    </div>
+    <div class="callout callout-tip">
+      <strong>Amber &mdash; you may use AI to assist with</strong>
+      Topic generation/brainstorming &middot; Preliminary research
+    </div>
+    <div class="callout callout-warn" style="background:#fbeae7;border-left:4px solid #c9503b;color:#7a2d1f">
+      <strong>Red &mdash; no AI is to be used in this assessment</strong>
+      For writing your analysis, conclusions or findings &mdash; those words must be your own, in every section of the report.
+    </div>
   </div>
 
-  <section class="overview">
-    <h2>Task overview</h2>
-    <p>You will choose a local environmental issue and complete an ‘Environmental Management Plan’ (EMP) for this issue.</p>
-    <p><strong>‘Local’</strong> means within the Central Coast (Gosford Council) area — if you want to use somewhere outside this area (e.g. Northern Beaches, Newcastle), you must get permission first, as it affects the Aboriginal Custodianship of Country section. You are to be visiting the site you choose more than once for primary data collection, so local areas are usually best.</p>
-    <p>The EMP can be a broad overview of the best way to manage a particular location, or a topical study on the most effective option given a range of possible solutions for an area. For example, your EMP could provide a broad conclusion for the best way to manage coastal erosion at Shelly Beach, or investigate whether a seawall is the most effective option to protect the Entrance Inlet.</p>
-    <div class="callout"><strong>Primary data</strong> is information you collect yourself (e.g. surveys, written observations, measurements, photographs). <strong>Secondary data</strong> is information already presented in someone else’s research (e.g. ABS data, government reports, Council EMPs). Both are required — see the Findings section below.</div>
-  </section>
-
-  <div class="structure-head">
-    <h2>Structure of the report — 55 marks</h2>
-    <p>Each section below shows what to include and the full marking criteria (A–E) used to grade it. Paragraph counts are a guide only, to help you not ‘underwrite’ a section.</p>
+  <div id="inquiry" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">1</div>
+      <div class="part-title"><h2>Inquiry Question (Title)</h2><p>Contextual understanding</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Choose a key inquiry question</h3><p>It must name your issue, your location, and have an evaluative focus — not just a descriptive one. Example: “To what extent is wetland restoration the most effective way to manage flooding at Wattlebrook Creek?”</p></div></div></div>
+    <div class="callout callout-tip"><strong>What makes a question evaluative, not descriptive?</strong>A descriptive question asks <em>what</em> or <em>how</em> something happens. An evaluative question asks <em>how well</em>, <em>to what extent</em>, or <em>is X the best option</em> — it sets you up to make a judgement, which is exactly what your Conclusion needs to do.</div>
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">5–6 marks band equivalent — C (Sound), 3 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Names the issue and location, but is descriptive rather than evaluative.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“What causes flooding at Wattlebrook Creek?”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 4 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Well-focused, names issue and location, mostly clear evaluative focus.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Is wetland restoration an effective way to manage flooding at Wattlebrook Creek?”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 5 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Clear, geographically specific, names issue, location and evaluative focus.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“To what extent is wetland restoration the most effective way to manage flooding at Wattlebrook Creek?”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Poses a clear, geographically specific inquiry question that names the issue, the location and an evaluative focus.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Poses a well-focused inquiry question that names the issue and location with a mostly clear evaluative focus.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Poses an appropriate inquiry question that names the issue and location but is descriptive rather than evaluative.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Poses a basic inquiry question that names the issue but lacks a clear location and/or evaluative focus.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes an attempt at an inquiry question, but it is vague, non-geographical, or does not match the report that follows.</td></tr></table>
+    </div>
+  </div>
+  <div id="background" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">2</div>
+      <div class="part-title"><h2>Background to the Issue</h2><p>Change over time and sustainability</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Explain how the issue developed</h3><p>Identify the issue and describe how it has developed and why, with specific reference to change over time (1–2 paragraphs).</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Describe the site</h3><p>3–4 sentences — e.g. its scale, land use and key features.</p></div></div><div class="step"><div class="step-num">3</div><div class="step-body"><h3>Prepare a labelled location map</h3><p>A bird’s eye view screenshot from Google Maps, labelled using BOLTSS conventions — Border, Orientation/north point, Legend, Title, Scale, Source.</p></div></div></div>
+    <div class="callout callout-warn"><strong>BOLTSS is all six elements</strong>Older habits from Stage 4 sometimes only cover scale and north point. This task marks against all six BOLTSS elements — missing several drops you to a D.</div>
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">C (Sound), 3 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Describes in general terms how the issue developed; map missing one labelling element.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Wattlebrook Creek has flooded more over the years because of housing development nearby. The site is a wetland area near some houses. [Map included, missing the source line.]”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 4 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Mostly specific and accurate detail; map has only minor labelling gaps.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Since 2015, flooding at Wattlebrook Creek has become more frequent as upstream housing developments increased hard surfaces, reducing water absorption. The site is a 2-hectare wetland bordering residential streets to the north. [Map included, missing only the scale bar.]”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 5 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Specific, accurate dates/data; precise site description; accurately labelled map.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Between 2015 and 2024, recorded flood events at Wattlebrook Creek rose from once every two years to three times a year, coinciding with a 40% increase in impervious surfaces from new housing estates upstream (Central Coast Council, 2023). The site is a 2-hectare freshwater wetland bordering low-density residential streets to the north and bushland to the south. [Map included with all six BOLTSS elements labelled.]”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Explains, with specific and accurate dates/data, how the issue has changed over time and why; precisely describes the site (scale, land use, key features); includes an accurately labelled bird’s eye view map (BOLTSS conventions).</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Explains, with mostly specific and accurate detail, how the issue has changed over time; detailed description of the site; includes a bird’s eye view map with only minor labelling gaps.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Describes, in general terms, how the issue has developed over time; adequately describes the site; includes a bird’s eye view map missing one labelling element.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>States, with limited explanation, how the issue developed; basic or generic site description; map present but missing several labelling elements.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes a limited attempt to identify the issue and/or describe the site; explanation of development is minimal or absent; map, if included, is unlabelled or not a bird’s eye view.</td></tr></table>
+    </div>
+  </div>
+  <div id="findings" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">3</div>
+      <div class="part-title"><h2>Findings — Primary and Secondary Data</h2><p>Processing geographical information</p></div>
+      <div class="marks-pill">/15</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Analyse your primary data</h3><p>Your own collected survey results, measurements, field observations, or photographs. Identify patterns, trends and interconnections, and cite specific figures/data as evidence (2–3 paragraphs).</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Analyse your secondary data</h3><p>Council reports, ABS/government data, existing studies, flood/hazard maps or quotes from reputable sources. Same standard: patterns, trends, interconnections, specific figures cited (2–3 paragraphs).</p></div></div></div>
+    <div class="callout callout-warn"><strong>Both are required</strong>A report missing primary data, or missing secondary data, cannot be assessed above a D in this section — no exceptions.</div>
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">C (Sound), 6–9 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">At least one primary and one secondary source; general reference to data without close detail.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“My survey showed that most people think flooding is a problem. Council data also shows flooding has increased.”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 10–12 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Several sources each type, relevant and labelled; consistent reference to data with at least one pattern/trend identified in each set.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Of the 20 residents I surveyed, 15 (75%) reported flood damage to their property since 2020, with the highest concentration among households within 100m of the creek. This matches Central Coast Council’s (2023) flood mapping, which shows the 1-in-20-year flood extent has grown by 30% since 2015.”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 13–15 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Multiple genuinely varied sources both types, sustained analysis explicitly identifying patterns/trends/interconnections, consistent specific figures cited.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Of the 20 residents I surveyed within 200m of Wattlebrook Creek, 75% reported flood damage since 2020, rising to 90% for the 8 households within 100m — a clear distance-decay pattern. This interconnects with Central Coast Council’s (2023) flood mapping, which shows the 1-in-20-year flood extent expanding 30% since 2015, and my own water-level measurements at three points along the creek, which recorded peak heights 0.4m higher at the culvert than at the wetland inlet, indicating the culvert is a bottleneck.”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>13–15</td><td>Includes multiple primary AND secondary data sources (a genuine range of types), clearly relevant and correctly labelled, with sustained analysis that explicitly identifies patterns, trends and interconnections and consistently cites specific, accurate figures/data as evidence.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>10–12</td><td>Includes several primary AND secondary data sources, relevant and appropriately labelled. Analysis refers consistently to the data and identifies at least one pattern or trend in each set.</td></tr><tr><td><strong>C (Sound)</strong></td><td>6–9</td><td>Includes at least one primary AND one secondary data source relevant to the inquiry question; presentation is inconsistent. Analysis makes general reference to the data without close detail.</td></tr><tr><td><strong>D (Basic)</strong></td><td>3–5</td><td>Includes data from only one of primary or secondary sources (not both), OR data present but lacking clear labelling or relevance. Analysis largely describes rather than analyses the data.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1–2</td><td>Primary and/or secondary data is attempted but very limited, missing, or largely irrelevant; analysis is minimal and rarely refers to the data.</td></tr></table>
+    </div>
+  </div>
+  <div id="custodianship" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">4</div>
+      <div class="part-title"><h2>Aboriginal Custodianship of Country</h2><p>Aboriginal Custodianship of Country</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Identify one example</h3><p>A practice, piece of knowledge, or a Traditional Owner group’s own statement, connected to your issue or site.</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Explain the link</h3><p>How this example supports sustainable management and Community wellbeing for your site (1–2 paragraphs).</p></div></div><div class="step"><div class="step-num">3</div><div class="step-body"><h3>Cite a credible source</h3><p>A Traditional Owner group’s own materials, your Local Aboriginal Land Council (Darkinjung LALC for the Central Coast), AIATSIS, or NSW Government Aboriginal affairs resources. The LALC speaks for the community — it is not a Traditional Owner’s own statement, so cite it accurately as that.</p></div></div></div>
+    <div class="callout callout-tip"><strong>You can reuse this in Future Solutions</strong>If a Custodianship-informed approach turns out to be one of your management options, you can draw on this research again in that section.</div>
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">C (Sound), 3 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Identifies an example and describes, in general terms, its link to management or wellbeing, with a credible source.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Aboriginal people used cultural burning to manage land. This is a sustainable way to look after Country (Darkinjung LALC, n.d.).”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 4 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Specific example, clear link to management OR wellbeing, accurate credible source.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Cultural burning, a practice used by Traditional Owners to manage vegetation and reduce fuel loads, supports sustainable land management around wetland areas like Wattlebrook Creek by maintaining healthy ground cover that slows water runoff (Darkinjung LALC, n.d.).”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 5 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Specific named example, link to both management and Community wellbeing, accurate credible source.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Cultural burning, a practice of low-intensity, cool-season burning used by Traditional Owners to manage vegetation and reduce fuel loads, supports sustainable management of wetland-adjacent land like Wattlebrook Creek by maintaining ground cover that slows water runoff and reduces erosion. It also enhances Community wellbeing by keeping cultural knowledge active and connecting the local Community to Country through ongoing land care (Darkinjung LALC, n.d.).”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Identifies a specific example of Custodianship (named practice, knowledge, or Traditional Owner statement) and explains its link to both sustainable management and Community wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Identifies a specific example of Custodianship and explains its link to management or wellbeing for the site, with an accurate credible source.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies an example of Custodianship and describes, in general terms, its link to management or wellbeing, with a credible source.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Identifies a superficial or generic example of Custodianship, with an unclear link to management or wellbeing for the site.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes a minimal or unrelated attempt to reference Custodianship.</td></tr></table>
+    </div>
+  </div>
+  <div id="solutions" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">5</div>
+      <div class="part-title"><h2>Future Solutions</h2><p>Evaluation and judgement</p></div>
+      <div class="marks-pill">/10</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Identify possible solutions</h3><p>Describe possible solutions for managing the issue, aiming for at least three (1–2 paragraphs).</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Assess the most effective option</h3><p>Against these three criteria (approx. 3 paragraphs): <strong>Economic viability</strong> — is it affordable? <strong>Social justice</strong> — is it fair to all the people involved? <strong>Environmental benefit</strong> — is it sustainable, minimal environmental impact?</p></div></div></div>
+    
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">C (Sound), 5–6 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">At least two suitable options; general reasoning not drawing specifically on Findings.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Wattlebrook Creek could use wetland restoration or a levee. Wetland restoration would be good for the environment and probably wouldn’t cost too much.”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 7–8 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">At least three suitable options; thorough reasoning referring to the Findings.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Three options exist: wetland restoration, a levee bank, and stormwater detention basins. Wetland restoration best meets the criteria: my survey data showed 75% of nearby residents support ‘natural’ solutions (social justice), council estimates place it at roughly a third the cost of a levee (economic viability), and it restores habitat rather than displacing water downstream (environmental benefit).”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 9–10 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">At least three realistic options, precise terminology; sustained, well-reasoned judgement against all three criteria, supported by Findings evidence.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Three realistic options exist: wetland restoration, a levee bank, and stormwater detention basins. Wetland restoration is the most effective. Economically, Central Coast Council’s (2023) figures put it at roughly a third the cost of levee construction. Socially, it is the most equitable option — my survey found 75% of residents within 200m support a ‘natural’ solution over infrastructure that could shift flood risk onto neighbouring properties. Environmentally, it directly addresses the bottleneck identified in my water-level measurements by restoring the wetland’s natural water-absorption capacity, rather than simply redirecting floodwater as a levee would.”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>9–10</td><td>Identifies at least three realistic, specific management options using precise geographical terminology. Assesses the preferred option against all three criteria with sustained, well-reasoned judgements supported by evidence from the Findings.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>7–8</td><td>Identifies at least three suitable options using relevant terminology. Assesses the preferred option against the three criteria with thorough reasoning, referring to the Findings.</td></tr><tr><td><strong>C (Sound)</strong></td><td>5–6</td><td>Identifies at least two suitable options using relevant terminology. Assesses the preferred option against the three criteria with general reasoning that does not draw specifically on the Findings.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2–4</td><td>Identifies one or two options using basic terminology. Assessment against the criteria is attempted but generic or only partially addresses each one.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Attempts to identify a management option, but it is unsuitable, unrealistic or not clearly linked to the issue; assessment against the criteria is minimal or absent.</td></tr></table>
+    </div>
+  </div>
+  <div id="conclusion" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">6</div>
+      <div class="part-title"><h2>Conclusion</h2><p>Explanation and reasoning</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Write your conclusion</h3><p>One paragraph. Provide a short summary of your EMP which conclusively identifies and justifies the most appropriate action from your listed Future Solutions.</p></div></div></div>
+    <div class="callout callout-tip"><strong>Draw on both</strong>The top band specifically rewards justification that draws on <strong>both</strong> your Findings <em>and</em> your evaluation criteria — not just one or the other.</div>
+    
+    <div class="wagoll-grades">
+      <div class="wagoll-grades-header">
+        <div class="wagoll-grades-title">What does each grade look like?</div>
+        <div class="wagoll-rubric-note">Wattlebrook Creek is a fictional example site — do not write about it, use your own chosen place.</div>
+      </div>
+      <div class="grade-tabs">
+        <div class="grade-tab grade-c active" onclick="switchGrade(this,'c')">C</div>
+        <div class="grade-tab grade-b" onclick="switchGrade(this,'b')">B</div>
+        <div class="grade-tab grade-a" onclick="switchGrade(this,'a')">A</div>
+      </div>
+      <div class="grade-panels">
+      <div class="grade-panel active c-panel" data-grade="c">
+        <div class="grade-badge c">C (Sound), 3 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Identifies a preferred action; general justification not drawing specifically on Findings or criteria.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Wetland restoration is the best option for managing flooding at Wattlebrook Creek because it is good for the environment.”</div></div>
+      </div>
+      <div class="grade-panel  b-panel" data-grade="b">
+        <div class="grade-badge b">B (Thorough), 4 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Clearly identifies a single preferred action; justification draws on either the Findings or the evaluation criteria.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Wetland restoration is the most appropriate action for Wattlebrook Creek, as it is the most affordable option and directly restores the wetland’s natural water-absorption capacity.”</div></div>
+      </div>
+      <div class="grade-panel  a-panel" data-grade="a">
+        <div class="grade-badge a">A (Extensive), 5 marks</div>
+        <p style="font-size:13.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Clearly identifies a single preferred action; justification draws specifically on both the Findings and the evaluation criteria.</p>
+        <div class="label-example"><div class="label-num">Example response</div><div class="label-text">“Wetland restoration is the most appropriate action for Wattlebrook Creek. It is the most economically viable option, at roughly a third the cost of a levee (Central Coast Council, 2023), and directly addresses the culvert bottleneck identified in my own water-level measurements — while also being the option most supported by nearby residents, making it the fairest as well as the most effective choice.”</div></div>
+      </div></div>
+    </div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Clearly identifies a single preferred action, with justification that draws specifically on both the Findings and the evaluation criteria.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Clearly identifies a single preferred action, with justification that draws on either the Findings or the evaluation criteria.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies a preferred action, with a general justification that does not draw specifically on the Findings or evaluation criteria.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Identifies a preferred action, but with minimal or unclear justification.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Does not clearly identify a single preferred action, or the conclusion does not relate to the rest of the report.</td></tr></table>
+    </div>
   </div>
 
-  <section class="task-block" id="inquiry-question">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>1. Inquiry Question (Title)</h2>
-    <div class="criterion-name">Criterion: Contextual understanding</div>
-    <h3>What to do</h3>
-    <p>Choose a key inquiry question for the report (e.g. ‘To what extent is wetland restoration the most effective way to manage flooding at Wattlebrook Creek?’).</p>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>Poses a clear, geographically specific inquiry question that names the issue, the location and an evaluative focus.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Poses a well-focused inquiry question that names the issue and location with a mostly clear evaluative focus.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Poses an appropriate inquiry question that names the issue and location but is descriptive rather than evaluative.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>Poses a basic inquiry question that names the issue but lacks a clear location and/or evaluative focus.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Makes an attempt at an inquiry question, but it is vague, non-geographical, or does not match the report that follows.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="background">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>2. Background to the Issue</h2>
-    <div class="criterion-name">Criterion: Change over time and sustainability</div>
-    <h3>What to do</h3>
-    <ol>
-      <li>Identify the issue and describe how it has developed and why, with specific reference to change over time (1–2 paragraphs).</li>
-      <li>Describe the site (3–4 sentences) — e.g. its scale, land use and key features.</li>
-      <li>Prepare a labelled location map (bird’s eye view screenshot from Google Maps) using BOLTSS conventions (border, orientation/north point, legend, title, scale, source).</li>
-    </ol>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>Explains, with specific and accurate dates/data, how the issue has changed over time and why; precisely describes the site (scale, land use, key features); includes an accurately labelled bird’s eye view map (BOLTSS conventions).</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Explains, with mostly specific and accurate detail, how the issue has changed over time; detailed description of the site; includes a bird’s eye view map with only minor labelling gaps.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Describes, in general terms, how the issue has developed over time; adequately describes the site; includes a bird’s eye view map missing one labelling element.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>States, with limited explanation, how the issue developed; basic or generic site description; map present but missing several labelling elements.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Makes a limited attempt to identify the issue and/or describe the site; explanation of development is minimal or absent; map, if included, is unlabelled or not a bird’s eye view.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="findings">
-    <span class="marks-tag">15 MARKS</span>
-    <h2>3. Findings — Primary and Secondary Data</h2>
-    <div class="criterion-name">Criterion: Processing geographical information</div>
-    <h3>What to do</h3>
-    <ol>
-      <li><strong>Primary data</strong> (e.g. your collected survey results, measurements, field observations, your own photographs): analyse the information, identifying patterns, trends and interconnections, and cite specific figures/data as evidence (2–3 paragraphs).</li>
-      <li><strong>Secondary data</strong> (e.g. council reports, ABS/government data, existing studies, flood/hazard maps or quotes from reputable sources): analyse the information, identifying patterns, trends and interconnections, and cite specific figures/data as evidence (2–3 paragraphs).</li>
-    </ol>
-    <div class="task-note"><strong>Note:</strong> a report missing primary data, or missing secondary data, cannot be assessed above a D in this section — both are required.</div>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">13–15</td><td>Includes multiple primary AND secondary data sources (a genuine range of types — e.g. survey results, measurements, photographs, council/government data), clearly relevant and correctly labelled, with sustained analysis that explicitly identifies patterns, trends and interconnections and consistently cites specific, accurate figures/data as evidence.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">10–12</td><td>Includes several primary AND secondary data sources, relevant and appropriately labelled. Analysis refers consistently to the data and identifies at least one pattern or trend in each set.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">6–9</td><td>Includes at least one primary AND one secondary data source relevant to the inquiry question; presentation is inconsistent. Analysis makes general reference to the data without close detail.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">3–5</td><td>Includes data from only one of primary or secondary sources (not both), OR data present but lacking clear labelling or relevance. Analysis largely describes rather than analyses the data.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1–2</td><td>Primary and/or secondary data is attempted but very limited, missing, or largely irrelevant; analysis is minimal and rarely refers to the data.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="custodianship">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>4. Aboriginal Custodianship of Country</h2>
-    <div class="criterion-name">Criterion: Aboriginal Custodianship of Country</div>
-    <h3>What to do</h3>
-    <ol>
-      <li>Identify one example of Aboriginal Custodianship of Country connected to your issue or site (a practice, piece of knowledge, or a Traditional Owner group’s own statement).</li>
-      <li>Explain how this example supports sustainable management and Community wellbeing for your site (1–2 paragraphs).</li>
-      <li>Use at least one credible source: a Traditional Owner group’s own materials, your Local Aboriginal Land Council (Darkinjung LALC for the Central Coast), AIATSIS, or NSW Government Aboriginal affairs resources. Cite accurately — the LALC speaks for the community, it is not a Traditional Owner’s own statement.</li>
-    </ol>
-    <div class="task-note">You may draw on this research again in your Future Solutions section if a Custodianship-informed approach is one of your management options.</div>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>Identifies a specific example of Custodianship (named practice, knowledge, or Traditional Owner statement) and explains its link to both sustainable management and Community wellbeing for the site, with an accurate credible source.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Identifies a specific example of Custodianship and explains its link to management or wellbeing for the site, with an accurate credible source.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Identifies an example of Custodianship and describes, in general terms, its link to management or wellbeing, with a credible source.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>Identifies a superficial or generic example of Custodianship, with an unclear link to management or wellbeing for the site.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Makes a minimal or unrelated attempt to reference Custodianship.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="future-solutions">
-    <span class="marks-tag">10 MARKS</span>
-    <h2>5. Future Solutions</h2>
-    <div class="criterion-name">Criterion: Evaluation and judgement</div>
-    <h3>What to do</h3>
-    <ol>
-      <li>Identify and describe possible solutions for managing the issue, aiming for at least three (1–2 paragraphs).</li>
-      <li>Determine the most effective option based on the criteria below (approx. 3 paragraphs):
-        <ul>
-          <li><strong>Economic viability</strong> — is it affordable?</li>
-          <li><strong>Social justice</strong> — is it fair to all the people involved?</li>
-          <li><strong>Environmental benefit</strong> — is it sustainable and has minimal environmental impact?</li>
-        </ul>
-      </li>
-    </ol>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">9–10</td><td>Identifies at least three realistic, specific management options using precise geographical terminology. Assesses the preferred option against all three criteria (economic viability, social justice, environmental benefit) with sustained, well-reasoned judgements supported by evidence from the Findings.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">7–8</td><td>Identifies at least three suitable options using relevant terminology. Assesses the preferred option against the three criteria with thorough reasoning, referring to the Findings.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">5–6</td><td>Identifies at least two suitable options using relevant terminology. Assesses the preferred option against the three criteria with general reasoning that does not draw specifically on the Findings.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2–4</td><td>Identifies one or two options using basic terminology. Assessment against the criteria is attempted but generic or only partially addresses each one.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Attempts to identify a management option, but it is unsuitable, unrealistic or not clearly linked to the issue; assessment against the criteria is minimal or absent.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="conclusion">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>6. Conclusion</h2>
-    <div class="criterion-name">Criterion: Explanation and reasoning</div>
-    <h3>What to do</h3>
-    <p>Provide a short summary of your EMP which conclusively identifies and justifies the most appropriate action from the listed future solutions (1 paragraph).</p>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>Clearly identifies a single preferred action, with justification that draws specifically on both the Findings and the evaluation criteria.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Clearly identifies a single preferred action, with justification that draws on either the Findings or the evaluation criteria.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Identifies a preferred action, with a general justification that does not draw specifically on the Findings or evaluation criteria.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>Identifies a preferred action, but with minimal or unclear justification.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Does not clearly identify a single preferred action, or the conclusion does not relate to the rest of the report.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="referencing">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>7. Referencing</h2>
-    <div class="criterion-name">Criterion: Referencing and use of sources</div>
-    <h3>What to do</h3>
-    <ol>
-      <li>Include in-text citations for every source used throughout your report.</li>
-      <li>Provide a reference list using APA 7th referencing, with each in-text citation matching an entry in the list.</li>
-    </ol>
-    <div class="task-note">Fabricated, non-existent, or unverifiable sources cannot be credited, regardless of formatting accuracy.</div>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>All sources, including any AI tool used, are referenced accurately and consistently using APA, with every in-text citation matching an entry in the reference list.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Almost all sources are referenced using APA, with in-text citations matching the reference list for all but 1–2 sources; AI use, if any, is referenced.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Most sources are referenced using APA, but 3 or more in-text citations are missing, mismatched, or don’t correspond to a reference-list entry; AI use, if any, is referenced.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>Some sources are referenced using APA, but inconsistently or incompletely, and conventions are only partially applied.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Makes a minimal attempt at referencing; sources listed are incomplete, inconsistent, or do not follow APA conventions. Limited or no in-text citation.</td></tr>
-    </table>
-  </section>
-
-  <section class="task-block" id="communication">
-    <span class="marks-tag">5 MARKS</span>
-    <h2>8. Communication</h2>
-    <div class="criterion-name">Criterion: Editing, grammar and spelling</div>
-    <h3>What to do</h3>
-    <p>Marked throughout the report for accurate spelling, grammar, punctuation and consistent use of geographical terminology.</p>
-    <h3>Marking criteria</h3>
-    <table class="rubric">
-      <tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr>
-      <tr><td class="band">A (Extensive)</td><td class="marks">5</td><td>Writing is fluent and precise, with accurate spelling, grammar and punctuation throughout, and consistent use of geographical terminology and a formal tone throughout.</td></tr>
-      <tr><td class="band">B (Thorough)</td><td class="marks">4</td><td>Writing is fluent with mostly accurate spelling, grammar and punctuation, and consistent use of geographical terminology and a mostly formal tone.</td></tr>
-      <tr><td class="band">C (Sound)</td><td class="marks">3</td><td>Writing is generally clear with mostly accurate spelling and grammar; occasional errors do not interrupt meaning; geographical terminology and tone are mostly appropriate for a formal report.</td></tr>
-      <tr><td class="band">D (Basic)</td><td class="marks">2</td><td>Writing is understandable but spelling, grammar or punctuation errors occur regularly; geographical terminology is used inconsistently.</td></tr>
-      <tr><td class="band">E (Elementary)</td><td class="marks">1</td><td>Writing shows an attempt at communication, but frequent spelling, grammar or punctuation errors interrupt meaning; geographical terminology is rarely used and the tone is inconsistent or informal.</td></tr>
-    </table>
-  </section>
-
-  <div class="structure-head">
-    <h2>AI use checklist</h2>
-    <p>Applies across the whole task. Always reference any AI you use — an APA referencing guide for this will be provided.</p>
-  </div>
-  <div class="ai-tier ai-green">
-    <span class="tier-label">Green — AI can be used for any part of this assessment</span>
-    <ul>
-      <li>Generating exemplars and comparisons</li>
-      <li>Feedback and editing</li>
-      <li>Image generation</li>
-    </ul>
-  </div>
-  <div class="ai-tier ai-amber">
-    <span class="tier-label">Amber — You may use AI to assist with</span>
-    <ul>
-      <li>Topic generation/brainstorming</li>
-      <li>Preliminary research</li>
-    </ul>
-  </div>
-  <div class="ai-tier ai-red">
-    <span class="tier-label">Red — No AI is to be used in this assessment</span>
-    <p>For writing your analysis, conclusions or findings — those words must be your own, in every section of the report.</p>
+  <div id="referencing" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">7</div>
+      <div class="part-title"><h2>Referencing</h2><p>Referencing and use of sources</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>In-text citations for every source</h3><p>Every fact, figure, quote or data point you use from someone else needs an in-text citation, right where you use it.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>APA 7th reference list</h3><p>Every in-text citation must match an entry in your reference list, and every reference list entry must be cited somewhere in the report. If you used AI for any part of this task, it needs its own reference list entry too.</p></div></div>
+    </div>
+    <div class="callout callout-warn"><strong>Fabricated sources cannot be credited</strong>Made-up, non-existent, or unverifiable sources score zero for that citation — regardless of how correctly they are formatted. If you are not sure a source is real, do not use it.</div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>All sources, including any AI tool used, are referenced accurately and consistently using APA, with every in-text citation matching an entry in the reference list.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Almost all sources are referenced using APA, with in-text citations matching the reference list for all but 1–2 sources; AI use, if any, is referenced.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Most sources are referenced using APA, but 3 or more in-text citations are missing, mismatched, or don’t correspond to a reference-list entry; AI use, if any, is referenced.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Some sources are referenced using APA, but inconsistently or incompletely, and conventions are only partially applied.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Makes a minimal attempt at referencing; sources listed are incomplete, inconsistent, or do not follow APA conventions. Limited or no in-text citation.</td></tr></table>
+    </div>
   </div>
 
-  <div class="structure-head">
-    <h2>Additional instructions</h2>
+  <div id="communication" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number">8</div>
+      <div class="part-title"><h2>Communication</h2><p>Editing, grammar and spelling</p></div>
+      <div class="marks-pill">/5</div>
+    </div>
+    <p style="font-size:14px;font-weight:300;color:var(--muted);margin-bottom:20px;line-height:1.65">This is not a separate section to write — it is marked throughout your whole report, for accurate spelling, grammar, punctuation and consistent use of geographical terminology in a formal tone.</p>
+    <div class="callout callout-tip"><strong>Read it out loud before you submit</strong>The easiest way to catch grammar and punctuation errors is to read your report out loud, slowly. If a sentence does not sound right, it probably is not.</div>
+    <div class="rubric-section">
+      <div class="rubric-section-title">Full marking criteria</div>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Writing is fluent and precise, with accurate spelling, grammar and punctuation throughout, and consistent use of geographical terminology and a formal tone throughout.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Writing is fluent with mostly accurate spelling, grammar and punctuation, and consistent use of geographical terminology and a mostly formal tone.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Writing is generally clear with mostly accurate spelling and grammar; occasional errors do not interrupt meaning; geographical terminology and tone are mostly appropriate for a formal report.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Writing is understandable but spelling, grammar or punctuation errors occur regularly; geographical terminology is used inconsistently.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Writing shows an attempt at communication, but frequent spelling, grammar or punctuation errors interrupt meaning; geographical terminology is rarely used and the tone is inconsistent or informal.</td></tr></table>
+    </div>
   </div>
-  <section class="task-block">
-    <ul>
-      <li>Upload to iLearn as one document, before 9pm on Monday 14th September, 2026. Your file must be a PDF or Word Doc file, uploaded directly — not shared as a Canva or Word Doc link.</li>
-      <li>All written content must be entered as real, selectable text within the document, not embedded as an image (including text built in Canva, screenshots, or slides exported as flat images). If your text cannot be selected or searched within the file, it cannot be read or marked against that section of the rubric.</li>
-      <li>EMP samples from past students are being collated and will be shown in class in the coming weeks.</li>
-      <li>Paragraph counts listed for each section of this task are a guide only, to help you not ‘underwrite’ a section.</li>
-      <li>You may include an appendix for supporting material. Appendices don’t count toward the word limit and aren’t marked directly — all analysis and the key evidence for it must still be in the main report.</li>
-    </ul>
-    <div class="support"><strong>Need help?</strong> gosford.assessmentsupport@spcc.nsw.edu.au (“For Student Assessment Support”)</div>
-  </section>
+</main>
 
-  <footer>Stage 5 Geography — Environmental Change and Management | Assessment Task 3 — Environmental Management Plan</footer>
-</div>
+<footer>Year 9 Geography &nbsp;|&nbsp; Environmental Management Plan &nbsp;|&nbsp; Term 3, 2026</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function switchGrade(tabEl, grade) {
+  var wrap = tabEl.closest('.wagoll-grades');
+  wrap.querySelectorAll('.grade-tab').forEach(function(t){ t.classList.remove('active'); });
+  tabEl.classList.add('active');
+  wrap.querySelectorAll('.grade-panel').forEach(function(p){ p.classList.remove('active'); });
+  wrap.querySelector('.grade-panel.' + grade + '-panel').classList.add('active');
+}
+function sendFeedback(e, form) {
+  e.preventDefault();
+  var statusEl = form.querySelector('.feedback-status');
+  var btn = form.querySelector('.feedback-btn');
+  statusEl.textContent = 'Sending...'; statusEl.className = 'feedback-status';
+  btn.disabled = true;
+  var payload = {
+    name: form.name.value, class: form.class.value, message: form.message.value,
+    page: location.href, _subject: 'EMP site feedback — Stage 5 Geography', _captcha: 'false'
+  };
+  fetch('https://formsubmit.co/ajax/michelle.perkins@spcc.nsw.edu.au', {
+    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
+  }).then(function(r){ return r.json(); }).then(function(){
+    statusEl.textContent = 'Thanks — feedback sent.'; statusEl.className = 'feedback-status ok'; form.reset(); btn.disabled = false;
+  }).catch(function(){
+    statusEl.textContent = 'Could not send — please tell your teacher directly.'; statusEl.className = 'feedback-status err'; btn.disabled = false;
+  });
+  return false;
+}
+document.querySelectorAll('.tab-panel').forEach(function(panel){
+  var div = document.createElement('div');
+  div.innerHTML = '<div class="feedback-section"><div class="feedback-inner">\n  <h4>Found something wrong or confusing?</h4>\n  <p>If you spot an error, a broken link, or something that does not make sense, let us know. Be as descriptive as you can.</p>\n  <form onsubmit="return sendFeedback(event,this)">\n    <div class="feedback-fields">\n      <div class="feedback-field"><label>Your full name</label><input type="text" name="name" required></div>\n      <div class="feedback-field"><label>Your class</label><input type="text" name="class" required></div>\n    </div>\n    <div class="feedback-field full" style="margin-bottom:8px"><label>What did you find? Where was it?</label><textarea name="message" rows="2" required></textarea></div>\n    <div class="feedback-status"></div>\n    <button class="feedback-btn" type="submit">Send feedback</button>\n  </form>\n</div></div>';
+  panel.appendChild(div.firstElementChild);
+});
+</script>
 </body>
 </html>
