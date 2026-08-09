@@ -64,7 +64,7 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .wagoll-grades-header { background:var(--navy); padding:16px 22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
 .wagoll-grades-title { font-size:14px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--yellow); }
 .wagoll-rubric-note { font-size:14px; color:rgba(255,255,255,.6); font-weight:300; font-style:italic; }
-.grade-panels { background:var(--white); display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:20px; }
+.grade-panels { background:var(--white); display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:20px; align-items:start; }
 @media (max-width:680px) { .grade-panels { grid-template-columns:1fr; } }
 .grade-panel { display:flex; flex-direction:column; border:1.5px solid var(--border); border-radius:12px; padding:18px 20px; }
 .grade-badge { display:flex; align-items:center; justify-content:center; text-align:center; min-height:46px; border-radius:8px; padding:6px 14px; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; box-sizing:border-box; }
@@ -75,6 +75,7 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .label-example { font-size:15.5px; line-height:1.65; font-weight:300; font-style:italic; }
 .excerpt-warn { display:block; background:#c0392b; color:#ffffff; font-size:12px; font-weight:800; letter-spacing:.4px; line-height:1.5; text-transform:uppercase; text-align:center; padding:9px 12px; border-radius:8px; border:2px solid #8e2417; margin-bottom:10px; }
 .example-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.example-note { font-size:12.5px; font-style:italic; color:var(--muted); margin:6px 0 0; }
 .label-example .label-text { color:var(--text); }
 .outcomes { border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; font-size:.95rem; background:var(--white); }
 .outcomes h3 { color:var(--dteal); font-size:.92rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
@@ -332,18 +333,21 @@ footer a { color:var(--lteal); text-decoration:none; }
         <p style="font-size:15.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Identifies an example and describes, in general terms, its link to management or wellbeing, with an accurate credible source.</p>
         <div class="example-label">Example</div>
         <div class="label-example"><div class="label-text">&ldquo;Traditional Owners use cultural burning to manage land. This is a sustainable way to look after Country (Darkinjung LALC, n.d.).&rdquo;</div></div>
+        <div class="example-note">One sentence from a longer answer - yours should be 1-2 paragraphs.</div>
       </div>
       <div class="grade-panel b-panel" data-grade="b">
         <div class="grade-badge b">B (Thorough), 4 marks</div>
         <p style="font-size:15.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Specific example, clear link to management OR wellbeing, accurate credible source.</p>
         <div class="example-label">Example</div>
         <div class="label-example"><div class="label-text">&ldquo;Cultural burning is a specific practice used by Traditional Owners to manage vegetation. This supports sustainable management because it helps keep the land healthy (Darkinjung LALC, n.d.).&rdquo;</div></div>
+        <div class="example-note">One sentence from a longer answer - yours should be 1-2 paragraphs.</div>
       </div>
       <div class="grade-panel a-panel" data-grade="a">
         <div class="grade-badge a">A (Extensive), 5 marks</div>
         <p style="font-size:15.5px;color:var(--muted);font-weight:300;margin-bottom:14px;line-height:1.6">Specific named example, link to both management and Community wellbeing, accurate credible source.</p>
         <div class="example-label">Example</div>
         <div class="label-example"><div class="label-text">&ldquo;Cultural burning is a specific practice used by Traditional Owners to manage vegetation and reduce fuel loads. This supports sustainable land management by keeping the land healthy. It also supports Community wellbeing by keeping cultural knowledge and practices active (Darkinjung LALC, n.d.).&rdquo;</div></div>
+        <div class="example-note">One sentence from a longer answer - yours should be 1-2 paragraphs.</div>
       </div></div>
     </div>
     <div class="rubric-section">
@@ -429,7 +433,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
       <div class="rubric-key">Highlighted words show what you need to add to move up to that grade.</div>
-      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr data-band="a"><td><strong>A (Extensive)</strong></td><td>5</td><td>Clearly identifies a single preferred action, with justification that draws specifically on <span class="rubric-up">both the Findings and the evaluation criteria</span>.</td></tr><tr data-band="b"><td><strong>B (Thorough)</strong></td><td>4</td><td><span class="rubric-up">Clearly identifies a single</span> preferred action, with justification that draws on <span class="rubric-up">either the Findings or the evaluation criteria</span>.</td></tr><tr data-band="c"><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies a preferred action, with a general justification that does not draw specifically on the Findings or evaluation criteria.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Identifies a preferred action, but with minimal or unclear justification.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Does not clearly identify a single preferred action, or the conclusion does not relate to the rest of the report.</td></tr></table>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr data-band="a"><td><strong>A (Extensive)</strong></td><td>5</td><td>Clearly identifies a single preferred action, with justification that draws specifically on <span class="rubric-up">both the Findings and the evaluation criteria</span>.</td></tr><tr data-band="b"><td><strong>B (Thorough)</strong></td><td>4</td><td><span class="rubric-up">Clearly identifies a single</span> preferred action, with justification that draws on <span class="rubric-up">either the Findings or the evaluation criteria</span>.</td></tr><tr data-band="c"><td><strong>C (Sound)</strong></td><td>3</td><td>Identifies a preferred action, with a general justification that does not draw specifically on the Findings or evaluation criteria.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Does not clearly identify a single preferred action, or the conclusion does not relate to the rest of the report.</td></tr></table>
     </div>
   </div>
 
@@ -484,7 +488,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
       <div class="rubric-key">Highlighted words show what you need to add to move up to that grade.</div>
-      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Writing is fluent and <span class="rubric-up">precise</span>, with accurate spelling, grammar and punctuation <span class="rubric-up">throughout</span>, and consistent use of geographical terminology and a formal tone <span class="rubric-up">throughout</span>.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Writing is <span class="rubric-up">fluent</span> with mostly accurate spelling, grammar and punctuation, and <span class="rubric-up">consistent</span> use of geographical terminology and a mostly formal tone.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Writing is generally clear with mostly accurate spelling and grammar; occasional errors do not interrupt meaning; geographical terminology and tone are mostly appropriate for a formal report.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Writing is understandable but spelling, grammar or punctuation errors occur regularly; geographical terminology is used inconsistently.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Writing shows an attempt at communication, but frequent spelling, grammar or punctuation errors interrupt meaning; geographical terminology is rarely used and the tone is inconsistent or informal.</td></tr></table>
+      <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Writing is fluent and <span class="rubric-up">precise</span>, with accurate spelling, grammar and punctuation <span class="rubric-up">throughout</span>, and consistent use of geographical terminology and a formal tone <span class="rubric-up">throughout</span>.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Writing is <span class="rubric-up">fluent</span> with mostly accurate spelling, grammar and punctuation, and <span class="rubric-up">consistent</span> use of geographical terminology and a mostly formal tone.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Writing is understandable but spelling, grammar or punctuation errors occur regularly; geographical terminology is used inconsistently.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Writing shows an attempt at communication, but frequent spelling, grammar or punctuation errors interrupt meaning; geographical terminology is rarely used and the tone is inconsistent or informal.</td></tr></table>
     </div>
   </div>
 </main>
@@ -529,7 +533,7 @@ function sendFeedback(e, form) {
 }
 document.querySelectorAll('.tab-panel').forEach(function(panel){
   var div = document.createElement('div');
-  div.innerHTML = '<div class="feedback-section"><button type="button" class="feedback-toggle-btn" onclick="this.nextElementSibling.classList.toggle(\'open\')">Found something wrong or confusing? Let us know &rarr;</button><div class="feedback-inner"><form onsubmit="return sendFeedback(event,this)">\n    <div class="feedback-fields">\n      <div class="feedback-field"><label>Your full name</label><input type="text" name="name" required></div>\n      <div class="feedback-field"><label>Your class</label><input type="text" name="class" required></div>\n    </div>\n    <div class="feedback-field full" style="margin-bottom:8px"><label>What did you find? Where was it?</label><textarea name="message" rows="2" required></textarea></div>\n    <div class="feedback-status"></div>\n    <button class="feedback-btn" type="submit">Send feedback</button>\n  </form></div></div>';
+  div.innerHTML = '<div class="feedback-section"><button type="button" class="feedback-toggle-btn" onclick="this.nextElementSibling.classList.toggle(\'open\')">Found something wrong or confusing? Let us know &rarr;</button><div class="feedback-inner"><form onsubmit="return sendFeedback(event,this)">\n    <div class="feedback-fields">\n      <div class="feedback-field"><label>Your full name</label><input type="text" name="name" required></div>\n    <div class="feedback-field"><label>Your class</label><input type="text" name="class" required></div>\n    </div>\n    <div class="feedback-field full" style="margin-bottom:8px"><label>What did you find? Where was it?</label><textarea name="message" rows="2" required></textarea></div>\n    <div class="feedback-status"></div>\n    <button class="feedback-btn" type="submit">Send feedback</button>\n  </form></div></div>';
   panel.appendChild(div.firstElementChild);
 });
 </script>
