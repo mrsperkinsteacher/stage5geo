@@ -78,6 +78,8 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .excerpt-warn { display:block; background:#c0392b; color:#ffffff; font-size:12px; font-weight:800; letter-spacing:.4px; line-height:1.5; text-transform:uppercase; text-align:center; padding:9px 12px; border-radius:8px; border:2px solid #8e2417; margin-bottom:10px; }
 .example-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
 .example-note { font-size:12.5px; font-style:italic; color:var(--muted); margin:6px 0 0; }
+.example-subheading { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); margin:18px 0 8px; padding-bottom:4px; border-bottom:1px solid rgba(31,111,99,.25); }
+.apa-references-heading { text-align:center; font-weight:700; color:var(--navy); font-size:16px; margin:20px 0 10px; }
 .label-example .label-text { color:var(--text); }
 .outcomes { border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; font-size:.95rem; background:var(--white); }
 .outcomes h3 { color:var(--dteal); font-size:.92rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
@@ -435,22 +437,28 @@ footer a { color:var(--lteal); text-decoration:none; }
 
     <div class="callout callout-example" style="margin-top:20px">
       <strong>Worked example - a real APA 7 reference list</strong>
-      <p style="margin:6px 0 12px">These are genuine, publicly available sources (nothing invented) - used both here and in the fictional Wattlebrook Creek WAGOLL examples elsewhere on this site - showing a website with no date, a dated report, a textbook, and how to combine two sources in one bracket.</p>
+      <p style="margin:6px 0 12px">These are genuine, publicly available sources (nothing invented) - used both here and in the fictional Wattlebrook Creek WAGOLL examples elsewhere on this site - showing a website with no date, a dated report, a textbook, an AI chat, and how to combine two sources in one bracket.</p>
+
+      <div class="example-subheading">Citation notes</div>
       <p style="margin:0 0 12px;font-size:14px">Note: check the source for a publish date. No date shown? Write &ldquo;(n.d.)&rdquo; - short for &ldquo;no date&rdquo;. A date shown, like the 2020 report below? Use that year instead.</p>
       <p style="margin:0 0 12px;font-size:14px">Note: when two different sources support the same point, cite them together in one bracket, separated by a semicolon, e.g. &ldquo;(Central Coast Council, n.d.; NSW State Emergency Service, n.d.)&rdquo; - see the Findings A example elsewhere on this site for this in action.</p>
-      <p style="margin-bottom:4px"><strong style="font-weight:600;color:var(--navy)">In-text examples:</strong></p>
+
+      <div class="example-subheading">In-text examples</div>
       <p style="margin-bottom:6px">&ldquo;Central Coast Council (n.d.) provides flood risk mapping tools that show which properties are affected by different flood levels.&rdquo;</p>
       <p style="margin-bottom:6px">&ldquo;A 2020 floodplain risk management study for the Wyong River catchment (Central Coast Council, 2020) recommends a combination of wetland protection and stormwater upgrades to reduce flood risk.&rdquo;</p>
       <p style="margin-bottom:6px">&ldquo;The Central Coast is identified as a high flood-risk area (NSW State Emergency Service, n.d.).&rdquo;</p>
       <p style="margin-bottom:6px">&ldquo;Wetlands play an important role in flood mitigation by absorbing excess water (NSW Government, n.d.).&rdquo;</p>
       <p style="margin-bottom:6px">&ldquo;Wetland restoration is widely recognised as an effective way to reduce flood risk while also improving habitat quality (Swanson et al., 2026).&rdquo;</p>
-      <p style="margin-bottom:12px">&ldquo;This is supported by both council and government flood data (Central Coast Council, n.d.; NSW State Emergency Service, n.d.).&rdquo;</p>
-      <p style="margin:12px 0 6px"><strong style="font-weight:600;color:var(--navy)">Reference list (alphabetical order):</strong></p>
+      <p style="margin-bottom:6px">&ldquo;This is supported by both council and government flood data (Central Coast Council, n.d.; NSW State Emergency Service, n.d.).&rdquo;</p>
+      <p style="margin-bottom:12px">&ldquo;Initial topic ideas were generated with the help of an AI chat tool, then rewritten in my own words before use (OpenAI, 2026).&rdquo;</p>
+
+      <div class="apa-references-heading">References</div>
       <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">Central Coast Council. (n.d.). <em>Flood risk tools</em>. <a href="https://www.centralcoast.nsw.gov.au/environment/flooding-central-coast/flood-risk-tools" target="_blank" rel="noopener">centralcoast.nsw.gov.au/environment/flooding-central-coast/flood-risk-tools</a></div>
       <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">Central Coast Council. (2020). <em>Wyong River catchment floodplain risk management study and plan</em>. <a href="https://cdn.centralcoast.nsw.gov.au/sites/default/files/reports/wyongriverfprmsrev4-volume1-report_17.pdf" target="_blank" rel="noopener">centralcoast.nsw.gov.au (PDF)</a></div>
       <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">Darkinjung Local Aboriginal Land Council. (n.d.). <em>Culture and heritage</em>. <a href="https://www.darkinjung.com.au/culture-and-heritage/" target="_blank" rel="noopener">darkinjung.com.au/culture-and-heritage</a></div>
       <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">NSW Government. (n.d.). <em>About wetlands</em>. Environment and Heritage. <a href="https://www.environment.nsw.gov.au/topics/water/wetlands/about-wetlands" target="_blank" rel="noopener">environment.nsw.gov.au/topics/water/wetlands/about-wetlands</a></div>
       <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">NSW State Emergency Service. (n.d.). <em>Central Coast - local information</em>. <a href="https://ses.nsw.gov.au/local-information/central-coast" target="_blank" rel="noopener">ses.nsw.gov.au/local-information/central-coast</a></div>
+      <div style="padding-left:24px;text-indent:-24px;margin-bottom:8px">OpenAI. (2026). <em>ChatGPT</em> [Large language model]. <a href="https://chatgpt.com/share/6a77e6b5-fe00-83ec-b478-0f08300da0b4" target="_blank" rel="noopener">chatgpt.com/share/6a77e6b5-fe00-83ec-b478-0f08300da0b4</a></div>
       <div style="padding-left:24px;text-indent:-24px">Swanson, L., Gray, N., Bowden, K., Harrison, A., &amp; Newman, S. (2026). <em>Jacaranda GeoActive 2: Stage 5 NSW Australian syllabus geography</em> (6th ed.). John Wiley &amp; Sons.</div>
     </div>
 
