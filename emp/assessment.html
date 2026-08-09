@@ -94,6 +94,8 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .resource-box-icon { width:46px; height:46px; border-radius:12px; background:var(--teal); color:var(--white); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; margin:0 auto 14px; font-family:'DM Serif Display',serif; }
 .resource-box h3 { font-size:16px; color:var(--navy); font-weight:600; margin-bottom:6px; }
 .resource-box p { font-size:13.5px; color:var(--muted); font-weight:300; line-height:1.5; }
+.resource-box-start { border:2px solid var(--navy); background:rgba(14,59,79,.03); }
+.resource-start-badge { display:inline-block; background:var(--yellow); color:var(--navy); font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:12px; margin-bottom:12px; }
 .resource-subpage { display:none; }
 .resource-subpage.active { display:block; animation:fadeUp .3s ease; }
 .resource-back-btn { background:none; border:1.5px solid var(--border); border-radius:8px; padding:8px 16px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:var(--navy); cursor:pointer; margin-bottom:22px; display:inline-flex; align-items:center; gap:6px; }
@@ -511,12 +513,12 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div id="resources-hub">
       <p style="font-size:16px;font-weight:300;color:var(--muted);margin-bottom:22px;line-height:1.65">Pick a box below for help with this task. If you were away for the release lesson, start with the Walk-Thru Guide.</p>
       <div class="resource-grid">
-        <div class="resource-box" onclick="showResourceSub('walkthru')" role="button" tabindex="0" style="border-left:5px solid var(--navy)"><div class="resource-box-icon" style="background:var(--navy)">W</div><h3>Walk-Thru &amp; Catch-Up Guide</h3><p>Especially for absent students</p></div>
-        <div class="resource-box" onclick="showResourceSub('faq')" role="button" tabindex="0" style="border-left:5px solid var(--teal)"><div class="resource-box-icon" style="background:var(--teal)">F</div><h3>FAQ</h3><p>Common questions, answered</p></div>
-        <div class="resource-box" onclick="showResourceSub('links')" role="button" tabindex="0" style="border-left:5px solid var(--dteal)"><div class="resource-box-icon" style="background:var(--dteal)">L</div><h3>Links</h3><p>Sources and tools used on this site</p></div>
-        <div class="resource-box" onclick="showResourceSub('videos')" role="button" tabindex="0" style="border-left:5px solid var(--clay)"><div class="resource-box-icon" style="background:var(--clay)">V</div><h3>Helpful Videos</h3><p>Short how-to videos</p></div>
-        <div class="resource-box" onclick="showResourceSub('refhelp')" role="button" tabindex="0" style="border-left:5px solid var(--yellow)"><div class="resource-box-icon" style="background:var(--yellow);color:var(--navy)">R</div><h3>More Referencing Help</h3><p>APA quick-reference</p></div>
-        <div class="resource-box" onclick="showResourceSub('msforms')" role="button" tabindex="0" style="border-left:5px solid var(--lteal)"><div class="resource-box-icon" style="background:var(--lteal);color:var(--navy)">MF</div><h3>Using Microsoft Forms</h3><p>Build your own survey</p></div>
+        <div class="resource-box resource-box-start" onclick="showResourceSub('walkthru')" role="button" tabindex="0" style="border-left:5px solid var(--navy)"><span class="resource-start-badge">Start here</span><div class="resource-box-icon" style="background:var(--navy)">&#10003;</div><h3>Walk-Thru &amp; Catch-Up Guide</h3><p>Especially for absent students</p></div>
+        <div class="resource-box" onclick="showResourceSub('faq')" role="button" tabindex="0" style="border-left:5px solid var(--teal)"><div class="resource-box-icon" style="background:var(--teal)">1</div><h3>FAQ</h3><p>Common questions, answered</p></div>
+        <div class="resource-box" onclick="showResourceSub('videos')" role="button" tabindex="0" style="border-left:5px solid var(--clay)"><div class="resource-box-icon" style="background:var(--clay)">2</div><h3>Helpful Videos</h3><p>Short how-to videos</p></div>
+        <div class="resource-box" onclick="showResourceSub('links')" role="button" tabindex="0" style="border-left:5px solid var(--dteal)"><div class="resource-box-icon" style="background:var(--dteal)">3</div><h3>Links</h3><p>Sources and tools used on this site</p></div>
+        <div class="resource-box" onclick="showResourceSub('refhelp')" role="button" tabindex="0" style="border-left:5px solid var(--yellow)"><div class="resource-box-icon" style="background:var(--yellow);color:var(--navy)">4</div><h3>More Referencing Help</h3><p>APA quick-reference</p></div>
+        <div class="resource-box" onclick="showResourceSub('msforms')" role="button" tabindex="0" style="border-left:5px solid var(--lteal)"><div class="resource-box-icon" style="background:var(--lteal);color:var(--navy)">5</div><h3>Using Microsoft Forms</h3><p>Build your own survey</p></div>
       </div>
     </div>
 
