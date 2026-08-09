@@ -687,13 +687,13 @@ function sendFeedback(e, form) {
   }).catch(function(){
     btn.textContent = originalLabel;
     btn.disabled = false;
-    statusEl.textContent = 'Could not send - please tell your teacher directly.'; statusEl.className = 'feedback-status err';
+    statusEl.textContent = 'Could not send - please let me know directly.'; statusEl.className = 'feedback-status err';
   });
   return false;
 }
 document.querySelectorAll('.tab-panel').forEach(function(panel){
   var div = document.createElement('div');
-  div.innerHTML = '<div class="feedback-section"><button type="button" class="feedback-toggle-btn" onclick="this.nextElementSibling.classList.toggle(\'open\')">Found something wrong or confusing? Let us know &rarr;</button><div class="feedback-inner"><form onsubmit="return sendFeedback(event,this)">\n    <div class="feedback-fields">\n      <div class="feedback-field"><label>Your full name</label><input type="text" name="name" required></div>\n      <div class="feedback-field"><label>Your class</label><input type="text" name="class" required></div>\n    </div>\n    <div class="feedback-field full" style="margin-bottom:8px"><label>What did you find? Where was it?</label><textarea name="message" rows="2" required></textarea></div>\n    <div class="feedback-status"></div>\n    <button class="feedback-btn" type="submit">Send feedback</button>\n  </form></div></div>';
+  div.innerHTML = '<div class="feedback-section"><button type="button" class="feedback-toggle-btn" onclick="this.nextElementSibling.classList.toggle(\'open\')">Found something wrong or confusing? Let me know &rarr;</button><div class="feedback-inner"><form onsubmit="return sendFeedback(event,this)">\n    <div class="feedback-fields">\n      <div class="feedback-field"><label>Your full name</label><input type="text" name="name" required></div>\n      <div class="feedback-field"><label>Your class</label><input type="text" name="class" required></div>\n    </div>\n    <div class="feedback-field full" style="margin-bottom:8px"><label>What did you find? Where was it?</label><textarea name="message" rows="2" required></textarea></div>\n    <div class="feedback-status"></div>\n    <button class="feedback-btn" type="submit">Send feedback</button>\n  </form></div></div>';
   panel.appendChild(div.firstElementChild);
 });
 </script>
