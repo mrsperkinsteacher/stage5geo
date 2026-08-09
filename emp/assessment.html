@@ -43,7 +43,7 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .tab-panel.active { display:block; animation:fadeUp .3s ease; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
 .part-heading { display:flex; align-items:flex-start; gap:20px; margin-bottom:32px; padding-bottom:24px; border-bottom:2px solid var(--border); flex-wrap:wrap; }
-.part-number { flex-shrink:0; width:56px; height:56px; background:var(--navy); border-radius:14px; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; font-size:24px; color:var(--yellow); }
+.part-number { flex-shrink:0; width:56px; height:56px; background:var(--navy); border-radius:14px; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; font-size:22px; color:var(--yellow); }
 .part-title h2 { font-family:'DM Serif Display',serif; font-size:26px; color:var(--navy); margin-bottom:4px; }
 .part-title p { font-size:15px; color:var(--muted); font-weight:300; }
 .marks-pill { margin-left:auto; flex-shrink:0; background:var(--teal); color:var(--white); font-size:14px; font-weight:600; padding:6px 14px; border-radius:20px; align-self:center; }
@@ -66,13 +66,14 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .wagoll-rubric-note { font-size:14px; color:rgba(255,255,255,.6); font-weight:300; font-style:italic; }
 .grade-panels { background:var(--white); display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:20px; }
 @media (max-width:680px) { .grade-panels { grid-template-columns:1fr; } }
-.grade-panel { border:1.5px solid var(--border); border-radius:12px; padding:16px 18px; }
+.grade-panel { display:flex; flex-direction:column; border:1.5px solid var(--border); border-radius:12px; padding:18px 20px; }
 .grade-badge { display:inline-flex; align-items:center; gap:8px; border-radius:8px; padding:6px 14px; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
 .grade-badge.c { background:#fff3cd; color:#7a4a00; border:1.5px solid #f0a500; }
 .grade-badge.b { background:#e8f4f0; color:#1a4a2f; border:1.5px solid var(--teal); }
 .grade-badge.a { background:#fdeae3; color:#c1502f; border:1.5px solid var(--clay); }
-.label-example { border-radius:10px; padding:14px 16px; font-size:15.5px; line-height:1.65; font-weight:300; border:1.5px solid var(--border); background:var(--cream); }
-.excerpt-warn { display:block; background:#c0392b; color:#ffffff; font-size:13px; font-weight:800; letter-spacing:1.3px; text-transform:uppercase; text-align:center; padding:9px 12px; border-radius:8px; border:2px solid #8e2417; margin-bottom:10px; }
+.grade-panel p { margin-bottom:0; }
+.label-example { font-size:15.5px; line-height:1.65; font-weight:300; font-style:italic; }
+.excerpt-warn { display:block; background:#c0392b; color:#ffffff; font-size:13px; font-weight:800; letter-spacing:1.3px; text-transform:uppercase; text-align:center; padding:9px 12px; border-radius:8px; border:2px solid #8e2417; margin-top:auto; margin-bottom:10px; }
 .label-example .label-text { color:var(--text); }
 .outcomes { border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; font-size:.95rem; background:var(--white); }
 .outcomes h3 { color:var(--dteal); font-size:.92rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
