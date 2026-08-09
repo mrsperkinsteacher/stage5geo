@@ -35,6 +35,8 @@ header h1 em { color:var(--yellow); font-style:italic; }
 .tab-nav-inner { max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; padding:0 16px; }
 .tab-btn { flex:0 0 auto; background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.15); cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; color:rgba(255,255,255,.8); padding:10px 14px; border-radius:10px; position:relative; transition:background .2s,border-color .2s,color .2s; white-space:nowrap; }
 .tab-btn:hover { background:rgba(255,255,255,.16); color:var(--white); }
+.tab-btn.tab-resources { background:rgba(239,124,92,.3); border-color:rgba(239,124,92,.55); }
+.tab-btn.tab-resources:hover { background:rgba(239,124,92,.45); }
 .tab-btn.active { background:var(--yellow); border-color:var(--yellow); color:var(--navy); }
 .tab-mark { display:inline-block; background:rgba(0,0,0,.12); border-radius:10px; font-size:12px; padding:1px 7px; margin-left:5px; color:inherit; font-weight:700; }
 .tab-btn.active .tab-mark { background:rgba(14,59,79,.15); color:var(--navy); }
@@ -144,7 +146,7 @@ footer a { color:var(--lteal); text-decoration:none; }
 
 <nav class="tab-nav" role="tablist">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)">Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)">Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('resources', this)">Resources</button>
+    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)">Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)">Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button><button class="tab-btn tab-resources" role="tab" onclick="switchTab('resources', this)">Resources</button>
   </div>
 </nav>
 
@@ -509,12 +511,12 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div id="resources-hub">
       <p style="font-size:16px;font-weight:300;color:var(--muted);margin-bottom:22px;line-height:1.65">Pick a box below for help with this task. If you were away for the release lesson, start with the Walk-Thru Guide.</p>
       <div class="resource-grid">
-        <div class="resource-box" onclick="showResourceSub('walkthru')" role="button" tabindex="0"><div class="resource-box-icon">W</div><h3>Walk-Thru &amp; Catch-Up Guide</h3><p>Especially for absent students</p></div>
-        <div class="resource-box" onclick="showResourceSub('faq')" role="button" tabindex="0"><div class="resource-box-icon">F</div><h3>FAQ</h3><p>Common questions, answered</p></div>
-        <div class="resource-box" onclick="showResourceSub('links')" role="button" tabindex="0"><div class="resource-box-icon">L</div><h3>Links</h3><p>Sources and tools used on this site</p></div>
-        <div class="resource-box" onclick="showResourceSub('videos')" role="button" tabindex="0"><div class="resource-box-icon">V</div><h3>Helpful Videos</h3><p>Short how-to videos</p></div>
-        <div class="resource-box" onclick="showResourceSub('refhelp')" role="button" tabindex="0"><div class="resource-box-icon">R</div><h3>More Referencing Help</h3><p>APA quick-reference</p></div>
-        <div class="resource-box" onclick="showResourceSub('msforms')" role="button" tabindex="0"><div class="resource-box-icon">MF</div><h3>Using Microsoft Forms</h3><p>Build your own survey</p></div>
+        <div class="resource-box" onclick="showResourceSub('walkthru')" role="button" tabindex="0" style="border-left:5px solid var(--navy)"><div class="resource-box-icon" style="background:var(--navy)">W</div><h3>Walk-Thru &amp; Catch-Up Guide</h3><p>Especially for absent students</p></div>
+        <div class="resource-box" onclick="showResourceSub('faq')" role="button" tabindex="0" style="border-left:5px solid var(--teal)"><div class="resource-box-icon" style="background:var(--teal)">F</div><h3>FAQ</h3><p>Common questions, answered</p></div>
+        <div class="resource-box" onclick="showResourceSub('links')" role="button" tabindex="0" style="border-left:5px solid var(--dteal)"><div class="resource-box-icon" style="background:var(--dteal)">L</div><h3>Links</h3><p>Sources and tools used on this site</p></div>
+        <div class="resource-box" onclick="showResourceSub('videos')" role="button" tabindex="0" style="border-left:5px solid var(--clay)"><div class="resource-box-icon" style="background:var(--clay)">V</div><h3>Helpful Videos</h3><p>Short how-to videos</p></div>
+        <div class="resource-box" onclick="showResourceSub('refhelp')" role="button" tabindex="0" style="border-left:5px solid var(--yellow)"><div class="resource-box-icon" style="background:var(--yellow);color:var(--navy)">R</div><h3>More Referencing Help</h3><p>APA quick-reference</p></div>
+        <div class="resource-box" onclick="showResourceSub('msforms')" role="button" tabindex="0" style="border-left:5px solid var(--lteal)"><div class="resource-box-icon" style="background:var(--lteal);color:var(--navy)">MF</div><h3>Using Microsoft Forms</h3><p>Build your own survey</p></div>
       </div>
     </div>
 
