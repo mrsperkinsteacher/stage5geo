@@ -80,6 +80,12 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .example-note { font-size:12.5px; font-style:italic; color:var(--muted); margin:6px 0 0; }
 .example-subheading { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); margin:18px 0 8px; padding-bottom:4px; border-bottom:1px solid rgba(31,111,99,.25); }
 .apa-references-heading { text-align:center; font-weight:700; color:var(--navy); font-size:16px; margin:20px 0 10px; }
+.faq-item { border:1.5px solid var(--border); border-radius:10px; margin-bottom:10px; background:var(--white); overflow:hidden; }
+.faq-item summary { cursor:pointer; padding:13px 16px; font-weight:600; color:var(--navy); list-style:none; font-size:15.5px; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::before { content:'+'; margin-right:10px; color:var(--teal); font-weight:700; }
+.faq-item[open] summary::before { content:'\2212'; }
+.faq-item p { padding:0 16px 14px; margin:0; font-size:15px; font-weight:300; line-height:1.65; color:var(--text); }
 .label-example .label-text { color:var(--text); }
 .outcomes { border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; font-size:.95rem; background:var(--white); }
 .outcomes h3 { color:var(--dteal); font-size:.92rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
@@ -128,7 +134,7 @@ footer a { color:var(--lteal); text-decoration:none; }
 
 <nav class="tab-nav" role="tablist">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)">Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)">Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button>
+    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)">Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)">Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('resources', this)">Resources</button>
   </div>
 </nav>
 
@@ -475,12 +481,76 @@ footer a { color:var(--lteal); text-decoration:none; }
       <div class="part-title"><h2>Communication</h2><p>Editing, grammar and spelling</p></div>
       <div class="marks-pill">/5</div>
     </div>
+    <div class="example-subheading" style="margin-top:0">Geographical terminology and tone</div>
     <p style="font-size:16px;font-weight:300;color:var(--muted);margin-bottom:20px;line-height:1.65">This is not a separate section to write - it is marked throughout your whole report, for accurate spelling, grammar, punctuation and consistent use of geographical terminology in a formal tone.</p>
     <div class="callout callout-tip"><strong>Read it out loud before you submit</strong>The easiest way to catch grammar and punctuation errors is to read your report out loud, slowly. If a sentence does not sound right, it probably is not.</div>
     <div class="rubric-section">
       <div class="rubric-section-title">Full marking criteria</div>
       <div class="rubric-key">Highlighted words show what you need to add to move up to that grade.</div>
       <table class="wagoll-table"><tr><th>Band</th><th>Marks</th><th>Descriptor</th></tr><tr><td><strong>A (Extensive)</strong></td><td>5</td><td>Writing is fluent and <span class="rubric-up">precise</span>, with accurate spelling, grammar and punctuation <span class="rubric-up">throughout</span>, and consistent use of geographical terminology and a formal tone <span class="rubric-up">throughout</span>.</td></tr><tr><td><strong>B (Thorough)</strong></td><td>4</td><td>Writing is <span class="rubric-up">fluent</span> with mostly accurate spelling, grammar and punctuation, and <span class="rubric-up">consistent</span> use of geographical terminology and a mostly formal tone.</td></tr><tr><td><strong>C (Sound)</strong></td><td>3</td><td>Writing is generally clear with mostly accurate spelling and grammar; occasional errors do not interrupt meaning; geographical terminology and tone are mostly appropriate for a formal report.</td></tr><tr><td><strong>D (Basic)</strong></td><td>2</td><td>Writing is understandable but spelling, grammar or punctuation errors occur regularly; geographical terminology is used inconsistently.</td></tr><tr><td><strong>E (Elementary)</strong></td><td>1</td><td>Writing shows an attempt at communication, but frequent spelling, grammar or punctuation errors interrupt meaning; geographical terminology is rarely used and the tone is inconsistent or informal.</td></tr></table>
+    </div>
+  </div>
+
+  <div id="resources" class="tab-panel">
+    <div class="part-heading">
+      <div class="part-number" style="background:var(--yellow);font-size:15px;font-weight:600;letter-spacing:1px;color:var(--navy);">R</div>
+      <div class="part-title"><h2>Resources</h2><p>Catch-up guide and FAQ - if you missed the release lesson or just want a refresher</p></div>
+    </div>
+    <p style="font-size:16px;font-weight:300;color:var(--muted);margin-bottom:22px;line-height:1.65">This tab covers everything from the release lesson in one place, plus answers to the most common questions. If you were away, read it properly rather than skimming - it will save you time later. Still unclear after reading? Ask your teacher directly rather than guessing.</p>
+
+    <div class="rubric-section">
+      <div class="rubric-section-title">Before you start</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Check iLearn for the exact due date and time</h3><p>The official Assessment Notification on iLearn is the source of truth for the due date, time and word count.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Email your teacher your suburb/site and inquiry question first</h3><p>Do this before committing real hours of work, so you know your idea is workable.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Plan your first two site visits now</h3><p>One visit for primary data, another once you have your secondary data and know what else you need. Do not leave this to the last week - you have roughly five weeks.</p></div></div>
+      </div>
+      <div class="callout callout-tip"><strong>Why the report is structured this way</strong>This is the same kind of report a real council writes when deciding how to manage an actual environmental problem - that is why it needs both data you collected yourself and data other people (like councils) have already published.</div>
+    </div>
+
+    <div class="rubric-section">
+      <div class="rubric-section-title">Choosing your topic</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Search &ldquo;environmental management plan&rdquo; plus any suburb</h3><p>Just to see what a real one looks like and how they collected data - it does not need to be the Central Coast yet, this step is only about understanding the format.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Narrow to a Central Coast site you can genuinely visit more than once</h3><p>This makes both your primary data collection and your write-up far more manageable.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Test your idea: &ldquo;can I photograph, measure, graph or survey this?&rdquo;</h3><p>A topic only describable in words (like general &lsquo;tourism&rsquo;) is too broad - narrow it to something specific, like foot traffic or erosion from beach use. Pick an issue councils publish on (flooding, erosion, water quality, biodiversity loss), not something so local that no secondary data exists.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Popular sites need your own angle</h3><p>Wamberal Beach will come up a lot - that is fine, but you need your own angle: a specific street, a specific proposed development, or your own dataset, so your report is not the same as everyone else&rsquo;s.</p></div></div>
+      </div>
+    </div>
+
+    <div class="rubric-section">
+      <div class="rubric-section-title">Primary data ideas by issue type</div>
+      <div class="rubric-key" style="text-align:left">Not exhaustive - a starting point if you are stuck. Remember: a photo alone is not primary data, it needs a number attached, e.g. &ldquo;Fig 1: creek width at Point A, 4.2m, measured on 12 March.&rdquo;</div>
+      <table class="wagoll-table">
+        <tr><th>Issue type</th><th>Primary data idea</th></tr>
+        <tr><td>Coastal erosion</td><td>A simple beach profile using a string line and ruler between two fixed points (e.g. the base of the dune and the high-tide mark), repeated on a second visit to show change; paired with photos taken from the same spot each time.</td></tr>
+        <tr><td>Flooding</td><td>Flood height marked against a fixed object (kerb, pole, fence); timing how long a road is impassable; a resident survey with rated 1-5 answers. Flooding primary data needs an actual flood (or existing flood records) to work with - think through how you would get real data before committing to this topic.</td></tr>
+        <tr><td>Water quality / pollution</td><td>Testing the water with pH and pollution test strips; counting rubbish in a marked-out area or set time; measuring water clarity with a Secchi disk (a plain white disk lowered on a string until it disappears from view).</td></tr>
+        <tr><td>Biodiversity / native plant loss</td><td>Counting native and invasive plants inside a marked-out 1m x 1m quadrant at a few spots; or walking a fixed path and recording plants seen at set distances (e.g. every 5 steps).</td></tr>
+        <tr><td>Urban heat / green space</td><td>Measuring ground or surface temperature at a few spots, same time of day each; or photographing straight up at the same spot and estimating roughly how much sky is covered by tree canopy versus open sky.</td></tr>
+        <tr><td>Any topic</td><td>A structured survey with rated or multiple-choice questions (not open &lsquo;what do you think&rsquo;), so you get an actual percentage or average to cite.</td></tr>
+      </table>
+    </div>
+
+    <div class="callout callout-tip"><strong>Keep your drafts</strong>Keeping drafts of your work and being able to walk your teacher through the journey of your assessment is a great habit - it also protects you if anyone questions how a section was produced. AI use is covered in full on the AI Use tab.</div>
+
+    <div class="rubric-section">
+      <div class="rubric-section-title">Frequently asked questions</div>
+      <details class="faq-item"><summary>Why do we need all those BOLTSS things on the map now?</summary><p>Because a map without a scale or legend cannot be used to judge distance or understand what is shown. BOLTSS is the real convention geographers use so the map stands on its own.</p></details>
+      <details class="faq-item"><summary>What is the Aboriginal Custodianship section asking us to do?</summary><p>Find one real example (a practice, piece of knowledge, or a Traditional Owner group&rsquo;s own statement) connected to your issue or site, and explain how it supports managing that issue. Be precise about your source: your Local Aboriginal Land Council (Darkinjung for the Central Coast) is not the same as a Traditional Owner group&rsquo;s own statement.</p></details>
+      <details class="faq-item"><summary>Where do I find sources for the Aboriginal Custodianship section?</summary><p>Start with Darkinjung Local Aboriginal Land Council for the Central Coast, or AIATSIS and NSW Government Aboriginal Affairs resources for broader material.</p></details>
+      <details class="faq-item"><summary>Can I still do Wamberal Beach if everyone else is?</summary><p>Yes, but you will need your own angle: a specific street, a specific proposed development, or a specific dataset, so your report is not the same as everyone else&rsquo;s and reflects your own inquiry.</p></details>
+      <details class="faq-item"><summary>I want to use flooding as my topic, is that a problem?</summary><p>It can be, because flooding primary data really does need a flood (or existing flood data) to work with. Either use existing records of past flooding (secondary data), or, if you know a king tide or heavy rain event is likely during your assessment window, plan your before-and-after photos and measurements around that date. This is still risky. &ldquo;There was no flood&rdquo; will not be accepted as a reason for missing primary data.</p></details>
+      <details class="faq-item"><summary>Do I really need three solutions? What if there is only one sensible one?</summary><p>You need to identify and describe possible solutions, aiming for at least three. If you think there is only one good option, that is fine, but you still need to show you considered and ruled out the alternatives - that is what the evaluation is for.</p></details>
+      <details class="faq-item"><summary>Does my conclusion have to match what would really happen?</summary><p>No, it should be your own well-justified recommendation based on your findings and evaluation criteria, even if the real situation is messy or contested.</p></details>
+      <details class="faq-item"><summary>Can I use ChatGPT?</summary><p>For brainstorming a topic or finding search terms and sources, yes. Not for writing your analysis, conclusions or findings, and never as something you cite as a source of evidence. See the Referencing tab and AI Use tab for how to do this properly.</p></details>
+      <details class="faq-item"><summary>What if I cannot find much information about my issue?</summary><p>That is a sign to pick a different issue or reframe it. Choose something councils or government agencies have studied and published on.</p></details>
+      <details class="faq-item"><summary>Is a photo enough for primary data?</summary><p>No. A report missing genuine primary data (measurements, a survey, field observations) or missing secondary data cannot score above a D in Findings, no matter how many photos you include.</p></details>
+      <details class="faq-item"><summary>Do I have to visit my site more than once?</summary><p>Yes, plan on at least two visits: one for original primary data, another once you have your secondary data and know what else you need.</p></details>
+      <details class="faq-item"><summary>What if I cannot get transport to my site?</summary><p>Talk to your teacher early. If family cannot get you there, tell them what creeks, bushland or coastline is within walking distance, and you will work out a realistic option together.</p></details>
+      <details class="faq-item"><summary>Do I need to submit as PDF, or is Word okay?</summary><p>Either is fine, if it is uploaded directly, not shared as a link.</p></details>
+      <details class="faq-item"><summary>What if I built my report in Canva?</summary><p>Make sure your words are typed into an actual text box, not part of a picture. Test it: search your downloaded PDF for a word you can see on the page. If the search cannot find it, it is a picture of words, not real text, and it cannot be read or marked.</p></details>
+      <details class="faq-item"><summary>How do you make sure marking stays fair when you are marking so many reports?</summary><p>Every report is marked against the rubric, and marking is also moderated.</p></details>
     </div>
   </div>
 </main>
