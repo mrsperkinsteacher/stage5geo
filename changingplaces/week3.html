@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
+<script>
+if (sessionStorage.getItem("cp_gate") !== "ok") {
+  var pw = prompt("This page is password protected. Enter the password:");
+  if (pw === "JedCharlie123!") {
+    sessionStorage.setItem("cp_gate", "ok");
+  } else {
+    document.write("<div style=\"font-family:sans-serif;text-align:center;margin-top:15vh;color:#333;\"><h1>Locked</h1><p>Incorrect password.</p></div>");
+    document.close();
+    window.stop();
+  }
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Week 3 — Australia’s Population | Stage 5 Geography</title>
