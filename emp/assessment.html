@@ -149,7 +149,7 @@ footer a { color:var(--lteal); text-decoration:none; }
 .chain-box li { font-size:14px; line-height:1.65; font-weight:300; color:var(--text); margin-bottom:8px; }
 .chain-box li strong { font-weight:600; color:var(--navy); }
 .flow-row { display:flex; align-items:stretch; gap:0; margin:14px 0; flex-wrap:wrap; }
-.flow-box { flex:1 1 260px; background:#fdf3e3; border-left:4px solid var(--yellow); border-radius:12px; padding:18px 20px; font-size:13.5px; line-height:1.6; font-weight:300; color:#5a4200; }
+.flow-box { flex:1 1 260px; background:#fdf3e3; border-left:4px solid var(--yellow); border-radius:12px; padding:18px 20px; font-size:13.5px; line-height:1.6; font-weight:300; color:var(--text); }
 .flow-box.final { background:var(--white); border-left:4px solid var(--clay); color:var(--text); }
 .flow-box strong { font-weight:600; display:block; margin-bottom:8px; color:var(--navy); font-size:14px; }
 .flow-box .flow-tag { display:block; text-transform:uppercase; letter-spacing:1px; font-size:11px; color:var(--clay); font-weight:700; margin-bottom:6px; }
@@ -170,7 +170,7 @@ footer a { color:var(--lteal); text-decoration:none; }
 
 <nav class="tab-nav" role="tablist">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)">Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button><button class="tab-btn tab-resources" role="tab" onclick="switchTab('resources', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Resources</button>
+    <button class="tab-btn active" role="tab" onclick="switchTab('overview', this)">Overview</button><button class="tab-btn" role="tab" onclick="switchTab('aiuse', this)">AI Use</button><button class="tab-btn" role="tab" onclick="switchTab('inquiry', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Inquiry Question <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('background', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Background to the Issue <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('findings', this)">Findings <span class="tab-mark">/15</span></button><button class="tab-btn" role="tab" onclick="switchTab('custodianship', this)"><span class="new-badge tab-new-dot" data-added="2026-08-29">NEW</span>Aboriginal Custodianship of Country <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('solutions', this)">Future Solutions <span class="tab-mark">/10</span></button><button class="tab-btn" role="tab" onclick="switchTab('conclusion', this)">Conclusion <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('referencing', this)">Referencing <span class="tab-mark">/5</span></button><button class="tab-btn" role="tab" onclick="switchTab('communication', this)">Communication <span class="tab-mark">/5</span></button><button class="tab-btn tab-resources" role="tab" onclick="switchTab('resources', this)"><span class="new-badge tab-new-dot" data-added="2026-08-10">NEW</span>Resources</button>
   </div>
 </nav>
 
@@ -361,10 +361,10 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Identify one example</h3><p>A practice, piece of knowledge, or a Traditional Owner group&rsquo;s own statement, connected to your issue or site.</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Explain the link</h3><p>How this example supports sustainable management and Community wellbeing for your site (1-2 paragraphs).</p></div></div><div class="step"><div class="step-num">3</div><div class="step-body"><h3>Cite a credible source</h3><p>A Traditional Owner group&rsquo;s own materials, your Local Aboriginal Land Council (Darkinjung LALC for the Central Coast), AIATSIS, or NSW Government Aboriginal affairs resources. The LALC speaks for the community - it is not a Traditional Owner&rsquo;s own statement, so cite it accurately as that.</p></div></div></div>
     <div class="callout callout-tip"><strong>You can reuse this in Future Solutions</strong>If a Custodianship-informed approach turns out to be one of your management options, you can draw on this research again in that section.</div>
 
-    <div class="tie-line" style="background:#fdf3e3;border-color:var(--yellow)"><strong style="display:block;color:var(--navy);margin-bottom:4px">In short</strong>Find a real Aboriginal source connected to Darkinjung Country if you can. If you can&rsquo;t, be honest about that and explain your best thinking. The steps below show you how.</div>
+    <div class="tie-line" style="background:#fdf3e3;border-color:var(--yellow)"><strong style="display:block;color:var(--navy);margin-bottom:4px">In short <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></strong>Find a real Aboriginal source connected to Darkinjung Country if you can. If you can&rsquo;t, be honest about that and explain your best thinking. The steps below show you how.</div>
 
     <div style="margin:36px 0 14px">
-      <h3 style="font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy)">Read first</h3>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy)">Read first <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></h3>
       <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:2px">Aboriginal Nations are distinct and separate, each with their own knowledge and Country - read this first to understand what they still share, before you start researching your own site</p>
     </div>
 
@@ -387,7 +387,7 @@ footer a { color:var(--lteal); text-decoration:none; }
       For your EMP, this means you should be aiming to find an example that is Darkinjung&rsquo;s own - the Traditional Custodians of the Central Coast - not a practice borrowed from another Nation&rsquo;s Country, even if the underlying idea looks similar. Step C below covers what to do if a genuine search still doesn&rsquo;t turn up something Darkinjung-specific.
     </div>
 
-    <div class="step-heading"><div class="step-big-num">A</div><div><h3>Find your source, in this order</h3><p>Where to actually look - no filled-in example, because this step is search, not writing</p></div></div>
+    <div class="step-heading"><div class="step-big-num">A</div><div><h3>Find your source, in this order <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></h3><p>Where to actually look - no filled-in example, because this step is search, not writing</p></div></div>
 
     <div class="chain-box">
       <ol>
@@ -399,7 +399,7 @@ footer a { color:var(--lteal); text-decoration:none; }
       <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:4px">Only these four source types count for your 5 marks. A general web search, Wikipedia, or a source outside this list won&rsquo;t satisfy the rubric&rsquo;s &lsquo;accurate credible source&rsquo; requirement, no matter how well the paragraph around it is written. And if you do use Darkinjung LALC material, cite it as the LALC speaking for the community - not as a Traditional Owner&rsquo;s own statement, since those are two different things.</p>
     </div>
 
-    <div class="step-heading"><div class="step-big-num">B</div><div><h3>Structure your paragraph</h3><p>The job each sentence needs to do - placeholders only, so there&rsquo;s nothing here to copy</p></div></div>
+    <div class="step-heading"><div class="step-big-num">B</div><div><h3>Structure your paragraph <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></h3><p>The job each sentence needs to do - placeholders only, so there&rsquo;s nothing here to copy</p></div></div>
 
     <div class="chain-box">
       <h4>One Possible Sentence Frame</h4>
@@ -427,10 +427,10 @@ footer a { color:var(--lteal); text-decoration:none; }
       <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:10px">One more thing worth knowing: the task sheet asks for 1&ndash;2 paragraphs for this whole section. A single sentence, even a well-written one, will read as underwritten - there needs to be enough there to actually fit the example, the honesty about what&rsquo;s confirmed, and both benefits properly explained.</p>
     </div>
 
-    <div class="step-heading"><div class="step-big-num">C</div><div><h3>When you hit a wall</h3><p>You searched Darkinjung, then AIATSIS, then NSW Government - and found nothing specific to your site</p></div></div>
+    <div class="step-heading"><div class="step-big-num">C</div><div><h3>When you hit a wall <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></h3><p>You searched Darkinjung, then AIATSIS, then NSW Government - and found nothing specific to your site</p></div></div>
 
     <div class="callout callout-tip">
-      <strong>If you can&rsquo;t find a Darkinjung-specific source <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></strong>
+      <strong>If you can&rsquo;t find a Darkinjung-specific source</strong>
       You can still use what you found about another Nation&rsquo;s practice - just be honest about it. Don&rsquo;t write it as if you found a Darkinjung source when you didn&rsquo;t. Say what you found, say clearly it&rsquo;s not from Darkinjung, then explain <em>why</em> it might still fit your site - maybe a similar landscape, or a similar issue. That&rsquo;s an honest, thought-out guess, not a made-up one - and it&rsquo;s a better answer than pretending you&rsquo;re sure when you&rsquo;re not. Use the sentence frame in Step B above to build this - the structure is the same, just with an honest &lsquo;not confirmed for Darkinjung&rsquo; sentence added in.
     </div>
 
