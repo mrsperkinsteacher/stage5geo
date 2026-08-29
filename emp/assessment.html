@@ -138,6 +138,24 @@ main { max-width:960px; margin:0 auto; padding:40px 24px 80px; }
 .feedback-btn.sent { background:#1a7a4a; }
 footer { background:var(--navy); color:rgba(255,255,255,.45); font-size:14px; text-align:center; padding:20px; font-weight:300; }
 footer a { color:var(--lteal); text-decoration:none; }
+.step-heading { display:flex; align-items:center; gap:12px; margin:36px 0 14px; }
+.step-heading .step-big-num { flex-shrink:0; width:34px; height:34px; background:var(--navy); color:var(--yellow); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'DM Serif Display',serif; font-size:16px; }
+.step-heading h3 { font-family:'DM Serif Display',serif; font-size:19px; color:var(--navy); }
+.step-heading p { font-size:12px; color:var(--muted); font-weight:300; margin-top:2px; }
+.tie-line { font-size:14px; line-height:1.65; font-weight:500; color:var(--navy); background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; margin:14px 0 6px; }
+.chain-box { background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:20px 22px; margin:14px 0; }
+.chain-box h4 { font-family:'DM Serif Display',serif; font-size:16px; color:var(--navy); margin-bottom:12px; }
+.chain-box ol, .chain-box ul { padding-left:20px; }
+.chain-box li { font-size:14px; line-height:1.65; font-weight:300; color:var(--text); margin-bottom:8px; }
+.chain-box li strong { font-weight:600; color:var(--navy); }
+.flow-row { display:flex; align-items:stretch; gap:0; margin:14px 0; flex-wrap:wrap; }
+.flow-box { flex:1 1 260px; background:#fdf3e3; border-left:4px solid var(--yellow); border-radius:12px; padding:18px 20px; font-size:13.5px; line-height:1.6; font-weight:300; color:#5a4200; }
+.flow-box.final { background:var(--white); border-left:4px solid var(--clay); color:var(--text); }
+.flow-box strong { font-weight:600; display:block; margin-bottom:8px; color:var(--navy); font-size:14px; }
+.flow-box .flow-tag { display:block; text-transform:uppercase; letter-spacing:1px; font-size:11px; color:var(--clay); font-weight:700; margin-bottom:6px; }
+.flow-box cite { display:block; margin-top:10px; font-size:11px; font-style:normal; color:var(--muted); }
+.flow-arrow { flex:0 0 44px; display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--muted); }
+@media (max-width:700px) { .flow-arrow { flex-basis:100%; transform:rotate(90deg); padding:4px 0; } }
 </style>
 </head>
 <body>
@@ -342,6 +360,78 @@ footer a { color:var(--lteal); text-decoration:none; }
     </div>
     <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Identify one example</h3><p>A practice, piece of knowledge, or a Traditional Owner group&rsquo;s own statement, connected to your issue or site.</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Explain the link</h3><p>How this example supports sustainable management and Community wellbeing for your site (1-2 paragraphs).</p></div></div><div class="step"><div class="step-num">3</div><div class="step-body"><h3>Cite a credible source</h3><p>A Traditional Owner group&rsquo;s own materials, your Local Aboriginal Land Council (Darkinjung LALC for the Central Coast), AIATSIS, or NSW Government Aboriginal affairs resources. The LALC speaks for the community - it is not a Traditional Owner&rsquo;s own statement, so cite it accurately as that.</p></div></div></div>
     <div class="callout callout-tip"><strong>You can reuse this in Future Solutions</strong>If a Custodianship-informed approach turns out to be one of your management options, you can draw on this research again in that section.</div>
+
+    <div class="tie-line" style="background:#fdf3e3;border-color:var(--yellow)"><strong style="display:block;color:var(--navy);margin-bottom:4px">In short</strong>Find a real Aboriginal source connected to Darkinjung Country if you can. If you can&rsquo;t, be honest about that and explain your best thinking. The steps below show you how.</div>
+
+    <div style="margin:36px 0 14px">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy)">Read first</h3>
+      <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:2px">Aboriginal Nations are distinct and separate, each with their own knowledge and Country - read this first to understand what they still share, before you start researching your own site</p>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-box">
+        <strong>Different Nations, one shared relationship with Country</strong>
+        Aboriginal Australia was never one single group. There were hundreds of distinct Nations, each with its own language, laws, knowledge and Country to care for. But research comparing groups from very different parts of Australia still finds something in common: a close, long-term connection to the environment and the way it&rsquo;s used (Wangchuk, 2022, Introduction section, para. 3).
+        <cite>Wangchuk, P. (2022). Aboriginal medicinal plants of Queensland: Ethnopharmacological uses, species diversity, and biodiscovery pathways. <em>Journal of Ethnobiology and Ethnomedicine, 18</em>, Article 54. https://doi.org/10.1186/s13002-022-00552-6</cite>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box">
+        <strong>Knowledge that has survived</strong>
+        Colonisation disrupted and separated many Aboriginal Nations from their Country. But traditional knowledge of land and water management has still survived (Jones, n.d.). Aboriginal culture is often described as &lsquo;the longest continuing culture in the world&rsquo; (Jones, n.d., Learning from Loving Country section, para. 8).
+        <cite>Jones, J. (n.d.). <em>Caring for Country and Culture in a changing climate: stories of adaptation</em>. AdaptNSW. https://www.climatechange.environment.nsw.gov.au/stories-and-case-studies/caring-country-and-culture-changing-climate-stories-adaptation</cite>
+      </div>
+      <div class="flow-box final">
+        <span class="flow-tag">However</span>
+        For your EMP, this means you should be aiming to find an example that is Darkinjung&rsquo;s own - the Traditional Custodians of the Central Coast - not a practice borrowed from another Nation&rsquo;s Country, even if the underlying idea looks similar. Step C below covers what to do if a genuine search still doesn&rsquo;t turn up something Darkinjung-specific.
+      </div>
+    </div>
+
+    <div class="step-heading"><div class="step-big-num">A</div><div><h3>Find your source, in this order</h3><p>Where to actually look - no filled-in example, because this step is search, not writing</p></div></div>
+
+    <div class="chain-box">
+      <ol>
+        <li><strong>A Traditional Owner&rsquo;s own statement, if you can find one.</strong> This is the strongest source type - a Darkinjung person or family speaking in their own words, not an organisation speaking on their behalf.</li>
+        <li><strong>Darkinjung LALC&rsquo;s own materials next.</strong> Check darkinjung.com.au - their Culture and Heritage page, newsletters and annual reports. If nothing comes up for your issue, email or ring them directly and ask - contact details are on their site.</li>
+        <li><strong>AIATSIS next.</strong> aiatsis.gov.au holds broader research on Aboriginal land and water management that may cover your kind of issue, even if it isn&rsquo;t Darkinjung-specific.</li>
+        <li><strong>An NSW Government Aboriginal affairs resource as a fallback.</strong> Search terms like &lsquo;NSW Government Aboriginal cultural land management&rsquo; or &lsquo;NSW Government Sea Country&rsquo; - these pages are a legitimate source type even when they aren&rsquo;t Central Coast-specific.</li>
+      </ol>
+      <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:4px">Only these four source types count for your 5 marks. A general web search, Wikipedia, or a source outside this list won&rsquo;t satisfy the rubric&rsquo;s &lsquo;accurate credible source&rsquo; requirement, no matter how well the paragraph around it is written. And if you do use Darkinjung LALC material, cite it as the LALC speaking for the community - not as a Traditional Owner&rsquo;s own statement, since those are two different things.</p>
+    </div>
+
+    <div class="step-heading"><div class="step-big-num">B</div><div><h3>Structure your paragraph</h3><p>The job each sentence needs to do - placeholders only, so there&rsquo;s nothing here to copy</p></div></div>
+
+    <div class="chain-box">
+      <h4>One Possible Sentence Frame</h4>
+      <p style="margin-bottom:10px;line-height:1.75;font-size:14.5px">&lsquo;[Practice] is a way [Nation] people have looked after land or water, described by [Source, Year]. This has not been recorded for the Traditional Custodians of this site, but the area has a similar [landscape feature], so a similar approach may have been used here too. This would need to be confirmed with the relevant Local Aboriginal Land Council directly. If used here, it would help manage the site by [management benefit], and support Community wellbeing by [wellbeing benefit].&rsquo;</p>
+      <ul>
+        <li><strong>Sentence 1:</strong> name the practice, who it belongs to, and cite it.</li>
+        <li><strong>Sentence 2:</strong> say, honestly, whether it&rsquo;s confirmed for Darkinjung Country specifically or not.</li>
+        <li><strong>Sentence 3 (if not confirmed):</strong> explain - with a real reason, not a guess - why it might still apply.</li>
+        <li><strong>Final two sentences:</strong> state a management benefit AND a wellbeing benefit, separately. One alone is enough for a C or B - naming both, clearly tied to the site, is what pushes an answer toward an A. See Step C below if this is the part that&rsquo;s hard to write.</li>
+      </ul>
+    </div>
+
+    <div style="margin:28px 0 14px">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy)">What actually separates a C from a B from an A <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></h3>
+      <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:2px">Straight from the marking rubric, in plain English</p>
+    </div>
+
+    <div class="chain-box">
+      <ul>
+        <li><strong>For a C:</strong> name an example, and give one general sentence linking it to management or wellbeing, with a real source from the four types in Step A.</li>
+        <li><strong>For a B:</strong> everything in C, but your example needs to be specific and named - a real named practice or type of knowledge, not a vague description like &lsquo;Aboriginal people cared for Country&rsquo;. And your benefit sentence needs to properly explain why it helps, not just say that it does.</li>
+        <li><strong>For an A:</strong> everything in B, but with a second, separate sentence properly explaining the other benefit too - so both management and wellbeing are covered, each explained, not just one.</li>
+      </ul>
+      <p style="font-size:13px;line-height:1.65;font-weight:300;color:var(--text);margin-top:12px;padding-top:12px;border-top:1px solid var(--border)"><strong style="color:var(--navy)">Stating vs explaining, since this is the main thing that separates C from B/A:</strong><br>Stating (C): &lsquo;This knowledge helps manage the site.&rsquo;<br>Explaining (B/A): &lsquo;This knowledge helps manage the site because [the specific reason this practice or knowledge actually does that - not just &lsquo;it&rsquo;s traditional&rsquo;].&rsquo;</p>
+      <p style="font-size:12px;color:var(--muted);font-weight:300;margin-top:10px">One more thing worth knowing: the task sheet asks for 1&ndash;2 paragraphs for this whole section. A single sentence, even a well-written one, will read as underwritten - there needs to be enough there to actually fit the example, the honesty about what&rsquo;s confirmed, and both benefits properly explained.</p>
+    </div>
+
+    <div class="step-heading"><div class="step-big-num">C</div><div><h3>When you hit a wall</h3><p>You searched Darkinjung, then AIATSIS, then NSW Government - and found nothing specific to your site</p></div></div>
+
+    <div class="callout callout-tip">
+      <strong>If you can&rsquo;t find a Darkinjung-specific source <span class="new-badge" data-added="2026-08-29">New - added 29/08</span></strong>
+      You can still use what you found about another Nation&rsquo;s practice - just be honest about it. Don&rsquo;t write it as if you found a Darkinjung source when you didn&rsquo;t. Say what you found, say clearly it&rsquo;s not from Darkinjung, then explain <em>why</em> it might still fit your site - maybe a similar landscape, or a similar issue. That&rsquo;s an honest, thought-out guess, not a made-up one - and it&rsquo;s a better answer than pretending you&rsquo;re sure when you&rsquo;re not. Use the sentence frame in Step B above to build this - the structure is the same, just with an honest &lsquo;not confirmed for Darkinjung&rsquo; sentence added in.
+    </div>
 
     <div class="wagoll-grades">
       <div class="wagoll-grades-header">
