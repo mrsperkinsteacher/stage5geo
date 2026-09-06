@@ -39,6 +39,7 @@
   .tile-due { font-size:11px; font-weight:600; color:#c1502f; background:#fdeae3; border:1px solid var(--clay); border-radius:6px; padding:5px 10px; align-self:flex-start; }
   .tile.soon { opacity:.45; pointer-events:none; }
   .tile.soon .tile-tag { background:#ccc; color:#666; }
+  .new-badge { display:inline-block; background:var(--yellow); color:var(--navy); font-size:10px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; }
   footer { background:var(--navy); color:rgba(255,255,255,.4); font-size:12px; text-align:center; padding:20px; font-weight:300; }
   footer a { color:var(--lteal); text-decoration:none; }
 </style>
@@ -63,7 +64,7 @@
 
     <a class="tile" href="assessment.html">
       <div class="tile-tag">Assessment 3</div>
-      <h2>Environmental Management Plan</h2>
+      <h2>Environmental Management Plan <span class="new-badge" data-added="2026-09-06">Updated 06/09</span></h2>
       <p>Choose a local environmental issue and manage it well. Steps, examples and full marking criteria for every part of the report, plus the AI use checklist.</p>
       <div class="tile-due">Due Monday 14 September 2026</div>
       <div class="tile-arrow">
@@ -86,6 +87,17 @@
   Year 9 Geography &nbsp;|&nbsp; Environmental Change and Management &nbsp;|&nbsp; Term 3, 2026
   <div style="margin-top:6px;font-size:11px;color:rgba(255,255,255,.35)">This website is a guide only - your Assessment Task and Marking Guide, and your class teacher, are what you need to follow.</div>
 </footer>
+
+<script>
+(function(){
+  var THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+  var now = new Date();
+  document.querySelectorAll('.new-badge[data-added]').forEach(function(el){
+    var added = new Date(el.getAttribute('data-added') + 'T00:00:00');
+    if (now - added > THREE_DAYS_MS) { el.style.display = 'none'; }
+  });
+})();
+</script>
 
 </body>
 </html>
