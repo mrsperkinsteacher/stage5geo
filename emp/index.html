@@ -90,11 +90,11 @@
 
 <script>
 (function(){
-  var THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+  var FOUR_DAYS_MS = 4 * 24 * 60 * 60 * 1000;
   var now = new Date();
   document.querySelectorAll('.new-badge[data-added]').forEach(function(el){
     var added = new Date(el.getAttribute('data-added') + 'T00:00:00');
-    if (now - added > THREE_DAYS_MS) { el.style.display = 'none'; }
+    if (now - added > FOUR_DAYS_MS) { el.style.display = 'none'; }
   });
 })();
 </script>
