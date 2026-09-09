@@ -290,6 +290,7 @@ footer a { color:var(--lteal); text-decoration:none; }
     <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Explain how the issue developed</h3><p>Identify the issue and describe how it has developed and why, with specific reference to change over time (1-2 paragraphs).</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Describe the site</h3><p>3-4 sentences - e.g. its scale, land use and key features.</p></div></div><div class="step"><div class="step-num">3</div><div class="step-body"><h3>Prepare a labelled location map</h3><p>A bird&rsquo;s eye view screenshot from Google Maps, labelled using BOLTSS conventions - Border, Orientation/north point, Legend, Title, Scale, Source. Full step-by-step walkthrough: <a href="#" onclick="goToResource('locmap'); return false;">Locality/Site Map guide <span class="new-badge" data-added="2026-09-06">New - added 06/09</span></a> in Resources.</p></div></div></div>
     <div class="callout callout-warn"><strong>BOLTSS is all six elements</strong>Older habits from Stage 4 sometimes only cover scale and north point. This task marks against all six BOLTSS elements - missing several drops you to a D.</div>
     <div class="callout callout-tip"><strong>Zoom out for context <span class="new-badge" data-added="2026-08-10">New - added 10/08</span></strong>A single site can be hard to place on its own - include enough of the surrounding area (nearby suburbs, or the whole state) that anyone looking at your map immediately knows where you mean. NSW is much easier to recognise as a shape once you can see part of Queensland above it and Victoria below, both labelled.</div>
+    <div class="callout callout-tip"><strong>Slow, long-term issue? <span class="new-badge" data-added="2026-09-09">New - added 09/09</span></strong>If your issue is a slow, long-term process (e.g. erosion), your site description and data do not need to prove a long-term trend. A realistic comparison within your own visits is enough.</div>
 
     <div class="wagoll-grades">
       <div class="wagoll-grades-header">
@@ -327,6 +328,8 @@ footer a { color:var(--lteal); text-decoration:none; }
     </div>
     <div class="steps"><div class="step"><div class="step-num">1</div><div class="step-body"><h3>Analyse your primary data</h3><p>Your own collected survey results, measurements, field observations, or photographs. Identify patterns, trends and interconnections, and cite specific figures/data as evidence (2-3 paragraphs).</p></div></div><div class="step"><div class="step-num">2</div><div class="step-body"><h3>Analyse your secondary data</h3><p>Council reports, ABS/government data, existing studies, flood/hazard maps or quotes from reputable sources. Same standard: patterns, trends, interconnections, specific figures cited (2-3 paragraphs).</p></div></div></div>
     <div class="callout callout-warn"><strong>Both are required</strong>A report missing primary data, or missing secondary data, cannot be assessed above a D in this section - no exceptions.</div>
+    <div class="callout callout-tip"><strong>A pattern isn&rsquo;t only about time <span class="new-badge" data-added="2026-09-09">New - added 09/09</span></strong>A pattern does not have to mean change over time. It can also mean a difference between two things measured at the same time, such as comparing two locations on the same day.</div>
+    <div class="callout callout-tip"><strong>It&rsquo;s okay for your plan to change <span class="new-badge" data-added="2026-09-09">New - added 09/09</span></strong>It is fine to adjust your question or method once you are on site, that is a normal part of fieldwork, not a failure. You are in Year 9, not a specialist working in the field with professional equipment and years of training, so it is completely expected that your plans might need to change once you see the site for real.</div>
 
     <div class="wagoll-grades">
       <div class="wagoll-grades-header">
@@ -738,6 +741,7 @@ footer a { color:var(--lteal); text-decoration:none; }
           <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Plan your first two site visits now</h3><p>One visit for primary data, another once you have your secondary data and know what else you need. Do not leave this to the last week - you have roughly five weeks.</p></div></div>
         </div>
         <div class="callout callout-tip"><strong>Why the report is structured this way</strong>This is the same kind of report a real council writes when deciding how to manage an actual environmental problem - that is why it needs both data you collected yourself and data other people (like councils) have already published.</div>
+        <div class="callout callout-tip"><strong>How many visits is enough? <span class="new-badge" data-added="2026-09-09">New - added 09/09</span></strong>The task asks for more than one visit. Most students manage two visits comfortably if they start early, and that is enough if you have collected what you need.</div>
       </div>
 
       <div class="rubric-section">
@@ -1015,11 +1019,11 @@ document.querySelectorAll('.tab-panel').forEach(function(panel){
   panel.appendChild(div.firstElementChild);
 });
 (function(){
-  var THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+  var FOUR_DAYS_MS = 4 * 24 * 60 * 60 * 1000;
   var now = new Date();
   document.querySelectorAll('.new-badge[data-added]').forEach(function(el){
     var added = new Date(el.getAttribute('data-added') + 'T00:00:00');
-    if (now - added > THREE_DAYS_MS) { el.style.display = 'none'; }
+    if (now - added > FOUR_DAYS_MS) { el.style.display = 'none'; }
   });
 })();
 </script>
