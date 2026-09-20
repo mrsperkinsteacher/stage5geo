@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 01 - What is Human Wellbeing | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 01</p>
+  <h1>Lesson 01: What is Human Wellbeing</h1>
+  <p class="subheading">Defining wellbeing beyond income</p>
+  <p class="intro">What does it actually mean for a country, or a person, to be doing well? This page has everything from Lesson 01 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <span class="disabled">&larr; Lesson</span>
+  <a href="index.html">All lessons</a>
+  <a href="lesson02.html">Lesson 02 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson opens the Human Wellbeing unit. You worked out what "wellbeing" actually means as a geographer, not just a feel-good word: wellbeing is a person or community's quality of life, shaped by material things (income, housing, food) and non-material things (health, safety, freedom, relationships).</p>
+<p>You met the five domains geographers use to break wellbeing down - <b>STEEP</b> (Social, Technological, Economic, Environmental, Political) - and looked at three different perspectives on what "a good life" means: a Western/economic view (focused on income and consumption), a wellbeing/happiness view (focused on life satisfaction), and a Biblical perspective (focused on shalom - wholeness, right relationship with God, others and creation, not just material comfort).</p>
+<p>You finished by previewing the OECD's Better Life Index as a real tool that tries to measure wellbeing across many of these domains at once.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">OECD Better Life Index - How's Life?</div>
+    <p>A short OECD explainer on how the Better Life Index measures wellbeing across 11 topics, from housing and income to life satisfaction and work-life balance.</p>
+    <p><a href="https://youtu.be/OOIK9YxQ2sY" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://www.oecdbetterlifeindex.org/" target="_blank" rel="noopener">OECD Better Life Index (interactive)</a> - build your own wellbeing ranking by weighting the 11 topics yourself, then compare countries.</li>
+    <li><a href="https://worldhappiness.report/" target="_blank" rel="noopener">World Happiness Report</a> - the annual global ranking of countries by self-reported life satisfaction, published by the UN Sustainable Development Solutions Network.</li>
+</ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Wellbeing</b> - a person or community's overall quality of life - material and non-material.</div>
+    <div class="term"><b>Material wellbeing</b> - quality of life measured by physical, measurable things - income, housing, food, healthcare access.</div>
+    <div class="term"><b>Non-material wellbeing</b> - quality of life measured by things that can't be bought - safety, freedom, relationships, sense of purpose.</div>
+    <div class="term"><b>STEEP</b> - a framework for sorting factors affecting wellbeing into Social, Technological, Economic, Environmental and Political categories.</div>
+    <div class="term"><b>Shalom</b> - a Biblical concept of wellbeing as wholeness and right relationship - with God, other people, and creation - not just material comfort.</div>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/poverty/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-01-1024x1024.png" alt="SDG 1: No Poverty" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 1 - No Poverty</b><p>wellbeing starts with meeting basic material needs - the foundation this whole unit builds on.</p></div>
+</a>
+
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/health/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-03-1024x1024.png" alt="SDG 3: Good Health and Well-being" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 3 - Good Health and Well-being</b><p>the UN's own goal explicitly named for wellbeing - ensuring healthy lives and promoting wellbeing for all ages.</p></div>
+</a>
+</div>
+<p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>The OECD's Better Life Index lets you build your own personal definition of a good life by weighting 11 different topics (from income to life satisfaction) however you think matters most - and different countries top the list depending on which topics you weight highest. There's no single "correct" way to measure wellbeing, which is exactly why geographers use several measures side by side rather than just one.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+      <p><b>March 2026:</b> The 2026 World Happiness Report shifted its ranking methodology to weight "benevolence" (acts of kindness) more heavily alongside income and health, changing several countries' positions in the top 20.</p>
+    <p class="src">Source: World Happiness Report, worldhappiness.report</p>
+    <p><b>January 2026:</b> UN member states met in Geneva to discuss "Beyond GDP" measures of national progress, pushing more countries to adopt wellbeing indicators alongside traditional economic ones.</p>
+    <p class="src">Source: UN Geneva, un.org</p>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+      <p><b>Finland</b> - has topped the World Happiness Report's global ranking for several years running, credited to strong social trust, healthcare and work-life balance rather than the highest income in the world.</p>
+    <p><b>Bhutan</b> - famously measures Gross National Happiness (GNH) instead of GDP as its main measure of national progress - one of the first countries to formally do this.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson sets up the whole unit. Lesson 02 (Mapping Wellbeing) puts these ideas onto a real world map using the Human Development Index. Lesson 03 (Trends in Wealth) digs into the economic side of wellbeing in detail.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>In Stage 6 Geography and in subjects like Society and Culture, these same wellbeing frameworks return in much more depth - particularly the UN's Human Development Index and Sustainable Development Goals, which you'll use again and again to analyse real places.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>OECD (2026). <i>Better Life Index</i>. oecdbetterlifeindex.org</li>
+    <li>UN Sustainable Development Solutions Network (2026). <i>World Happiness Report 2026</i>. worldhappiness.report</li>
+    <li>United Nations. <i>Sustainable Development Goal 3: Good Health and Well-being</i>. un.org/sustainabledevelopment/health/</li>
+</ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
