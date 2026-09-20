@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 03 - Trends in Wealth | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 03</p>
+  <h1>Lesson 03: Trends in Wealth</h1>
+  <p class="subheading">GDP, GNI, and what they leave out</p>
+  <p class="intro">Two countries can look equally rich on paper and have very different lives inside them. This page has everything from Lesson 03 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson02.html">&larr; Lesson 02</a>
+  <a href="index.html">All lessons</a>
+  <span class="disabled">Lesson &rarr;</span>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson unpacked the difference between <b>GDP</b> (Gross Domestic Product - the value of everything produced <i>inside</i> a country's borders) and <b>GNI</b> (Gross National Income - the income earned <i>by</i> a country's citizens and businesses, wherever in the world they earn it).</p>
+<p>You looked at how transnational corporations (TNCs) complicate GDP figures, then worked through three real case studies: Switzerland's MONET 2030 wellbeing-measurement system, Australia's own Measuring What Matters framework, and the puzzle of why tiny, oil-rich Qatar has one of the highest GDP-per-capita figures in the world despite a small population. You finished by looking at what GDP and GNI leave out altogether - inequality, environmental cost, unpaid work - and why "beyond GDP" measures matter.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">200 years of wealth and health in 4 minutes (Gapminder / Hans Rosling)</div>
+    <p>Hans Rosling's famous animated data visualisation showing how income and life expectancy have changed together for every country in the world since 1810.</p>
+    <p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+<div class="res-item">
+    <div class="res-item-title">Global wealth inequality explained</div>
+    <p>A short explainer on how wealth (not just income) is distributed extremely unevenly across the world's population.</p>
+    <p><a href="https://www.youtube.com/watch?v=uWSxzjyMNpU" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://www.visualcapitalist.com/global-wealth-pyramid/" target="_blank" rel="noopener">The Global Wealth Pyramid (Visual Capitalist)</a> - a widely-cited infographic showing how global wealth is distributed across income tiers - a good visual companion to the GDP/GNI distinction.</li>
+    <li><a href="https://www.credit-suisse.com/about-us/en/reports-research/global-wealth-report.html" target="_blank" rel="noopener">Global Wealth Report</a> - the long-running annual report on how wealth (not just income) is distributed across countries and individuals worldwide.</li>
+</ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>GDP (Gross Domestic Product)</b> - the total value of everything produced inside a country's borders in a year.</div>
+    <div class="term"><b>GNI (Gross National Income)</b> - the total income earned by a country's citizens and businesses, wherever in the world they earn it.</div>
+    <div class="term"><b>Transnational corporation (TNC)</b> - a company that operates in more than one country - its profits can complicate a single country's GDP figures.</div>
+    <div class="term"><b>GDP per capita</b> - GDP divided by population - used to compare average economic output between countries of very different sizes.</div>
+    <div class="term"><b>Beyond GDP</b> - the general push to measure national progress using wellbeing indicators as well as, or instead of, GDP alone.</div>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-08-1024x1024.png" alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 8 - Decent Work and Economic Growth</b><p>GDP and GNI are direct measures of a country's economic growth - the foundation this SDG tracks.</p></div>
+</a>
+
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>high GDP or GNI can hide huge inequality within a country - exactly the gap this SDG targets.</p></div>
+</a>
+</div>
+<p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>Qatar has one of the highest GDP-per-capita figures in the world - but this comes from dividing a huge oil-and-gas-driven GDP by a very small citizen population, much of which is made up of foreign workers whose earnings are counted in Qatar's GDP but often sent home as GNI to another country entirely. It is a real, concrete example of why GDP per capita alone can be a misleading measure of an average person's actual wellbeing.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+      <p><b>2026:</b> Switzerland's MONET 2030 system continued reporting against its full set of wellbeing indicators (spanning environment, society and economy), used alongside GDP by the Swiss Federal Statistical Office to track national progress.</p>
+    <p class="src">Source: Swiss Federal Statistical Office, bfs.admin.ch</p>
+    <p><b>2026:</b> Australia's Measuring What Matters framework, first launched in 2023, remained in active use by Federal Treasury as a companion to GDP when reporting on the nation's progress.</p>
+    <p class="src">Source: Australian Treasury, treasury.gov.au</p>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+      <p><b>Switzerland</b> - uses its MONET 2030 system to track wellbeing alongside GDP, spanning environmental, social and economic indicators.</p>
+    <p><b>Qatar</b> - has extremely high GDP per capita driven by oil and gas exports and a small population - a real case study in why GDP per capita can mislead.</p>
+    <p><b>Australia</b> - reports Measuring What Matters annually alongside GDP, covering five wellbeing themes: healthy, secure, sustainable, cohesive and prosperous.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson builds directly on Lesson 02 (Mapping Wellbeing), where you first met the Human Development Index - HDI actually uses income data related to GNI as one of its three components. Lesson 01 (What is Human Wellbeing) introduced the broader idea that wealth alone doesn't equal wellbeing, which this lesson explores in economic depth.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>GDP, GNI and "beyond GDP" measures are core content in both HSC Geography and HSC Economics/Business Studies - understanding what these measures do and don't capture is a skill that carries directly into senior study.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Swiss Federal Statistical Office (2026). <i>MONET 2030 - Sustainable Development Indicators</i>. bfs.admin.ch</li>
+    <li>Australian Government - The Treasury (2026). <i>Measuring What Matters</i>. treasury.gov.au</li>
+    <li>Gapminder Foundation. <i>200 Years, 200 Countries, 4 Minutes</i>. gapminder.org</li>
+    <li>Visual Capitalist. <i>The Global Wealth Pyramid</i>. visualcapitalist.com/global-wealth-pyramid/</li>
+</ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
