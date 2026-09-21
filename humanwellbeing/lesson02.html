@@ -140,6 +140,30 @@
   .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
   .res-item p { margin: 4px 0; }
 
+  .video-group-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 8px 0;
+  }
+  .video-group-label:first-child { margin-top: 0; }
+
+  .from-lesson-tag {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--ocean);
+    font-size: 0.68rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
   .glossary-grid {
     display: flex;
     flex-wrap: wrap;
@@ -249,6 +273,7 @@
 <div class="resource-subpage" id="box-videos">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="video-group-label">From this lesson</div>
   <div class="res-item">
     <div class="res-item-title">Choropleth Maps (Pimlico Geography)</div>
     <p>A short clip explaining how to read shading and legends on a choropleth map - the same map type used throughout this lesson.</p>
@@ -263,6 +288,22 @@
     <div class="res-item-title">Human Development Index (HDI) - The Geographer's Dictionary</div>
     <p>A quick, clear explanation of how the HDI is calculated from income, education and life expectancy data.</p>
     <p><a href="https://www.youtube.com/watch?v=UdyQYbtFFKE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+  <div class="video-group-label">More to explore <span class="added-badge" data-added="2026-09-21">Added 21/09</span></div>
+  <div class="res-item">
+    <div class="res-item-title">Human Development Index | AQA GCSE Geography | Development Gap 4</div>
+    <p>A second, GCSE-level explainer covering what HDI measures and why it's used as a development indicator - useful if the Geographer's Dictionary version above didn't quite land.</p>
+    <p><a href="https://www.youtube.com/watch?v=OPKzI-7_li4" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+<div class="res-item">
+    <div class="res-item-title">How do we measure happiness? World Happiness Report 2023</div>
+    <p>A closer look at the survey methodology behind the life satisfaction scores you mapped in this lesson - what's actually being asked, and how it's turned into a number.</p>
+    <p><a href="https://www.youtube.com/watch?v=VMbaOcyDtsQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+<div class="res-item">
+    <div class="res-item-title">How to Read a Choropleth Map (BGCSE Geography tutorial)</div>
+    <p>A second choropleth-map walkthrough using a different worked example, if you want the reading skill explained a different way.</p>
+    <p><a href="https://www.youtube.com/watch?v=IRlSImUZYJM" target="_blank" rel="noopener">Watch on YouTube</a></p>
 </div>
 </div>
 
@@ -363,6 +404,14 @@ function showResourceHub() {
   document.getElementById('hub-grid').classList.remove('hidden');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
+(function(){
+  var DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+  var now = new Date();
+  document.querySelectorAll('.added-badge[data-added]').forEach(function(el){
+    var added = new Date(el.getAttribute('data-added') + 'T00:00:00');
+    if (now - added > DAYS_MS) { el.style.display = 'none'; }
+  });
+})();
 </script>
 
 </body>
