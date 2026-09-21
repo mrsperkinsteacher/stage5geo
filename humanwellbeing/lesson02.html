@@ -1,1 +1,369 @@
-/Users/michelle/Library/Application Support/Claude/local-agent-mode-sessions/d15ec464-e8fb-4326-97d5-1a04263eb1b2/de63614b-8c0d-4730-ac42-7feaa153cfbc/local_265f60c4-9710-4673-939e-b844d30b57a2/outputs/s02work/lesson02.html
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 02 - Mapping Wellbeing | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 02</p>
+  <h1>Lesson 02: Mapping Wellbeing</h1>
+  <p class="subheading">Reading a choropleth map with the PQE method</p>
+  <p class="intro">How do geographers turn a table of numbers into a map that tells a story? This page has everything from Lesson 02 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson01.html">&larr; Lesson 01</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson03.html">Lesson 03 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson taught you how to read a choropleth map - a map that uses colour shading to show how a value (like the Human Development Index) varies from place to place - using the <b>PQE method</b>: <b>P</b>attern (what's the overall trend?), <b>Q</b>uantify (use real numbers from the map/legend), <b>E</b>xception (what breaks the pattern, and why?).</p>
+<p>You applied PQE to a real HDI world map, then practised it again with a genuine 30-country life satisfaction dataset, mapping and describing the data yourselves. Along the way you met the Human Development Index itself - a UN measure combining income, education and life expectancy into a single score - as a second way (alongside the World Happiness Report) that wellbeing gets measured globally.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">Choropleth Maps (Pimlico Geography)</div>
+    <p>A short clip explaining how to read shading and legends on a choropleth map - the same map type used throughout this lesson.</p>
+    <p><a href="https://youtu.be/Gfn-664b4CE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+<div class="res-item">
+    <div class="res-item-title">World Happiness Report: The Science of Happiness</div>
+    <p>Explains the Cantril Ladder - the life satisfaction scale behind the wellbeing scores you mapped in this lesson.</p>
+    <p><a href="https://www.youtube.com/watch?v=WxWqLH6GHnA" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+<div class="res-item">
+    <div class="res-item-title">Human Development Index (HDI) - The Geographer's Dictionary</div>
+    <p>A quick, clear explanation of how the HDI is calculated from income, education and life expectancy data.</p>
+    <p><a href="https://www.youtube.com/watch?v=UdyQYbtFFKE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://hdr.undp.org/data-center/human-development-index" target="_blank" rel="noopener">UNDP Human Development Index data centre</a> - explore the real, current HDI rankings and data for every country, published by the UN Development Programme.</li>
+    <li><a href="https://ourworldindata.org/human-development-index" target="_blank" rel="noopener">Our World in Data - Human Development Index</a> - interactive maps and charts showing how HDI has changed over time, country by country.</li>
+</ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Choropleth map</b> - a map that uses colour shading to represent how much of a value exists in each area.</div>
+    <div class="term"><b>PQE method</b> - Pattern, Quantify, Exception - a structured way to describe and analyse a choropleth map.</div>
+    <div class="term"><b>Human Development Index (HDI)</b> - a UN measure combining income, education and life expectancy into a single score from 0 to 1.</div>
+    <div class="term"><b>Life satisfaction</b> - a self-reported measure of how happy or content people say they are with their lives, usually on a 0-10 scale.</div>
+</div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>the whole point of mapping wellbeing is to see where inequality between places is greatest - directly this goal's focus.</p></div>
+</a>
+
+<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank" rel="noopener">
+    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-17-1024x1024.png" alt="SDG 17: Partnerships for the Goals" loading="lazy">
+    <div class="sdg-tile-text"><b>SDG 17 - Partnerships for the Goals</b><p>reliable global data like the HDI only exists because countries and the UN work together to collect and share it.</p></div>
+</a>
+</div>
+<p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>Norway has ranked among the very top countries on the Human Development Index for years, but it does not always top the World Happiness Report in the same year - a genuine example of an "exception" a geographer would flag using the PQE method, since two different, both legitimate, measures of wellbeing don't always agree on which country is "best off".</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+      <p><b>2026:</b> The UK's Office for National Statistics continued publishing its regular "Measures of National Well-being" dashboard, tracking indicators like life satisfaction, anxiety and personal worth alongside traditional economic statistics.</p>
+    <p class="src">Source: UK Office for National Statistics, ons.gov.uk</p>
+    <p><b>2026:</b> Australia's Measuring What Matters framework, first launched by the Australian Treasury in 2023, continued to be updated with fresh wellbeing data across its five themes: healthy, secure, sustainable, cohesive and prosperous.</p>
+    <p class="src">Source: Australian Treasury, treasury.gov.au</p>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+      <p><b>Norway</b> - consistently ranks in the top handful of countries on the HDI, driven by high income, strong education access and long life expectancy.</p>
+    <p><b>Niger</b> - has consistently ranked among the lowest HDI scores globally, reflecting major gaps in income, education access and life expectancy - a useful real contrast when mapping global patterns.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson's mapping skill (PQE) is used again throughout the unit whenever a choropleth map appears. Lesson 01 (What is Human Wellbeing) introduced the ideas being mapped here; Lesson 03 (Trends in Wealth) digs deeper into the economic data (GDP/GNI) that feeds into indexes like the HDI.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Choropleth maps and the PQE (or similar PQE/GRASP) approach to describing them are core Stage 6 Geography skills, used constantly when analysing spatial data in the HSC course.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>United Nations Development Programme (2026). <i>Human Development Index</i>. hdr.undp.org/data-center/human-development-index</li>
+    <li>UK Office for National Statistics (2026). <i>Measures of National Well-being Dashboard</i>. ons.gov.uk</li>
+    <li>Australian Government - The Treasury (2026). <i>Measuring What Matters</i>. treasury.gov.au</li>
+</ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
