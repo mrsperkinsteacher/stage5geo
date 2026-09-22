@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 04 - Trends in Health | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 04</p>
+  <h1>Lesson 04: Trends in Health</h1>
+  <p class="subheading">Life expectancy, and what it does and doesn't tell you</p>
+  <p class="intro">Two countries can earn about the same income and still have very different life expectancies. This page has everything from Lesson 04 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson03.html">&larr; Lesson 03</a>
+  <a href="index.html">All lessons</a>
+  <span class="disabled">Lesson &rarr;</span>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson looked at <b>life expectancy</b> - the average number of years a person is expected to live in a given country - as one of the most widely used quantitative wellbeing indicators, because it reflects a population's overall health, nutrition and living conditions.</p>
+  <p>You traced the global trend since 1960 (around 51 years globally, rising to around 73 years by 2023), then looked at why that trend isn't even: high-income countries such as Japan and Australia sit above 83 years while some low-income countries such as Nigeria and Chad remain below 55 years, and even within Australia, life expectancy for Aboriginal and Torres Strait Islander Peoples sits below the national average. You finished by comparing Costa Rica and Russia on Gapminder - two countries with a similar income but a very different life expectancy - to explain that income alone doesn't fully predict health outcomes.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">200 Countries, 200 Years, 4 Minutes (BBC, The Joy of Stats / Hans Rosling)</div>
+    <p>The same Hans Rosling data visualisation linked from Lesson 03 - it shows income and life expectancy changing together for every country since 1810, which makes it just as relevant to today's health-focused lesson as it was to wealth.</p>
+    <p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo" target="_blank" rel="noopener">Watch on YouTube</a></p>
+  </div>
+  <div class="res-item">
+    <div class="res-item-title">A Global Hunger Crisis: How Did We Get Here?</div>
+    <p>A short video used in this lesson as optional extension viewing on global hunger as a factor affecting health and wellbeing.</p>
+    <p><a href="https://youtu.be/nw0BKZCFq7M" target="_blank" rel="noopener">Watch on YouTube</a></p>
+  </div>
+  <div class="res-item">
+    <div class="res-item-title">More Than a Billion People Obese Worldwide</div>
+    <p>A short video used in this lesson as optional extension viewing on obesity as the other side of the 'double burden' of malnutrition, alongside hunger.</p>
+    <p><a href="https://youtu.be/qFC1eHncuV0" target="_blank" rel="noopener">Watch on YouTube</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://ourworldindata.org/life-expectancy" target="_blank" rel="noopener">Life Expectancy (Our World in Data)</a> - the same source behind the world map used in this lesson, with more interactive charts you can explore by country and by year.</li>
+    <li><a href="https://www.who.int/data/gho" target="_blank" rel="noopener">WHO Global Health Observatory</a> - the World Health Organization's data portal for health indicators, including life expectancy, for every country in the world.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Life expectancy</b> - the average number of years a person is expected to live in a given country.</div>
+    <div class="term"><b>Choropleth map</b> - a map that uses colour shading to show how a value, such as life expectancy, changes from place to place.</div>
+    <div class="term"><b>GNI per capita</b> - a country's Gross National Income divided by its population - in this lesson, used alongside life expectancy to see whether income and health actually move together.</div>
+    <div class="term"><b>Disparity</b> - a noticeable difference or gap between groups or places.</div>
+    <div class="term"><b>HDI (Human Development Index)</b> - a measure built from life expectancy, education and income combined.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/health/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-03-1024x1024.png" alt="SDG 3: Good Health and Well-being" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 3 - Good Health and Well-being</b><p>Life expectancy is one of the clearest single measures of a population's health - exactly what this SDG aims to improve for everyone, everywhere.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>Costa Rica and Russia have almost identical GNI per capita - about US$14,330 and US$14,250 - yet Costa Rica's life expectancy sits at 80.8 years compared with Russia's 73.4 years, a gap of more than seven years. It's a real, concrete example of why income alone doesn't fully predict how long people actually live - factors such as healthcare access, diet, sanitation and public health policy matter too.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <p>Global life expectancy estimates aren't a one-off figure - they're tracked continuously and updated roughly every two years in the United Nations' <i>World Population Prospects</i> report, and by the World Health Organization's Global Health Observatory. Keep an eye on either source if you want to see how the 2023 figures used in this lesson have changed since.</p>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Costa Rica</b> - life expectancy of 80.8 years on a GNI per capita of around US$14,330, the higher-life-expectancy half of this lesson's case-study pair.</p>
+  <p><b>Russia</b> - life expectancy of 73.4 years on a GNI per capita of around US$14,250, almost the same income as Costa Rica but a noticeably lower life expectancy.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Epidemiologist</b> - studies the patterns, causes and effects of health and disease within populations, the kind of work behind the life expectancy figures you used today.</p>
+  <p><b>Public health researcher</b> - investigates why health outcomes such as life expectancy vary between and within countries, and what policies actually improve them.</p>
+  <p><b>Global health NGO worker</b> - works for an organisation such as the World Health Organization on programs aimed at closing exactly the kind of life expectancy gaps you explored in this lesson.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson builds directly on Lesson 03 (Trends in Wealth), where you learned about GNI - the same income measure you used again here to compare Costa Rica and Russia. Lesson 05 (Trends in Education) continues this "Trends in..." run of lessons, looking at how education access and outcomes vary around the world in the same way health does here.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Life expectancy and other health indicators are core content in HSC Geography, and the same ideas about what a national average does and doesn't capture come up again in HSC PDHPE - understanding the difference between a headline figure and the disparities hiding inside it is a skill that carries directly into senior study.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Topic 14.9.3: Life expectancy (p.552)</li>
+    <li>Our World in Data. <i>Life Expectancy</i>. ourworldindata.org/life-expectancy (data source: UN, World Population Prospects, 2024, CC BY)</li>
+    <li>Gapminder Foundation. <i>Life expectancy vs income</i>, interactive bubble chart. gapminder.org</li>
+    <li>Australian Bureau of Statistics. <i>Life Expectancy - Aboriginal and Torres Strait Islander Peoples</i>. abs.gov.au</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
