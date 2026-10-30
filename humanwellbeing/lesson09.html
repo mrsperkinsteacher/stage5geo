@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 09 - Climate Factors | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 09</p>
+  <h1>Lesson 09: Climate Factors</h1>
+  <p class="subheading">Climate change as a 'threat multiplier'</p>
+  <p class="intro">Are the countries that pollute the least the ones suffering the most from climate change? This page has everything from Lesson 09 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson08.html">&larr; Lesson 08</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson10.html">Lesson 10 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson explained why climate change is called a <b>threat multiplier</b>: it doesn't just cause new problems, it makes existing ones - like poverty, hunger and conflict - worse. Lower-income countries contribute the least to greenhouse gas emissions but often suffer the most, especially where people rely on farming or herding.</p>
+  <p>The case study was the <b>Horn of Africa drought</b>. Oxfam estimates about 25 million people across Somalia, Ethiopia and Kenya will need food assistance by mid-2026, and in the worst-hit areas the price of water has risen by more than 2000%. You traced the drought cycle - failed rains, lost livelihoods, less money to prepare for the next drought - and looked at rising seas in the Pacific. Then you evaluated the humanitarian response: better early warning, but funding far short of what's needed.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">Horn of Africa drought drives 20 million towards hunger (FRANCE 24 English, 2022)</div>
+    <p>How many people face hunger, what happens to animals and crops, and which countries are named?</p>
+    <p><a href="https://www.youtube.com/watch?v=UEfFPKhHcbU" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://fews.net/east-africa" target="_blank" rel="noopener">FEWS NET - East Africa</a> - the Famine Early Warning Systems Network. See its latest alerts and maps.</li>
+    <li><a href="https://humanitarianaction.info/plan/1221" target="_blank" rel="noopener">Somalia humanitarian plan (UN OCHA)</a> - how much money is needed, and how much has actually arrived.</li>
+    <li><a href="https://reliefweb.int/report/somalia/somalia-2025-2026-drought-emergency-situation-report-no-4" target="_blank" rel="noopener">Somalia drought situation report (ReliefWeb)</a> - the latest official update on the drought.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Threat multiplier</b> - something that makes existing problems, like poverty or conflict, worse, rather than causing them alone.</div>
+    <div class="term"><b>Food insecurity</b> - not having reliable access to enough food for an active, healthy life.</div>
+    <div class="term"><b>Climate-vulnerable</b> - especially likely to be seriously harmed by climate change, often because of poverty or reliance on farming.</div>
+    <div class="term"><b>Humanitarian response</b> - organised aid that meets urgent human needs during a crisis.</div>
+    <div class="term"><b>Subsistence farming</b> - growing food mainly to feed your own family, with little left to sell.</div>
+    <div class="term"><b>Poverty trap</b> - a cycle where low income means low investment, which keeps income low.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/climate-change/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-13-1024x1024.png" alt="SDG 13: Climate Action" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 13 - Climate Action</b><p>The countries least responsible for climate change are often the most at risk from it. This goal is about urgent climate action.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/hunger/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-02-1024x1024.png" alt="SDG 2: Zero Hunger" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 2 - Zero Hunger</b><p>Drought destroys harvests and herds. This goal aims to end hunger.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>In the worst-hit parts of Somalia, Kenya and Ethiopia, <b>the cost of water has risen by more than 2000%</b>. If a 20-litre jerry can cost 20 cents before, it would now cost more than $4 - out of reach for many families who have already lost their crops and animals.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <div class="res-item">
+    <p><span class="news-date">Mar 2026</span>Oxfam warned that millions of people across Somalia, Kenya and Ethiopia face a drought crisis as the cost of water rises by 2000% in the worst-hit areas.</p>
+    <p class="src">Source: <a href="https://www.oxfam.org.uk/media/press-releases/millions-of-people-across-somalia-kenya-and-ethiopia-facing-drought-crisis-as-cost-of-water-increases-by-2000-in-worst-hit-areas/" target="_blank" rel="noopener">Oxfam</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">Feb 2026</span>Kenya's drought authority reported 3.3 million people affected by drought.</p>
+    <p class="src">Source: <a href="https://citizen.digital/article/cs-ruku-33-million-kenyans-affected-by-drought-23-counties-at-risk-n377398" target="_blank" rel="noopener">Citizen Digital</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Somalia</b> - 6.5 million people facing hunger - nearly double early 2025.</p>
+  <p><b>Kenya</b> - 3.3 million people affected and 15 of 23 dry counties at alarm level or worse (Feb 2026).</p>
+  <p><b>Ethiopia</b> - part of the same drought region, with millions needing food assistance.</p>
+  <p><b>Tuvalu and Kiribati</b> - small Pacific nations facing rising seas, despite contributing almost nothing to emissions.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Meteorologist / climate scientist</b> - predicts droughts early, like the FEWS NET early-warning system.</p>
+  <p><b>Agricultural scientist</b> - develops drought-resistant crops and better ways to store water.</p>
+  <p><b>Humanitarian logistics officer</b> - gets food and water to people in a crisis, fast.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson follows <a href="lesson08.html">Lesson 08 (Environmental Factors (India))</a>, another environmental cause. Displacement links back to <a href="lesson06.html">Lesson 06 (Inequality in Wellbeing (Syria))</a> (Syria). <a href="lesson11.html">Lesson 11 (Population Factors)</a> looks at population, another factor that shapes how hard a crisis hits.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Climate change, food security and natural hazards are major topics in senior Geography and Earth and Environmental Science.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Lesson 14.7: What are the global challenges to human wellbeing and development that result in spatial inequality? (pp.541-545)</li>
+    <li>Oxfam International (5 Mar 2026). Press release on drought and water costs. <a href="https://www.oxfam.org.uk/media/press-releases/millions-of-people-across-somalia-kenya-and-ethiopia-facing-drought-crisis-as-cost-of-water-increases-by-2000-in-worst-hit-areas/" target="_blank" rel="noopener">oxfam.org.uk</a></li>
+    <li>FEWS NET. <i>East Africa</i>. <a href="https://fews.net/east-africa" target="_blank" rel="noopener">fews.net</a></li>
+    <li>UN OCHA. <i>Somalia Humanitarian Plan</i>. <a href="https://humanitarianaction.info/plan/1221" target="_blank" rel="noopener">humanitarianaction.info</a></li>
+    <li>ReliefWeb. <i>Somalia 2025-2026 Drought Emergency Situation Report No. 4</i>. <a href="https://reliefweb.int/report/somalia/somalia-2025-2026-drought-emergency-situation-report-no-4" target="_blank" rel="noopener">reliefweb.int</a></li>
+    <li>World Health Organization. <i>Horn of Africa appeal</i>. <a href="https://www.who.int/emergencies/funding/health-emergency-appeals/2022/2023/2023-appeals/appeal-horn-of-africa" target="_blank" rel="noopener">who.int</a></li>
+    <li>Citizen Digital (Feb 2026). Kenya drought figures. <a href="https://citizen.digital/article/cs-ruku-33-million-kenyans-affected-by-drought-23-counties-at-risk-n377398" target="_blank" rel="noopener">citizen.digital</a></li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

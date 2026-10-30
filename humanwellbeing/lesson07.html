@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 07 - Why Wellbeing Varies | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 07</p>
+  <h1>Lesson 07: Why Wellbeing Varies</h1>
+  <p class="subheading">Tokyo and rural Japan: one country, two different lives</p>
+  <p class="intro">Why can two people in the same country have such different access to doctors, schools and jobs? This page has everything from Lesson 07 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson06.html">&larr; Lesson 06</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson08.html">Lesson 08 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson explained the <b>causes of spatial variation</b> in wellbeing using five lenses - the STEEP idea from Lesson 01, with Historic instead of Technological: <b>Environmental</b> (like the 2011 tsunami), <b>Social</b>, <b>Economic</b>, <b>Historic</b> and <b>Political</b>.</p>
+  <p>Japan was the case study. <b>Tokyo</b> has a huge economy - about US$63,000 per person (FY2022) - and over 3.3 doctors per 1000 people. <b>Rural Japan</b> has about 2 doctors per 1000 people, more than 6000 rural schools have closed since 2000, and Akita has lost more than a quarter of its population since 1980. Japan's population is ageing and shrinking: about 30% of people are 65 or older, and the fertility rate hit a record low of 1.14 in 2025. Some villages are now <i>genkai shuraku</i> - places with too few people left to keep basic services going.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">In Japan's ageing countryside, some villages face extinction (Al Jazeera, 15 Aug 2024)</div>
+    <p>A video report on rural Japan's empty houses and shrinking villages.</p>
+    <p><a href="https://www.aljazeera.com/news/2024/8/15/in-japans-ageing-countryside-communities-are-facing-extinction" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://www.stat.go.jp/english/data/jinsui/index.html" target="_blank" rel="noopener">Statistics Bureau of Japan - population estimates</a> - the official population data behind the Akita and Japan figures.</li>
+    <li><a href="https://www.stat.go.jp/english/info/news/20260625.html" target="_blank" rel="noopener">Statistics Bureau of Japan - 2025 census news</a> - Japan's latest census results.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Spatial variation</b> - the way something, like wellbeing, differs from place to place.</div>
+    <div class="term"><b>Urbanisation</b> - the growth in the share of people living in cities rather than rural areas.</div>
+    <div class="term"><b>Ageing population</b> - a population with a rising share of older people and a falling share of children.</div>
+    <div class="term"><b>Brain drain</b> - when skilled or educated people leave a region for better opportunities elsewhere.</div>
+    <div class="term"><b>Genkai shuraku</b> - 'marginal settlements' - Japanese villages with too few residents left to sustain basic services.</div>
+    <div class="term"><b>Karoshi</b> - a Japanese term meaning death caused by overwork.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/cities/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-11-1024x1024.png" alt="SDG 11: Sustainable Cities and Communities" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 11 - Sustainable Cities and Communities</b><p>Japan shows how cities and the countryside can pull apart. This goal is about making all communities good places to live.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>Access to doctors, schools and jobs shouldn't depend on where in a country you happen to live.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p><b>Tokyo</b> has more doctors: over 3.3 for every 1000 people, compared with about 2 per 1000 in rural Japan. Was your Geo Spark prediction right? Cities have their own problems too - Tokyo has some of the highest rates of overwork and stress in the world.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <div class="res-item">
+    <p><span class="news-date">Aug 2024</span>Al Jazeera reported on Japan's ageing countryside, where some villages face extinction.</p>
+    <p class="src">Source: <a href="https://www.aljazeera.com/news/2024/8/15/in-japans-ageing-countryside-communities-are-facing-extinction" target="_blank" rel="noopener">Al Jazeera</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">June 2026</span>Japan's fertility rate fell to a record low of 1.14 in 2025.</p>
+    <p class="src">Source: <a href="https://www.nippon.com/en/news/yjj2026060300610/" target="_blank" rel="noopener">Nippon.com</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Tokyo</b> - a bigger economy than all of Switzerland, with strong services - but high rates of overwork.</p>
+  <p><b>Akita Prefecture</b> - population down from about 1.26 million (1980) to 0.88 million (2025).</p>
+  <p><b>Nanmoku</b> - one of the shrinking villages from today's thinking moment.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Regional planner</b> - plans transport, housing and services so country towns stay good places to live.</p>
+  <p><b>Demographer</b> - studies population change, like Japan's ageing, and predicts what it will mean.</p>
+  <p><b>Rural GP</b> - a doctor working in country areas - exactly the job rural Japan is short of.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson reuses the STEEP lenses from <a href="lesson01.html">Lesson 01 (What is Human Wellbeing)</a>. The next lessons look at one cause at a time: environment in <a href="lesson08.html">Lesson 08 (Environmental Factors (India))</a>, climate in <a href="lesson09.html">Lesson 09 (Climate Factors)</a>, resources, trade and location in <a href="lesson10.html">Lesson 10 (Resources, Trade &amp; Location)</a>, and population in <a href="lesson11.html">Lesson 11 (Population Factors)</a>.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Urban-rural differences and ageing populations are big topics in senior Geography, especially when studying cities and population change.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Lesson 15.2: What are the causes and consequences of spatial variations in human wellbeing? (pp.566-572)</li>
+    <li>Tokyo Metropolitan Government. <i>Industries and Employment in Tokyo 2026</i>. <a href="https://www.sangyo-rodo.metro.tokyo.lg.jp/documents/d/sangyo-rodo/2026-07-31-145305-156" target="_blank" rel="noopener">metro.tokyo.lg.jp</a></li>
+    <li>Statistics Bureau of Japan. <i>Population estimates</i>. <a href="https://www.stat.go.jp/english/data/jinsui/index.html" target="_blank" rel="noopener">stat.go.jp</a></li>
+    <li>Ministry of Health, Labour and Welfare (June 2026), fertility rate, via <a href="https://www.nippon.com/en/news/yjj2026060300610/" target="_blank" rel="noopener">nippon.com</a></li>
+    <li>Al Jazeera (15 Aug 2024). <i>In Japan's ageing countryside, some villages face extinction</i>. <a href="https://www.aljazeera.com/news/2024/8/15/in-japans-ageing-countryside-communities-are-facing-extinction" target="_blank" rel="noopener">aljazeera.com</a></li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

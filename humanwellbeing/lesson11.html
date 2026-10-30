@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 11 - Population Factors | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 11</p>
+  <h1>Lesson 11: Population Factors</h1>
+  <p class="subheading">Same size, different shape: Yemen and Canada</p>
+  <p class="intro">Two countries with almost the same number of people can face completely different challenges. This page has everything from Lesson 11 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson10.html">&larr; Lesson 10</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson12.html">Lesson 12 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson used <b>population profiles</b> (population pyramids) to explain how a country's age structure affects wellbeing. A wide base suggests high birth rates; a wider top suggests more people living to older ages. More children means more demand for schools, and more over-65s means more demand for healthcare.</p>
+  <p><b>Yemen</b> and <b>Canada</b> each have about 40 million people, but very different shapes. Yemen has about 16.7 million people under 15 and only about 1.0 million aged 65+. Canada has about 6.0 million under 15 and 7.9 million aged 65+. You calculated age-group percentages from real data and compared the two countries' <b>dependency ratios</b>.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">Overpopulation - The Human Explosion Explained (Kurzgesagt, 2016)</div>
+    <p>Why did population grow so fast, and what happens to birth rates as countries get richer?</p>
+    <p><a href="https://www.youtube.com/watch?v=QsBT5EQt348" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://populationpyramids.org/yemen" target="_blank" rel="noopener">Yemen population pyramid</a> - the profile from this lesson.</li>
+    <li><a href="https://populationpyramids.org/canada" target="_blank" rel="noopener">Canada population pyramid</a> - compare it with Yemen's.</li>
+    <li><a href="https://www.populationpyramid.net/" target="_blank" rel="noopener">PopulationPyramid.net</a> - look up any country, including Australia, and press play to see its shape change over time.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Population profile</b> - a graph showing the age and sex structure of a population (also called a population pyramid).</div>
+    <div class="term"><b>Dependency ratio</b> - the number of people too young or too old to work, compared with the number of working-age people.</div>
+    <div class="term"><b>Youthful population</b> - a high proportion of children and young people, shown by a wide pyramid base.</div>
+    <div class="term"><b>Ageing population</b> - a rising share of older people, shown by a wider top on the pyramid.</div>
+    <div class="term"><b>Fertility rate</b> - the average number of children born per woman.</div>
+    <div class="term"><b>Demographic transition</b> - the pattern of birth and death rates changing as countries develop.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/health/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-03-1024x1024.png" alt="SDG 3: Good Health and Well-being" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 3 - Good Health and Well-being</b><p>Youthful populations need child and maternal healthcare; ageing ones need aged care. Both are part of this goal.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/education/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-04-1024x1024.png" alt="SDG 4: Quality Education" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 4 - Quality Education</b><p>A youthful population like Yemen's needs many more school places right now.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p><b>Yemen</b> has about <b>77 dependants for every 100 working-age people</b>; Canada has about 54. That means each Yemeni worker supports more children and older people than a Canadian worker - even though the two countries have almost the same total population.</p>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Yemen</b> - about 40.6 million people, with a youthful population and a wide pyramid base.</p>
+  <p><b>Canada</b> - about 39.7 million people, with an ageing population that relies on immigration to keep its workforce.</p>
+  <p><b>Egypt</b> - a wide-based profile, similar to Yemen's.</p>
+  <p><b>Japan</b> - almost the opposite shape - one of the oldest populations in the world.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Demographer</b> - studies population data and predicts how a country will change.</p>
+  <p><b>Health and aged care planner</b> - works out how many hospitals, nurses and aged care places a country will need.</p>
+  <p><b>Education planner</b> - plans how many schools and teachers a growing population will need.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>Japan's ageing population came up in <a href="lesson07.html">Lesson 07 (Why Wellbeing Varies)</a>. This lesson continues the 'one cause at a time' run after <a href="lesson10.html">Lesson 10 (Resources, Trade &amp; Location)</a>. <a href="lesson12.html">Lesson 12 (Gender Inequality)</a> looks at gender, another population characteristic that shapes wellbeing.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Population profiles and the demographic transition model are key tools in senior Geography, especially in the urban and population topics.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Lesson 15.3, SkillBuilder: Using Excel to construct population profiles</li>
+    <li>Geography Teachers' Association of NSW &amp; ACT. <i>Stage 5 Human Wellbeing Resource Pack</i>, Worksheet 2.1 (2026)</li>
+    <li>United Nations DESA. <i>World Population Prospects 2024</i>, via <a href="https://populationpyramids.org/yemen" target="_blank" rel="noopener">populationpyramids.org</a></li>
+    <li>PopulationPyramid.net. <a href="https://www.populationpyramid.net/" target="_blank" rel="noopener">populationpyramid.net</a></li>
+    <li>Kurzgesagt - In a Nutshell (2016). <i>Overpopulation - The Human Explosion Explained</i> (YouTube)</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

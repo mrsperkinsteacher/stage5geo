@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 08 - Environmental Factors (India) | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 08</p>
+  <h1>Lesson 08: Environmental Factors (India)</h1>
+  <p class="subheading">What the air you breathe has to do with your wellbeing</p>
+  <p class="intro">Something too small to see is one of the biggest threats to wellbeing in India. This page has everything from Lesson 08 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson07.html">&larr; Lesson 07</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson09.html">Lesson 09 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson showed how <b>environmental factors</b> - air and water pollution - cause variation in wellbeing within a country, using India as the case study. <b>PM2.5</b> is fine particulate matter small enough to reach deep into the lungs and bloodstream. The Lancet Countdown 2025 linked <b>1.72 million deaths</b> in India in 2022 to PM2.5 from human activity. In Delhi, PM2.5 takes about 8.2 years off life expectancy; the India average is 3.5 years.</p>
+  <p>Then the water: the 97 towns on the Ganges' main stem produce about 2.9 billion litres of sewage a day, and in a 2020 survey about 92% of Ganges fishers reported days with no catch at all. You joined the dots from pollution to health, money and school, then evaluated <b>Namami Gange</b>, the government's river clean-up - real progress in places, but only about 63% of its funding spent by March 2025.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">Toxic smog blankets New Delhi, plunging air quality to hazardous levels (Euronews, 15 Dec 2025)</div>
+    <p>What can you see and hear that shows how severe the smog is?</p>
+    <p><a href="https://www.euronews.com/video/2025/12/15/toxic-smog-blankets-new-delhi-plunging-air-quality-to-hazardous-levels" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://aqli.epic.uchicago.edu/" target="_blank" rel="noopener">Air Quality Life Index (University of Chicago)</a> - see how many years of life air pollution takes off people in any country, including Australia.</li>
+    <li><a href="https://lancetcountdown.org/2025-report/" target="_blank" rel="noopener">Lancet Countdown 2025 report</a> - the source of the 1.72 million deaths figure.</li>
+    <li><a href="https://www.impriindia.com/insights/policy-update/namami-gange-programme-assessing-progress-as-phase-ii-nears-its-2026-deadline/" target="_blank" rel="noopener">Namami Gange: assessing progress (IMPRI)</a> - a closer look at how the clean-up is going.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>PM2.5</b> - fine particulate matter: tiny particles small enough to reach deep into the lungs and bloodstream.</div>
+    <div class="term"><b>Air Quality Index (AQI)</b> - a scale showing how polluted the air is right now, and its likely health effects.</div>
+    <div class="term"><b>Water stress</b> - when demand for fresh water is close to, or more than, the reliable supply.</div>
+    <div class="term"><b>Sanitation</b> - systems that safely manage human waste to protect health and water quality.</div>
+    <div class="term"><b>Smog</b> - a mix of smoke and fog - air pollution you can see.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/water-and-sanitation/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-06-1024x1024.png" alt="SDG 6: Clean Water and Sanitation" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 6 - Clean Water and Sanitation</b><p>Sewage in the Ganges is a sanitation problem. This goal is about clean water and safe sanitation for everyone.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/health/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-03-1024x1024.png" alt="SDG 3: Good Health and Well-being" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 3 - Good Health and Well-being</b><p>Air pollution shortens lives. This goal includes reducing deaths from air, water and soil pollution.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>PM2.5 caused an estimated <b>17,188 deaths in Delhi in 2023</b> alone - nearly 15% of all deaths in the city that year. Across India, the Lancet Countdown 2025 linked 1.72 million deaths in 2022 to PM2.5, up 38% since 2010. How close was your Geo Spark guess?</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <div class="res-item">
+    <p><span class="news-date">Dec 2025</span>Toxic smog blanketed New Delhi, pushing air quality to hazardous levels.</p>
+    <p class="src">Source: <a href="https://www.euronews.com/video/2025/12/15/toxic-smog-blankets-new-delhi-plunging-air-quality-to-hazardous-levels" target="_blank" rel="noopener">Euronews</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">2025</span>Namami Gange passed 300 completed projects, with more than Rs 40,000 crore invested in the river.</p>
+    <p class="src">Source: <a href="https://ddnews.gov.in/en/namami-gange-programme-over-300-projects-completed-rs-40000-crore-invested-in-rejuvenating-river-ganga/" target="_blank" rel="noopener">DD News</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">Survey</span>Fishers who drink from the Ganges reported higher rates of water-borne disease.</p>
+    <p class="src">Source: <a href="https://www.downtoearth.org.in/news/pollution/higher-incidences-of-water-borne-diseases-in-fishermen-drinking-from-ganga-survey-73029" target="_blank" rel="noopener">Down To Earth</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Delhi</b> - 8.2 years of life expectancy lost to PM2.5 - more than double the India average.</p>
+  <p><b>The Ganges</b> - 97 towns on its main stem produce about 2.9 billion litres of sewage a day.</p>
+  <p><b>Haridwar to Sultanpur</b> - a stretch of the Ganges now off the polluted list - real progress from Namami Gange.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Air quality scientist</b> - measures pollution and works out its health effects.</p>
+  <p><b>Environmental engineer</b> - designs sewage treatment plants and clean-up projects, like those in Namami Gange.</p>
+  <p><b>Public health officer</b> - warns people on bad air days and plans ways to protect the most vulnerable.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson is the first of the 'one cause at a time' lessons that follow <a href="lesson07.html">Lesson 07 (Why Wellbeing Varies)</a>. <a href="lesson09.html">Lesson 09 (Climate Factors)</a> looks at another environmental factor - climate. The life expectancy idea comes from <a href="lesson04.html">Lesson 04 (Trends in Health)</a>.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Pollution, water management and environmental change are core topics in senior Geography and Earth and Environmental Science.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Lancet Countdown. <i>2025 Report</i>. <a href="https://lancetcountdown.org/2025-report/" target="_blank" rel="noopener">lancetcountdown.org</a></li>
+    <li>Air Quality Life Index, Energy Policy Institute, University of Chicago. <a href="https://aqli.epic.uchicago.edu/" target="_blank" rel="noopener">aqli.epic.uchicago.edu</a></li>
+    <li>Ministry of Jal Shakti. Lok Sabha Unstarred Question 558, water availability per person, 25 Jul 2024. <a href="https://eparlib.nic.in/bitstream/123456789/2981071/1/AU558_M0GrVi.pdf" target="_blank" rel="noopener">eparlib.nic.in</a></li>
+    <li>Ministry of Water Resources. Lok Sabha Unstarred Question 3776, Ganges sewage, 3 Jan 2019. <a href="https://eparlib.nic.in/bitstream/123456789/804473/1/AU3776.pdf" target="_blank" rel="noopener">eparlib.nic.in</a></li>
+    <li>Down To Earth (11 May 2018). <i>Minister claims Ganga will be 70-80% cleaner by March 2019, but is it realistic?</i> <a href="https://www.downtoearth.org.in/water/minister-claims-ganga-will-be-70-80-cleaner-by-march-2019-but-is-it-realistic--60510" target="_blank" rel="noopener">downtoearth.org.in</a></li>
+    <li>DD News. <i>Namami Gange programme: over 300 projects completed</i>. <a href="https://ddnews.gov.in/en/namami-gange-programme-over-300-projects-completed-rs-40000-crore-invested-in-rejuvenating-river-ganga/" target="_blank" rel="noopener">ddnews.gov.in</a></li>
+    <li>Euronews (15 Dec 2025). <i>Toxic smog blankets New Delhi</i>. <a href="https://www.euronews.com/video/2025/12/15/toxic-smog-blankets-new-delhi-plunging-air-quality-to-hazardous-levels" target="_blank" rel="noopener">euronews.com</a></li>
+    <li>Photo: Ashish Kushwaha on Unsplash, 22 Dec 2025, Unsplash Licence</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

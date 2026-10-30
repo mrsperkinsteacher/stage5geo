@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 05 - Measuring Education and Happiness | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 05</p>
+  <h1>Lesson 05: Measuring Education and Happiness</h1>
+  <p class="subheading">Counting what's easy to count - and what isn't</p>
+  <p class="intro">Can you measure happiness the way you measure money? This page has everything from Lesson 05 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson04.html">&larr; Lesson 04</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson06.html">Lesson 06 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson started with education. The <b>Human Development Index</b> combines three dimensions: a long and healthy life (life expectancy), knowledge (mean years of schooling and expected years of schooling) and standard of living (GNI per capita). Education gets its own dimension because it shapes almost everything else - income, health choices and opportunities. Photos of classrooms from Haiti to Kenya to Bangladesh showed how different school can look.</p>
+  <p>Then you compared <b>quantitative</b> indicators (things you can count, like GNI or literacy rate) with <b>qualitative</b> ones (things that are harder to count, like freedom of speech or safety). You looked at the <b>Happy Planet Index</b>, Bhutan's <b>Gross National Happiness</b>, and compared countries' press freedom with their HDI rank.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">World Education Issues: A Guide To Global Issues (Global Citizen)</div>
+    <p>The barriers keeping children out of school worldwide - poverty, gender, conflict and location.</p>
+    <p><a href="https://youtu.be/qX_O4EuP7-g" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+  <div class="res-item">
+    <div class="res-item-title">The Problem of Education Inequality (CNBC Reports)</div>
+    <p>How unequal access to education keeps wealth gaps going, between and within countries.</p>
+    <p><a href="https://youtu.be/T-JVpKku5SI" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://www.compassion.com.au/journal/where-kids-learn-10-classrooms-around-the-world" target="_blank" rel="noopener">10 classrooms around the world (Compassion Australia)</a> - the photos from this lesson. What's missing compared with your classroom?</li>
+    <li><a href="https://happyplanetindex.org/countries/AUS" target="_blank" rel="noopener">Happy Planet Index - Australia</a> - see how Australia scores on life expectancy, wellbeing and ecological footprint.</li>
+    <li><a href="https://rsf.org/en/index" target="_blank" rel="noopener">World Press Freedom Index (Reporters Without Borders)</a> - the ranking you used in today's press freedom task.</li>
+    <li><a href="https://hdr.undp.org/content/human-development-report-2025" target="_blank" rel="noopener">Human Development Report 2025 (UNDP)</a> - the source of the HDI ranks.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Quantitative indicator</b> - a measure you can count with numbers, e.g. GNI, literacy rate, life expectancy.</div>
+    <div class="term"><b>Qualitative indicator</b> - a measure that's harder to capture with numbers, from surveys not counts, e.g. freedom of speech, safety.</div>
+    <div class="term"><b>Empowerment</b> - having the knowledge, resources and opportunity to improve your own life.</div>
+    <div class="term"><b>Mean years of schooling</b> - how many years of school adults have actually completed, on average.</div>
+    <div class="term"><b>Expected years of schooling</b> - how many years of school a child starting today is expected to complete.</div>
+    <div class="term"><b>Happy Planet Index (HPI)</b> - rates countries on long, happy and sustainable lives, using life expectancy, life satisfaction and ecological footprint.</div>
+    <div class="term"><b>Gross National Happiness (GNH)</b> - Bhutan's way of measuring national progress by wellbeing, not just money.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/education/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-04-1024x1024.png" alt="SDG 4: Quality Education" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 4 - Quality Education</b><p>Education is one of the three dimensions of the HDI, and this goal aims for quality education for every child.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/peace-justice/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-16-1024x1024.png" alt="SDG 16: Peace, Justice and Strong Institutions" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 16 - Peace, Justice and Strong Institutions</b><p>Freedom of speech and a free press are qualitative indicators of how fair and safe a country's institutions are.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p>In the 2026 Happy Planet Index, <b>Australia ranked 103rd of 147</b> countries - 3rd for life expectancy and 19th for wellbeing, but only 131st for ecological footprint. A country can do well on some parts of wellbeing and badly on others, which a single number like GDP would hide.</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <div class="res-item">
+    <p><span class="news-date">2026</span>Reporters Without Borders released the 2026 World Press Freedom Index used in this lesson.</p>
+    <p class="src">Source: <a href="https://rsf.org/en/index" target="_blank" rel="noopener">Reporters Without Borders</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">2026</span>The Happy Planet Index released its 2026 results, ranking 147 countries.</p>
+    <p class="src">Source: <a href="https://happyplanetindex.org/countries/AUS" target="_blank" rel="noopener">Happy Planet Index</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Bhutan</b> - has measured Gross National Happiness since the 1970s, and led a UN resolution on happiness in 2011.</p>
+  <p><b>Finland</b> - tops happiness rankings without being the richest country in the world.</p>
+  <p><b>Norway and Singapore</b> - the pair in your SUPPORT box for comparing press freedom with HDI rank.</p>
+  <p><b>Australia</b> - 103rd of 147 on the 2026 Happy Planet Index.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Education policy adviser</b> - works out how to get more children into school and keep them there, at home or overseas.</p>
+  <p><b>Journalist</b> - reports the news - and depends on the press freedom you looked at today.</p>
+  <p><b>Survey researcher</b> - designs the questions used to measure qualitative things like happiness and safety.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>This lesson completes the HDI: <a href="lesson03.html">Lesson 03 (Trends in Wealth)</a> covered income and <a href="lesson04.html">Lesson 04 (Trends in Health)</a> covered life expectancy. <a href="lesson02.html">Lesson 02 (Mapping Wellbeing)</a> used life satisfaction scores on a map. Education comes back in <a href="lesson06.html">Lesson 06 (Inequality in Wellbeing (Syria))</a>, where conflict interrupts years of children's schooling.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>The debate about what to measure - money, happiness, or both - comes up again in senior Geography, Economics and Society and Culture.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Topic 14.5 (p.536) and Topic 14.8: Which qualitative indicators are used to measure human wellbeing and development? (pp.546-548)</li>
+    <li>Compassion Australia. <i>10 Eye-Opening Photos of Classrooms In the Developing World</i>. <a href="https://www.compassion.com.au/journal/where-kids-learn-10-classrooms-around-the-world" target="_blank" rel="noopener">compassion.com.au</a></li>
+    <li>Happy Planet Index (2026). <i>Australia</i>. <a href="https://happyplanetindex.org/countries/AUS" target="_blank" rel="noopener">happyplanetindex.org</a></li>
+    <li>Reporters Without Borders. <i>World Press Freedom Index</i>. <a href="https://rsf.org/en/index" target="_blank" rel="noopener">rsf.org</a></li>
+    <li>UNDP. <i>Human Development Report 2025</i>. <a href="https://hdr.undp.org/content/human-development-report-2025" target="_blank" rel="noopener">hdr.undp.org</a></li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

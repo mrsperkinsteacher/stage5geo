@@ -140,30 +140,6 @@
   .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
   .res-item p { margin: 4px 0; }
 
-  .video-group-label {
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 18px 0 8px 0;
-  }
-  .video-group-label:first-child { margin-top: 0; }
-
-  .from-lesson-tag {
-    display: inline-block;
-    background: var(--light-blue);
-    color: var(--ocean);
-    font-size: 0.68rem;
-    font-weight: bold;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
   .glossary-grid {
     display: flex;
     flex-wrap: wrap;
@@ -232,6 +208,15 @@
     color: var(--muted);
     text-align: center;
   }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
 </style>
 </head>
 <body>
@@ -267,133 +252,127 @@
 <div class="resource-subpage" id="box-summary">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
-  <p>This lesson taught you how to read a choropleth map - a map that uses colour shading to show how a value (like the Human Development Index) varies from place to place - using the <b>PQE method</b>: <b>P</b>attern (what's the overall trend?), <b>Q</b>uantify (use real numbers from the map/legend), <b>E</b>xception (what breaks the pattern, and why?).</p>
-<p>You applied PQE to a real HDI world map, then practised it again with a genuine 30-country life satisfaction dataset, mapping and describing the data yourselves. Along the way you met the Human Development Index itself - a UN measure combining income, education and life expectancy into a single score - as a second way (alongside the World Happiness Report) that wellbeing gets measured globally.</p>
+  <p>This lesson taught you to read a <b>choropleth map</b> - a map that uses different shades of the same colour to show a pattern in data. Darker usually means a higher value, lighter a lower one, and the legend tells you exactly what each shade means.</p>
+  <p>You used the <b>PQE method</b> - Pattern, Quantify, Exception - on a real Human Development Index (HDI) map. Very high HDI clusters in Western Europe, North America, East Asia and Australasia; low HDI clusters in Sub-Saharan Africa and in places affected by conflict, such as Afghanistan and Yemen. Then you built your own map from a 30-country life satisfaction data sheet (World Happiness Report 2026) and wrote your own PQE.</p>
 </div>
 
 <div class="resource-subpage" id="box-videos">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
-  <div class="video-group-label">From this lesson</div>
   <div class="res-item">
     <div class="res-item-title">Choropleth Maps (Pimlico Geography)</div>
-    <p>A short clip explaining how to read shading and legends on a choropleth map - the same map type used throughout this lesson.</p>
-    <p><a href="https://youtu.be/Gfn-664b4CE" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-<div class="res-item">
-    <div class="res-item-title">World Happiness Report: The Science of Happiness</div>
-    <p>Explains the Cantril Ladder - the life satisfaction scale behind the wellbeing scores you mapped in this lesson.</p>
-    <p><a href="https://www.youtube.com/watch?v=WxWqLH6GHnA" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-<div class="res-item">
-    <div class="res-item-title">Human Development Index (HDI) - The Geographer's Dictionary</div>
-    <p>A quick, clear explanation of how the HDI is calculated from income, education and life expectancy data.</p>
-    <p><a href="https://www.youtube.com/watch?v=UdyQYbtFFKE" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-  <div class="video-group-label">More to explore <span class="added-badge" data-added="2026-09-21">Added 21/09</span></div>
+    <p>How to read shading and legends on a choropleth map - the map type used all through this lesson.</p>
+    <p><a href="https://youtu.be/Gfn-664b4CE" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
   <div class="res-item">
-    <div class="res-item-title">Human Development Index | AQA GCSE Geography | Development Gap 4</div>
-    <p>A second, GCSE-level explainer covering what HDI measures and why it's used as a development indicator - useful if the Geographer's Dictionary version above didn't quite land.</p>
-    <p><a href="https://www.youtube.com/watch?v=OPKzI-7_li4" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-<div class="res-item">
-    <div class="res-item-title">How do we measure happiness? World Happiness Report 2023</div>
-    <p>A closer look at the survey methodology behind the life satisfaction scores you mapped in this lesson - what's actually being asked, and how it's turned into a number.</p>
-    <p><a href="https://www.youtube.com/watch?v=VMbaOcyDtsQ" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-<div class="res-item">
-    <div class="res-item-title">How to Read a Choropleth Map (BGCSE Geography tutorial)</div>
-    <p>A second choropleth-map walkthrough using a different worked example, if you want the reading skill explained a different way.</p>
-    <p><a href="https://www.youtube.com/watch?v=IRlSImUZYJM" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
+    <div class="res-item-title">World Happiness Report: The Science of Happiness</div>
+    <p>How happiness is actually measured. Is asking people to rate their life out of 10 useful, or unreliable?</p>
+    <p><a href="https://www.youtube.com/watch?v=WxWqLH6GHnA" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+  <div class="res-item">
+    <div class="res-item-title">Human Development Index (HDI) - The Geographer's Dictionary</div>
+    <p>A short, plain definition of the HDI - the measure behind the world map in this lesson.</p>
+    <p><a href="https://www.youtube.com/watch?v=UdyQYbtFFKE" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-interest">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
   <ul>
-    <li><a href="https://hdr.undp.org/data-center/human-development-index" target="_blank" rel="noopener">UNDP Human Development Index data centre</a> - explore the real, current HDI rankings and data for every country, published by the UN Development Programme.</li>
-    <li><a href="https://ourworldindata.org/human-development-index" target="_blank" rel="noopener">Our World in Data - Human Development Index</a> - interactive maps and charts showing how HDI has changed over time, country by country.</li>
-</ul>
+    <li><a href="https://ourworldindata.org/grapher/human-development-index" target="_blank" rel="noopener">Human Development Index world map (Our World in Data)</a> - the real, interactive choropleth map. Click any country to see its score over time.</li>
+    <li><a href="https://ourworldindata.org/grapher/happiness-cantril-ladder" target="_blank" rel="noopener">Life satisfaction (Cantril Ladder) map (Our World in Data)</a> - the source of your 30-country data sheet. Compare it with the HDI map - where do they disagree?</li>
+    <li><a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf" target="_blank" rel="noopener">UNDP Human Development Report 2025 - HDI table</a> - the official HDI score and rank for every country.</li>
+  </ul>
 </div>
 
 <div class="resource-subpage" id="box-glossary">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📖</span> Glossary</h2>
   <div class="glossary-grid">
-    <div class="term"><b>Choropleth map</b> - a map that uses colour shading to represent how much of a value exists in each area.</div>
-    <div class="term"><b>PQE method</b> - Pattern, Quantify, Exception - a structured way to describe and analyse a choropleth map.</div>
-    <div class="term"><b>Human Development Index (HDI)</b> - a UN measure combining income, education and life expectancy into a single score from 0 to 1.</div>
-    <div class="term"><b>Life satisfaction</b> - a self-reported measure of how happy or content people say they are with their lives, usually on a 0-10 scale.</div>
-</div>
+    <div class="term"><b>Choropleth map</b> - a map that uses different shades of the same colour to show a geographic pattern in data.</div>
+    <div class="term"><b>PQE</b> - Pattern, Quantify, Exception - the three-step method for analysing any map or data set.</div>
+    <div class="term"><b>Spatial pattern</b> - how something is distributed across space - where it clusters and where it's sparse.</div>
+    <div class="term"><b>Legend</b> - the key on a map that tells you exactly what each shade or symbol means.</div>
+    <div class="term"><b>HDI (Human Development Index)</b> - a UN measure combining life expectancy, education and income into one score from 0 to 1.</div>
+    <div class="term"><b>Life satisfaction</b> - how people rate their own life, from 0 (worst possible life) to 10 (best possible life).</div>
+    <div class="term"><b>Cartogram</b> - a map that resizes each country by the data, not by its land area.</div>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-sdgs">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
   <div class="sdg-grid">
-<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
-    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
-    <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>the whole point of mapping wellbeing is to see where inequality between places is greatest - directly this goal's focus.</p></div>
-</a>
-
-<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank" rel="noopener">
-    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-17-1024x1024.png" alt="SDG 17: Partnerships for the Goals" loading="lazy">
-    <div class="sdg-tile-text"><b>SDG 17 - Partnerships for the Goals</b><p>reliable global data like the HDI only exists because countries and the UN work together to collect and share it.</p></div>
-</a>
-</div>
-<p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>Mapping wellbeing shows exactly where the gaps between places are biggest - the gaps this goal is working to close.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-17-1024x1024.png" alt="SDG 17: Partnerships for the Goals" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 17 - Partnerships for the Goals</b><p>Global data like the HDI only exists because countries and the UN work together to collect and share it.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
 </div>
 
 <div class="resource-subpage" id="box-fact">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
-  <p>Norway has ranked among the very top countries on the Human Development Index for years, but it does not always top the World Happiness Report in the same year - a genuine example of an "exception" a geographer would flag using the PQE method, since two different, both legitimate, measures of wellbeing don't always agree on which country is "best off".</p>
+  <p><b>Seychelles</b> has an HDI of 0.848, classed 'very high' - far above most of Sub-Saharan Africa. That makes it a real <b>exception</b> on the map. An exception isn't a mistake in the data; it's often the most interesting thing on the map, because it tells you something else is going on.</p>
 </div>
 
 <div class="resource-subpage" id="box-news">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📰</span> In the News</h2>
-      <p><b>2026:</b> The UK's Office for National Statistics continued publishing its regular "Measures of National Well-being" dashboard, tracking indicators like life satisfaction, anxiety and personal worth alongside traditional economic statistics.</p>
-    <p class="src">Source: UK Office for National Statistics, ons.gov.uk</p>
-    <p><b>2026:</b> Australia's Measuring What Matters framework, first launched by the Australian Treasury in 2023, continued to be updated with fresh wellbeing data across its five themes: healthy, secure, sustainable, cohesive and prosperous.</p>
-    <p class="src">Source: Australian Treasury, treasury.gov.au</p>
+  <div class="res-item">
+    <p><span class="news-date">2026</span>The World Happiness Report 2026 was released. Your life satisfaction data sheet uses its scores, averaged over 2023-2025.</p>
+    <p class="src">Source: <a href="https://ourworldindata.org/grapher/happiness-cantril-ladder" target="_blank" rel="noopener">Our World in Data</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">2025</span>The UNDP published the Human Development Report 2025, with HDI scores for 2023.</p>
+    <p class="src">Source: <a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf" target="_blank" rel="noopener">UNDP</a></p>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-world">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
-      <p><b>Norway</b> - consistently ranks in the top handful of countries on the HDI, driven by high income, strong education access and long life expectancy.</p>
-    <p><b>Niger</b> - has consistently ranked among the lowest HDI scores globally, reflecting major gaps in income, education access and life expectancy - a useful real contrast when mapping global patterns.</p>
+  <p><b>Iceland</b> - the highest HDI in the world at 0.972 (2023 data).</p>
+  <p><b>Australia</b> - an HDI of 0.958, in the 'very high' group.</p>
+  <p><b>South Sudan</b> - the lowest HDI in the world at 0.388.</p>
+  <p><b>Seychelles</b> - 0.848, 'very high' - the exception that breaks the Sub-Saharan Africa pattern.</p>
 </div>
 
 <div class="resource-subpage" id="box-jobs">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
-  <p><b>GIS/cartographic analyst</b> - builds choropleth maps like the HDI map used in this lesson, turning raw country data into a map that tells a clear spatial story.</p>
-  <p><b>Statistician at an organisation like the UNDP</b> - compiles and calculates indices like the Human Development Index from raw income, education and life-expectancy data.</p>
+  <p><b>GIS analyst / cartographer</b> - turns raw data into maps, like the HDI map in this lesson, that tell a clear spatial story.</p>
+  <p><b>Data analyst at the UNDP</b> - calculates indexes like the HDI from income, education and life expectancy data.</p>
 </div>
 
 <div class="resource-subpage" id="box-related">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
-  <p>This lesson's mapping skill (PQE) is used again throughout the unit whenever a choropleth map appears. Lesson 01 (What is Human Wellbeing) introduced the ideas being mapped here; Lesson 03 (Trends in Wealth) digs deeper into the economic data (GDP/GNI) that feeds into indexes like the HDI.</p>
+  <p>This lesson builds on <a href="lesson01.html">Lesson 01 (What is Human Wellbeing)</a>, where you learned what wellbeing means. You'll use PQE again whenever a map appears in this unit. <a href="lesson03.html">Lesson 03 (Trends in Wealth)</a> looks at the income data that feeds into the HDI.</p>
 </div>
 
 <div class="resource-subpage" id="box-stage56">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
-  <p>Choropleth maps and the PQE (or similar PQE/GRASP) approach to describing them are core Stage 6 Geography skills, used constantly when analysing spatial data in the HSC course.</p>
+  <p>Reading maps, quantifying a pattern with real numbers and explaining exceptions are core skills in senior Geography, used whenever you analyse spatial data.</p>
 </div>
 
 <div class="resource-subpage" id="box-references">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
   <ul>
-    <li>United Nations Development Programme (2026). <i>Human Development Index</i>. hdr.undp.org/data-center/human-development-index</li>
-    <li>UK Office for National Statistics (2026). <i>Measures of National Well-being Dashboard</i>. ons.gov.uk</li>
-    <li>Australian Government - The Treasury (2026). <i>Measuring What Matters</i>. treasury.gov.au</li>
-</ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Topic 14.5: What are the spatial patterns of development on a global scale? (pp.536-537)</li>
+    <li>GTA NSW &amp; ACT Resource Pack, Worksheet 2.2: Mapping wellbeing (pp.10-11)</li>
+    <li>World Happiness Report 2026 (University of Oxford Wellbeing Research Centre), life evaluation scores via Our World in Data. <a href="https://ourworldindata.org/grapher/happiness-cantril-ladder" target="_blank" rel="noopener">ourworldindata.org</a> (CC BY)</li>
+    <li>Our World in Data. <i>Human Development Index</i>. <a href="https://ourworldindata.org/grapher/human-development-index" target="_blank" rel="noopener">ourworldindata.org</a> (CC BY)</li>
+    <li>UNDP. <i>Human Development Report 2025, Statistical Annex Table 1</i>. <a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf" target="_blank" rel="noopener">hdr.undp.org</a></li>
+  </ul>
 </div>
 
 <footer class="site-footer">
@@ -412,14 +391,6 @@ function showResourceHub() {
   document.getElementById('hub-grid').classList.remove('hidden');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
-(function(){
-  var DAYS_MS = 7 * 24 * 60 * 60 * 1000;
-  var now = new Date();
-  document.querySelectorAll('.added-badge[data-added]').forEach(function(el){
-    var added = new Date(el.getAttribute('data-added') + 'T00:00:00');
-    if (now - added > DAYS_MS) { el.style.display = 'none'; }
-  });
-})();
 </script>
 
 </body>

@@ -208,6 +208,15 @@
     color: var(--muted);
     text-align: center;
   }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
 </style>
 </head>
 <body>
@@ -243,114 +252,125 @@
 <div class="resource-subpage" id="box-summary">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
-  <p>This lesson unpacked the difference between <b>GDP</b> (Gross Domestic Product - the value of everything produced <i>inside</i> a country's borders) and <b>GNI</b> (Gross National Income - the income earned <i>by</i> a country's citizens and businesses, wherever in the world they earn it).</p>
-<p>You looked at how transnational corporations (TNCs) complicate GDP figures, then worked through three real case studies: Switzerland's MONET 2030 wellbeing-measurement system, Australia's own Measuring What Matters framework, and the puzzle of why tiny, oil-rich Qatar has one of the highest GDP-per-capita figures in the world despite a small population. You finished by looking at what GDP and GNI leave out altogether - inequality, environmental cost, unpaid work - and why "beyond GDP" measures matter.</p>
+  <p>This lesson compared the two main measures of a country's wealth. <b>GDP</b> (Gross Domestic Product) asks: <i>where was it made?</i> It counts everything produced inside a country's borders. <b>GNI</b> (Gross National Income) asks: <i>who earned it?</i> It counts what a country's own residents and businesses earn, wherever they earn it. You tested this with Sam Kerr's prize money and a South Korean car factory in Australia.</p>
+  <p>You saw how <b>transnational corporations</b> like Nike add to a country's GDP while the profit flows back home, and why neither GDP nor GNI shows pollution, stress, or how evenly wealth is shared - look at Rio de Janeiro, where favelas sit right next to wealthy neighbourhoods. Then you looked at countries measuring more than GDP: Switzerland's MONET 2030 and Australia's Measuring What Matters. Finally, you found out why Qatar's GDP per person is so high.</p>
 </div>
 
 <div class="resource-subpage" id="box-videos">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
   <div class="res-item">
-    <div class="res-item-title">200 years of wealth and health in 4 minutes (Gapminder / Hans Rosling)</div>
-    <p>Hans Rosling's famous animated data visualisation showing how income and life expectancy have changed together for every country in the world since 1810.</p>
-    <p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
-<div class="res-item">
-    <div class="res-item-title">Global wealth inequality explained</div>
-    <p>A short explainer on how wealth (not just income) is distributed extremely unevenly across the world's population.</p>
-    <p><a href="https://www.youtube.com/watch?v=uWSxzjyMNpU" target="_blank" rel="noopener">Watch on YouTube</a></p>
-</div>
+    <div class="res-item-title">200 Countries, 200 Years, 4 Minutes - Hans Rosling (BBC, The Joy of Stats)</div>
+    <p>Income and life expectancy for every country since 1810, animated. Which countries moved the most?</p>
+    <p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+  <div class="res-item">
+    <div class="res-item-title">Global Wealth Inequality - What You Never Knew You Never Knew</div>
+    <p>How wealth is actually shared across the world's population - the inequality GDP and GNI hide.</p>
+    <p><a href="https://www.youtube.com/watch?v=uWSxzjyMNpU" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-interest">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
   <ul>
-    <li><a href="https://www.visualcapitalist.com/global-wealth-pyramid/" target="_blank" rel="noopener">The Global Wealth Pyramid (Visual Capitalist)</a> - a widely-cited infographic showing how global wealth is distributed across income tiers - a good visual companion to the GDP/GNI distinction.</li>
-    <li><a href="https://www.credit-suisse.com/about-us/en/reports-research/global-wealth-report.html" target="_blank" rel="noopener">Global Wealth Report</a> - the long-running annual report on how wealth (not just income) is distributed across countries and individuals worldwide.</li>
-</ul>
+    <li><a href="https://www.visualcapitalist.com/the-global-distribution-of-wealth-shown-in-one-pyramid/" target="_blank" rel="noopener">The Global Wealth Pyramid (Visual Capitalist)</a> - the world's wealth shown in one pyramid, using UBS Global Wealth Report 2025 data. Which layer is Australia mostly in?</li>
+    <li><a href="https://worldmapper.org/the-world-in-2018/" target="_blank" rel="noopener">Worldmapper - The World in 2018</a> - every country resized by its share of the world's wealth. Which countries swell up, and which shrink?</li>
+    <li><a href="https://www.bfs.admin.ch/bfs/en/home/statistics/sustainable-development/monet-2030.html" target="_blank" rel="noopener">MONET 2030 (Swiss Federal Statistical Office)</a> - over 100 indicators Switzerland uses to track progress beyond GDP.</li>
+    <li><a href="https://www.abs.gov.au/statistics/measuring-what-matters" target="_blank" rel="noopener">Measuring What Matters (Australian Bureau of Statistics)</a> - Australia's own live dashboard of 50 wellbeing indicators.</li>
+    <li><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noopener">GDP per capita (World Bank)</a> - check the latest GDP per person for any country.</li>
+  </ul>
 </div>
 
 <div class="resource-subpage" id="box-glossary">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📖</span> Glossary</h2>
   <div class="glossary-grid">
-    <div class="term"><b>GDP (Gross Domestic Product)</b> - the total value of everything produced inside a country's borders in a year.</div>
-    <div class="term"><b>GNI (Gross National Income)</b> - the total income earned by a country's citizens and businesses, wherever in the world they earn it.</div>
-    <div class="term"><b>Transnational corporation (TNC)</b> - a company that operates in more than one country - its profits can complicate a single country's GDP figures.</div>
-    <div class="term"><b>GDP per capita</b> - GDP divided by population - used to compare average economic output between countries of very different sizes.</div>
-    <div class="term"><b>Beyond GDP</b> - the general push to measure national progress using wellbeing indicators as well as, or instead of, GDP alone.</div>
-</div>
+    <div class="term"><b>GDP (Gross Domestic Product)</b> - the value of all goods and services produced within a country's borders, no matter who produced them.</div>
+    <div class="term"><b>GNI (Gross National Income)</b> - the value of what a country's own residents and businesses earn, no matter where in the world they earned it.</div>
+    <div class="term"><b>TNC (transnational corporation)</b> - a company, like Nike, that operates and sells in many countries but sends profits back to its home country.</div>
+    <div class="term"><b>GDP per capita</b> - GDP divided by population - used to compare countries of very different sizes.</div>
+    <div class="term"><b>Beyond GDP</b> - measuring a country's progress with more than one economic number, as MONET 2030 and Measuring What Matters do.</div>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-sdgs">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
   <div class="sdg-grid">
-<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank" rel="noopener">
-    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-08-1024x1024.png" alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
-    <div class="sdg-tile-text"><b>SDG 8 - Decent Work and Economic Growth</b><p>GDP and GNI are direct measures of a country's economic growth - the foundation this SDG tracks.</p></div>
-</a>
-
-<a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
-    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
-    <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>high GDP or GNI can hide huge inequality within a country - exactly the gap this SDG targets.</p></div>
-</a>
-</div>
-<p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared framework for improving wellbeing globally by 2030.</p>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-08-1024x1024.png" alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 8 - Decent Work and Economic Growth</b><p>GDP and GNI are the main ways economic growth is measured - the growth this goal wants to be fair and decent.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/inequality/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-10-1024x1024.png" alt="SDG 10: Reduced Inequalities" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 10 - Reduced Inequalities</b><p>A high GDP can hide big gaps between rich and poor inside one country, like in Rio de Janeiro.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
 </div>
 
 <div class="resource-subpage" id="box-fact">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
-  <p>Qatar has one of the highest GDP-per-capita figures in the world - but this comes from dividing a huge oil-and-gas-driven GDP by a very small citizen population, much of which is made up of foreign workers whose earnings are counted in Qatar's GDP but often sent home as GNI to another country entirely. It is a real, concrete example of why GDP per capita alone can be a misleading measure of an average person's actual wellbeing.</p>
+  <p><b>Qatar</b> has one of the highest GDP per capita figures in the world, and it's real, not a statistical trick. Two reasons: a very small population, and extremely valuable natural gas and oil exports. Because GDP per capita divides by population, a small population with high export income pushes the figure up sharply.</p>
 </div>
 
 <div class="resource-subpage" id="box-news">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📰</span> In the News</h2>
-      <p><b>2026:</b> Switzerland's MONET 2030 system continued reporting against its full set of wellbeing indicators (spanning environment, society and economy), used alongside GDP by the Swiss Federal Statistical Office to track national progress.</p>
-    <p class="src">Source: Swiss Federal Statistical Office, bfs.admin.ch</p>
-    <p><b>2026:</b> Australia's Measuring What Matters framework, first launched in 2023, remained in active use by Federal Treasury as a companion to GDP when reporting on the nation's progress.</p>
-    <p class="src">Source: Australian Treasury, treasury.gov.au</p>
+  <div class="res-item">
+    <p><span class="news-date">Updated yearly</span>The ABS publishes Australia's Measuring What Matters indicators as a live dashboard. One thing to notice: there's no direct poverty-rate indicator, only 'Making ends meet' (whether people could raise $2,000 in an emergency).</p>
+    <p class="src">Source: <a href="https://www.abs.gov.au/statistics/measuring-what-matters" target="_blank" rel="noopener">Australian Bureau of Statistics</a></p>
+  </div>
+  <div class="res-item">
+    <p><span class="news-date">2025</span>The UBS Global Wealth Report 2025 data was turned into the Global Wealth Pyramid used in this lesson.</p>
+    <p class="src">Source: <a href="https://www.visualcapitalist.com/the-global-distribution-of-wealth-shown-in-one-pyramid/" target="_blank" rel="noopener">Visual Capitalist</a></p>
+  </div>
 </div>
 
 <div class="resource-subpage" id="box-world">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
-      <p><b>Switzerland</b> - uses its MONET 2030 system to track wellbeing alongside GDP, spanning environmental, social and economic indicators.</p>
-    <p><b>Qatar</b> - has extremely high GDP per capita driven by oil and gas exports and a small population - a real case study in why GDP per capita can mislead.</p>
-    <p><b>Australia</b> - reports Measuring What Matters annually alongside GDP, covering five wellbeing themes: healthy, secure, sustainable, cohesive and prosperous.</p>
+  <p><b>Switzerland</b> - tracks progress with MONET 2030 - over 100 environmental, social and economic indicators, including the poverty rate and gender wage gap.</p>
+  <p><b>Australia</b> - uses Measuring What Matters (2023), 50 indicators across five themes.</p>
+  <p><b>Qatar</b> - very high GDP per capita from a small population and gas and oil exports.</p>
+  <p><b>Rio de Janeiro, Brazil</b> - favelas next to wealthy neighbourhoods - one city, two very different lives.</p>
 </div>
 
 <div class="resource-subpage" id="box-jobs">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
-  <p><b>National accounts economist</b> - calculates official GDP and GNI figures for a government treasury or statistics office, the exact numbers behind today's lesson.</p>
-  <p><b>International trade analyst</b> - works inside a transnational corporation tracking how its cross-border operations and profits are reported in different countries, the real-world complication behind today's TNC discussion.</p>
+  <p><b>National accounts economist</b> - calculates the official GDP and GNI figures for a country's statistics office or treasury.</p>
+  <p><b>International trade analyst</b> - tracks how a transnational company's sales and profits move between countries.</p>
 </div>
 
 <div class="resource-subpage" id="box-related">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
-  <p>This lesson builds directly on Lesson 02 (Mapping Wellbeing), where you first met the Human Development Index - HDI actually uses income data related to GNI as one of its three components. Lesson 01 (What is Human Wellbeing) introduced the broader idea that wealth alone doesn't equal wellbeing, which this lesson explores in economic depth.</p>
+  <p>This lesson builds on <a href="lesson02.html">Lesson 02 (Mapping Wellbeing)</a>, where you met the HDI - its income part uses GNI per person. <a href="lesson04.html">Lesson 04 (Trends in Health)</a> uses the same Gapminder-style data to look at health, and <a href="lesson10.html">Lesson 10 (Resources, Trade &amp; Location)</a> comes back to TNCs and where the profit goes.</p>
 </div>
 
 <div class="resource-subpage" id="box-stage56">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
-  <p>GDP, GNI and "beyond GDP" measures are core content in both HSC Geography and HSC Economics/Business Studies - understanding what these measures do and don't capture is a skill that carries directly into senior study.</p>
+  <p>GDP, GNI and 'beyond GDP' measures come up again in senior Geography and in Economics and Business Studies, where knowing what a measure does and doesn't show really matters.</p>
 </div>
 
 <div class="resource-subpage" id="box-references">
   <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
   <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
   <ul>
-    <li>Swiss Federal Statistical Office (2026). <i>MONET 2030 - Sustainable Development Indicators</i>. bfs.admin.ch</li>
-    <li>Australian Government - The Treasury (2026). <i>Measuring What Matters</i>. treasury.gov.au</li>
-    <li>Gapminder Foundation. <i>200 Years, 200 Countries, 4 Minutes</i>. gapminder.org</li>
-    <li>Visual Capitalist. <i>The Global Wealth Pyramid</i>. visualcapitalist.com/global-wealth-pyramid/</li>
-</ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Topic 14.9: Which quantitative indicators are used to measure human wellbeing and development? (pp.551-554)</li>
+    <li>Federal Statistical Office (FSO), Switzerland. <i>MONET 2030 indicator system</i>. <a href="https://www.bfs.admin.ch/bfs/en/home/statistics/sustainable-development/monet-2030.html" target="_blank" rel="noopener">bfs.admin.ch</a></li>
+    <li>Australian Treasury / Australian Bureau of Statistics. <i>Measuring What Matters</i>. <a href="https://www.abs.gov.au/statistics/measuring-what-matters" target="_blank" rel="noopener">abs.gov.au</a></li>
+    <li>World Bank. <i>GDP per capita (current US$)</i>, 2025. <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noopener">data.worldbank.org</a></li>
+    <li>Oxford Insight Geography Australian Curriculum for NSW Stage 5 (2016, older edition), pp.306-307 (Qatar)</li>
+    <li>Worldmapper. <i>The World in 2018</i>. <a href="https://worldmapper.org/the-world-in-2018/" target="_blank" rel="noopener">worldmapper.org</a></li>
+    <li>Visual Capitalist. <i>The Global Distribution of Wealth Shown in One Pyramid</i> (UBS Global Wealth Report 2025 data). <a href="https://www.visualcapitalist.com/the-global-distribution-of-wealth-shown-in-one-pyramid/" target="_blank" rel="noopener">visualcapitalist.com</a></li>
+    <li>Photo: Nike store, Rick Obst, CC BY 2.0, via Wikimedia Commons</li>
+  </ul>
 </div>
 
 <footer class="site-footer">

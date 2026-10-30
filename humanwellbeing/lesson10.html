@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 10 - Resources, Trade & Location | Stage 5 Geography</title>
+<style>
+  :root {
+    --ocean: #065A82;
+    --teal: #1C7293;
+    --midnight: #21295C;
+    --mint: #02C39A;
+    --light-blue: #E8F1F6;
+    --light-mint: #E3F7F1;
+    --amber: #E3B23C;
+    --light-amber: #FBF1DB;
+    --border: #d5dee6;
+    --text: #222222;
+    --muted: #5a6b78;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    line-height: 1.55;
+  }
+  a { color: var(--ocean); }
+  header.page-header {
+    background: var(--midnight);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  header.page-header .crumb {
+    color: var(--mint);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+  header.page-header .crumb a { color: var(--mint); text-decoration: none; }
+  header.page-header .crumb a:hover { text-decoration: underline; }
+  header.page-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  header.page-header .subheading {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #cfe3ee;
+    font-style: italic;
+  }
+  header.page-header p.intro { margin: 0; color: #d9e2ec; }
+
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    font-size: 0.92rem;
+  }
+  .lesson-nav a {
+    text-decoration: none;
+    color: var(--ocean);
+    font-weight: bold;
+  }
+  .lesson-nav a:hover { text-decoration: underline; }
+  .lesson-nav .disabled { color: #aab4bc; font-weight: normal; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .resource-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  }
+  .resource-box:hover {
+    box-shadow: 0 4px 14px rgba(6, 90, 130, 0.15);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .resource-box .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .resource-box .rb-title {
+    font-weight: bold;
+    color: var(--midnight);
+    font-size: 1.02rem;
+  }
+
+  .resource-subpage {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    background: #ffffff;
+    margin-bottom: 10px;
+  }
+  .resource-subpage.active { display: block; }
+  .resource-grid.hidden { display: none; }
+  .subpage-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--midnight);
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.92rem;
+    cursor: pointer;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  .res-item {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .res-item-title { font-weight: bold; color: var(--midnight); margin-bottom: 4px; }
+  .res-item p { margin: 4px 0; }
+
+  .glossary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .term {
+    background: var(--light-blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.94rem;
+    flex: 1 1 260px;
+  }
+  .term b { color: var(--midnight); }
+
+  .sdg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sdg-tile {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--light-mint);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .sdg-tile:hover {
+    box-shadow: 0 4px 14px rgba(2, 195, 154, 0.28);
+    transform: translateY(-2px);
+  }
+  .sdg-tile img { width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0; }
+  .sdg-tile-text b { color: var(--midnight); display: block; margin-bottom: 2px; }
+  .sdg-tile-text p { margin: 0; font-size: 0.92rem; }
+  .sdg-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 10px; }
+
+  p.src { color: var(--muted); font-size: 0.85rem; font-style: italic; margin-top: 8px; }
+
+  .added-badge {
+    display: inline-block;
+    background: var(--light-mint);
+    color: var(--teal);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  #box-fact { background: var(--light-amber); border-color: var(--amber); }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  footer.site-footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .news-date { display:inline-block; font-size:0.75rem; font-weight:bold; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; margin-right:6px; }
+  @media (max-width: 600px) {
+    body { padding: 16px 16px 48px 16px; }
+    header.page-header { padding: 22px 20px; }
+    header.page-header h1 { font-size: 1.45rem; }
+    .resource-subpage { padding: 20px 18px; }
+    .resource-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-box { padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="crumb"><a href="index.html">Stage 5 Geography</a> &nbsp;&rsaquo;&nbsp; Human Wellbeing &nbsp;&rsaquo;&nbsp; Lesson 10</p>
+  <h1>Lesson 10: Resources, Trade &amp; Location</h1>
+  <p class="subheading">Why oil wealth doesn't guarantee wellbeing</p>
+  <p class="intro">Singapore has almost no natural resources, yet some of the highest wellbeing in the world. How? This page has everything from Lesson 10 to dig into further.</p>
+</header>
+
+<nav class="lesson-nav">
+  <a href="lesson09.html">&larr; Lesson 09</a>
+  <a href="index.html">All lessons</a>
+  <a href="lesson11.html">Lesson 11 &rarr;</a>
+</nav>
+
+<div class="resource-grid" id="hub-grid">
+  <div class="resource-box" onclick="showResourceSub('summary')"><span class="icon">📋</span><span class="rb-title">Summary of Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('videos')"><span class="icon">🎥</span><span class="rb-title">Linked Videos</span></div>
+  <div class="resource-box" onclick="showResourceSub('interest')"><span class="icon">🔎</span><span class="rb-title">Extra Things of Interest</span></div>
+  <div class="resource-box" onclick="showResourceSub('glossary')"><span class="icon">📖</span><span class="rb-title">Glossary</span></div>
+  <div class="resource-box" onclick="showResourceSub('sdgs')"><span class="icon">🌍</span><span class="rb-title">Link to the SDGs</span></div>
+  <div class="resource-box" onclick="showResourceSub('fact')"><span class="icon">💡</span><span class="rb-title">Did You Know?</span></div>
+  <div class="resource-box" onclick="showResourceSub('news')"><span class="icon">📰</span><span class="rb-title">In the News</span></div>
+  <div class="resource-box" onclick="showResourceSub('world')"><span class="icon">🗺️</span><span class="rb-title">Where in the World?</span></div>
+  <div class="resource-box" onclick="showResourceSub('jobs')"><span class="icon">💼</span><span class="rb-title">Careers Connected to This Lesson</span></div>
+  <div class="resource-box" onclick="showResourceSub('related')"><span class="icon">🔗</span><span class="rb-title">Related Lessons</span></div>
+  <div class="resource-box" onclick="showResourceSub('stage56')"><span class="icon">🎓</span><span class="rb-title">Where This Leads</span></div>
+  <div class="resource-box" onclick="showResourceSub('references')"><span class="icon">📚</span><span class="rb-title">References and Further Reading</span></div>
+</div>
+
+<div class="resource-subpage" id="box-summary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📋</span> Summary of Lesson</h2>
+  <p>This lesson looked at how <b>natural resources, trade and location</b> can improve or limit a country's wellbeing. Transnational corporations can boost a country's GDP, but the profits often go back to the company's home country.</p>
+  <p><b>Nigeria</b> and <b>Kuwait</b> both have large oil reserves but very different outcomes: Kuwait has used oil money to fund public services, while in Nigeria the wealth hasn't reached most citizens - an example of the <b>resource curse</b>. Location matters too: <b>landlocked</b> countries like Mongolia, Kazakhstan and Burundi must cross another country's border to reach a port. And <b>Singapore</b> shows the opposite - almost no resources, but a location on one of the world's busiest shipping routes and smart investment in its port, education and finance.</p>
+</div>
+
+<div class="resource-subpage" id="box-videos">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎥</span> Linked Videos</h2>
+  <div class="res-item">
+    <div class="res-item-title">Why is Singapore so rich? (CNBC Explains, 2019)</div>
+    <p>What does Singapore's location give it, and what did it rely on instead of oil or minerals?</p>
+    <p><a href="https://www.youtube.com/watch?v=cRDgnLa42PQ" target="_blank" rel="noopener">Watch the video</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-interest">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔎</span> Extra Things of Interest</h2>
+  <ul>
+    <li><a href="https://www.un.org/ohrlls/node/1164" target="_blank" rel="noopener">List of Landlocked Developing Countries (UN-OHRLLS)</a> - find every landlocked developing country. Which continent has the most?</li>
+    <li><a href="https://www.mot.gov.sg/what-we-do/maritime/global-maritime-hub/" target="_blank" rel="noopener">Singapore as a Global Maritime Hub (Ministry of Transport)</a> - how Singapore built one of the world's busiest ports.</li>
+    <li><a href="https://u4.no/publications/natural-resource-management-transparency-and-governance/fullversion" target="_blank" rel="noopener">Natural resource management, transparency and governance (U4)</a> - why some resource-rich countries struggle.</li>
+  </ul>
+</div>
+
+<div class="resource-subpage" id="box-glossary">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📖</span> Glossary</h2>
+  <div class="glossary-grid">
+    <div class="term"><b>Natural resource</b> - materials from nature, like oil, gold or fertile land, that people use or trade.</div>
+    <div class="term"><b>Landlocked</b> - a country with no direct access to the ocean.</div>
+    <div class="term"><b>TNC (transnational corporation)</b> - a large company that operates in more than one country.</div>
+    <div class="term"><b>Resource curse</b> - when a country rich in natural resources ends up with lower wellbeing than expected, often because of corruption or poor management.</div>
+    <div class="term"><b>Governance</b> - how a country is run - how decisions are made and how money is managed.</div>
+    <div class="term"><b>Infrastructure</b> - the roads, ports, rail and services a country needs to work and trade.</div>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-sdgs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🌍</span> Link to the SDGs</h2>
+  <div class="sdg-grid">
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/economic-growth/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-08-1024x1024.png" alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 8 - Decent Work and Economic Growth</b><p>Good jobs and fair growth depend on how resources and trade are managed.</p></div>
+    </a>
+    <a class="sdg-tile" href="https://www.un.org/sustainabledevelopment/globalpartnerships/" target="_blank" rel="noopener">
+      <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-17-1024x1024.png" alt="SDG 17: Partnerships for the Goals" loading="lazy">
+      <div class="sdg-tile-text"><b>SDG 17 - Partnerships for the Goals</b><p>Trade between countries is one of the main partnerships this goal is about.</p></div>
+    </a>
+  </div>
+  <p class="sdg-note">The United Nations' 17 Sustainable Development Goals (SDGs) are the world's shared plan for improving wellbeing everywhere by 2030.</p>
+</div>
+
+<div class="resource-subpage" id="box-fact">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💡</span> Did You Know?</h2>
+  <p><b>Singapore's HDI is 0.946 - 13th in the world</b> (UNDP, 2023 data), even though it has almost no natural resources of its own. Its wealth is built almost entirely on trade, services and location. Was your Geo Spark guess right?</p>
+</div>
+
+<div class="resource-subpage" id="box-news">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📰</span> In the News</h2>
+  <div class="res-item">
+    <p><span class="news-date">Feb 2026</span>The IMF reviewed Kuwait's economy, including the risk from relying so heavily on oil prices.</p>
+    <p class="src">Source: <a href="https://www.imf.org/en/news/articles/2026/02/23/pr-26061-kuwait-imf-executive-board-concludes-2025-article-iv-consultation" target="_blank" rel="noopener">IMF</a></p>
+  </div>
+</div>
+
+<div class="resource-subpage" id="box-world">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🗺️</span> Where in the World?</h2>
+  <p><b>Singapore</b> - a tiny island on a major shipping route, with very high wellbeing.</p>
+  <p><b>Nigeria</b> - one of Africa's largest oil producers, with high poverty rates.</p>
+  <p><b>Kuwait</b> - a small oil-rich nation that funds public services, healthcare and education with oil money.</p>
+  <p><b>Mongolia and Burundi</b> - landlocked countries that must cross borders to reach a port.</p>
+</div>
+
+<div class="resource-subpage" id="box-jobs">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>💼</span> Careers Connected to This Lesson</h2>
+  <p><b>Logistics and shipping manager</b> - moves goods through ports like Singapore's around the world.</p>
+  <p><b>Resource economist</b> - advises governments on how to manage oil and mining wealth fairly.</p>
+  <p><b>Anti-corruption investigator</b> - tracks money that goes missing from public resources.</p>
+</div>
+
+<div class="resource-subpage" id="box-related">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🔗</span> Related Lessons</h2>
+  <p>TNCs first came up in <a href="lesson03.html">Lesson 03 (Trends in Wealth)</a>. This lesson continues the 'one cause at a time' run after <a href="lesson07.html">Lesson 07 (Why Wellbeing Varies)</a>, <a href="lesson08.html">Lesson 08 (Environmental Factors (India))</a> and <a href="lesson09.html">Lesson 09 (Climate Factors)</a>. <a href="lesson11.html">Lesson 11 (Population Factors)</a> looks at population next.</p>
+</div>
+
+<div class="resource-subpage" id="box-stage56">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>🎓</span> Where This Leads</h2>
+  <p>Trade, resources and global economic links are big topics in senior Geography, Economics and Business Studies.</p>
+</div>
+
+<div class="resource-subpage" id="box-references">
+  <a class="back-link" onclick="showResourceHub()">&larr; Back to all resources</a>
+  <h2 class="subpage-title"><span>📚</span> References and Further Reading</h2>
+  <ul>
+    <li>Jacaranda GeoActive 2 NSW Syllabus Geography Stage 5, 6th ed. Lesson 14.9 (p.551) and Lesson 15.4 (pp.574-575)</li>
+    <li>UNDP. <i>Human Development Report 2025, Statistical Annex Table 1</i>. <a href="https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf" target="_blank" rel="noopener">hdr.undp.org</a></li>
+    <li>U4 Anti-Corruption Resource Centre (Chêne, 2017). <a href="https://u4.no/publications/natural-resource-management-transparency-and-governance/fullversion" target="_blank" rel="noopener">u4.no</a></li>
+    <li>IMF (Feb 2026). <i>Kuwait: 2025 Article IV Consultation</i>. <a href="https://www.imf.org/en/news/articles/2026/02/23/pr-26061-kuwait-imf-executive-board-concludes-2025-article-iv-consultation" target="_blank" rel="noopener">imf.org</a></li>
+    <li>UN-OHRLLS. <i>List of Landlocked Developing Countries</i>. <a href="https://www.un.org/ohrlls/node/1164" target="_blank" rel="noopener">un.org</a></li>
+    <li>Singapore Ministry of Transport. <i>Global Maritime Hub</i>. <a href="https://www.mot.gov.sg/what-we-do/maritime/global-maritime-hub/" target="_blank" rel="noopener">mot.gov.sg</a></li>
+    <li>CNBC International (2019). <i>Why is Singapore so rich? | CNBC Explains</i> (YouTube)</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  Stage 5 Geography - Human Wellbeing &nbsp;|&nbsp; Dig a bit deeper than the lesson made you.
+</footer>
+
+<script>
+function showResourceSub(key) {
+  document.getElementById('hub-grid').classList.add('hidden');
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('box-' + key).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function showResourceHub() {
+  document.querySelectorAll('.resource-subpage').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('hub-grid').classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
