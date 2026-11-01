@@ -1004,7 +1004,7 @@ function sendFeedback(e, form) {
     name: form.name.value, class: form.class.value, message: form.message.value,
     page: location.href, _subject: 'EMP site feedback - Stage 5 Geography', _captcha: 'false'
   };
-  fetch('https://formsubmit.co/ajax/michelle.perkins@spcc.nsw.edu.au', {
+  fetch('https://formsubmit.co/ajax/' + ['michelle.perkins','spcc.nsw.edu.au'].join('@'), {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
   }).then(function(r){ return r.json(); }).then(function(){
     btn.textContent = 'Sent ✓';
