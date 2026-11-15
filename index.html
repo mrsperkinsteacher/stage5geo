@@ -3,77 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Year 9 & 10 Geography | Stage 5</title>
+<title>Stage 5 Geography | Years 9-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#21295C; --teal:#1C7293; --forest:#1E4D3B; --amber:#E3B23C;
-          --emp-navy:#3d2b1f; --emp-teal:#5c8a5c; --emp-clay:#a6512d; }
-  * { box-sizing: border-box; }
-  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; margin:0; color:#222; background:#fff; }
-  .top { background:var(--navy); color:#fff; padding:2.6rem 1rem; text-align:center; }
-  .top .tophome { margin:0 0 .9rem; }
-  .top .tophome a { color:#fff; opacity:.75; text-decoration:none; font-size:.8rem; letter-spacing:.02em; }
-  .top .tophome a:hover { opacity:1; text-decoration:underline; }
-  .top .kicker { font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; opacity:.8; }
-  .top h1 { margin:.4rem 0 .2rem; font-size:2.2rem; }
-  .top p { margin:0; opacity:.9; }
-  main { max-width:900px; margin:0 auto; padding:1.5rem 1rem 3rem; }
-  .intro { background:#f2f7fa; border:1px solid #d7e5ee; border-radius:12px; padding:1.1rem 1.4rem; margin:1.5rem 0; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.5rem; }
-  @media (max-width:640px) { .grid { grid-template-columns:1fr; } }
-  .card { border:1px solid #d7e5ee; border-radius:12px; padding:1.3rem 1.4rem; display:flex; flex-direction:column; }
-  .card h2 { margin:.1rem 0 .4rem; font-size:1.25rem; }
-  .card .fa { font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; }
-  .card p { font-size:.93rem; margin:.4rem 0 1rem; flex:1; }
-  .card a.btn, .card span.btn { display:inline-block; align-self:flex-start; color:#fff; text-decoration:none; padding:.5rem 1.1rem; border-radius:8px; font-size:.92rem; }
-  .c-cp .fa { color:var(--amber); } .c-cp h2 { color:var(--forest); } .c-cp a.btn { background:var(--forest); }
-  .c-emp .fa { color:var(--emp-clay); } .c-emp h2 { color:var(--emp-navy); } .c-emp a.btn { background:var(--emp-navy); }
-  .c-hw .fa { color:var(--teal); } .c-hw h2 { color:var(--navy); } .c-hw a.btn { background:var(--navy); }
-  .c-sb .fa { color:var(--forest); } .c-sb h2 { color:var(--navy); } .c-sb span.btn { background:var(--navy); }
-  .card.soon { opacity:.65; }
-  .card.soon span.btn { background:#b8c6cf; }
-  footer { text-align:center; font-size:.85rem; color:#777; padding:2rem 1rem; border-top:1px solid #eee; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#0f2a3a}
+body{background:#0f2a3a;min-height:100vh;color:#f7eee9;font-family:Inter,system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.top{padding:12px 0 4px}
+h1,h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+.lbl{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ffc20e}
+.ban{min-height:250px;border-radius:18px;background-size:cover;background-position:center;display:flex;align-items:flex-end}
+.ban .t{background:rgba(10,30,42,.8);margin:18px;padding:14px 20px;border-radius:12px;border:1px solid rgba(255,194,14,.55);max-width:560px}
+.ban h1{font-size:44px;line-height:1.05}
+.hero{background:#173a4e;border:1px solid rgba(255,194,14,.35);border-radius:18px;padding:24px;text-align:center}
+.hero h1{font-size:42px;line-height:1.05}.hero .bar{width:60px;height:6px;border-radius:99px;background:#ffc20e;margin:12px auto 0}
+.intro{margin:16px 0 0;font-size:15px}
+.strip{margin-top:16px;border-radius:16px;background:#173a4e;border:1px solid rgba(255,194,14,.35);border-left:8px solid #ffc20e;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;text-decoration:none;color:inherit}
+.strip h2{font-size:24px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.card{border-radius:16px;overflow:hidden;background:#173a4e;text-decoration:none;color:inherit;display:flex;flex-direction:column;border:1px solid rgba(255,194,14,.35);transition:transform .15s}
+a.card:hover,a.strip:hover,a.wide:hover{transform:translateY(-3px)}
+.card .pic{aspect-ratio:4/3;background-size:cover;background-position:center}
+.card .in{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column}
+.card h2{font-size:22px;line-height:1.1;margin:4px 0 6px}.card p{font-size:13px}.card .desc{flex:1}
+.go{margin-top:10px;align-self:flex-start;background:#ffc20e;color:#0f2a3a;font-weight:800;font-size:12px;border-radius:99px;padding:6px 13px;white-space:nowrap}
+.gold{background:#ffc20e;color:#003146}
+.soon{opacity:.75}.soon .go{background:rgba(127,127,127,.25);color:inherit}.soon .pic{filter:grayscale(.45)}
+.wide{margin-top:14px;border-radius:16px;display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:18px;background:#173a4e;border:1px solid rgba(255,194,14,.35);overflow:hidden;padding-right:18px;text-decoration:none;color:inherit;transition:transform .15s}
+.wide .go{align-self:center;justify-self:start}.wide .pic{height:140px;background-size:cover;background-position:center}.wide h2{font-size:24px}
+.has{font-size:12px;opacity:.85;margin-top:6px}
+.ft{text-align:center;padding:30px 0 26px}.enc{font-family:Caveat,cursive;font-size:26px;color:#ffc20e;min-height:1.3em}.nm{font-size:12px;opacity:.75;margin-top:4px}.cr{font-size:11px;opacity:.55;margin-top:6px}.cr a{color:inherit}
+.note{font-size:11px;opacity:.55;margin-top:6px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.ban h1,.hero h1{font-size:34px}.ban .t{margin:10px}.wide{grid-template-columns:1fr;padding:0 0 14px}.wide>div,.wide>span{margin:0 14px}.strip{flex-direction:column;align-items:flex-start}}
 </style>
 <style id="mp-trail-css">.mp-trail{margin:0 0 .6rem!important;padding:0!important;font-size:12px!important;line-height:1.5!important;letter-spacing:.02em!important;font-weight:400!important;text-transform:none!important;text-align:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;grid-column:1/-1;max-width:none}.mp-trail a{color:inherit!important;text-decoration:none!important;font:inherit!important}.mp-trail a:hover{text-decoration:underline!important}.mp-trail .mp-sep{margin:0 .45em}nav>.mp-trail{max-width:1100px;margin:0 auto!important;padding:.45rem 2rem 0!important}</style>
 </head>
 <body>
-<div class="top">
-  <p class="mp-trail" style="color:rgb(255, 255, 255);opacity:0.85"><a href="https://mrsperkinsteacher.github.io/">Mrs Perkins home</a><span class="mp-sep">/</span><a href="https://mrsperkinsteacher.github.io/stage5geo/">Stage 5 Geography</a></p>
-  <div class="kicker">Stage 5 Geography | NSW Syllabus (2024)</div>
-  <h1>Year 9 &amp; 10 Geography</h1>
-  <p>Change, management and the wellbeing of people and places.</p>
+<div class="wrap">
+<div class="top"><p class="mp-trail" style="color:rgb(247, 238, 233);opacity:0.85"><a href="https://mrsperkinsteacher.github.io/">Mrs Perkins home</a><span class="mp-sep">/</span><a href="https://mrsperkinsteacher.github.io/stage5geo/">Stage 5 Geography</a></p></div>
+<div class="ban" style="background-image:url(images/banner.webp)"><div class="t"><p class="lbl">Years 9-10 &nbsp;|&nbsp; NSW Syllabus (2024)</p><h1>Stage 5 Geography</h1><p>Change, management and the wellbeing of people and places.</p></div></div>
+<div class="grid">
+<div class="card soon"><div class="pic" style="background-image:url(images/biomes.webp)" role="img" aria-label=""></div><div class="in"><p class="lbl">Term 1</p><h2>Biomes and Sustainable Agriculture</h2><p class="desc">How biomes support life, and how they can be managed sustainably to feed a growing population.</p><span class="go">Coming 2027</span></div></div>
+<a class="card" href="changingplaces/index.html"><div class="pic" style="background-image:url(images/changingplaces.webp)" role="img" aria-label=""></div><div class="in"><p class="lbl">Term 2</p><h2>Changing Places</h2><p class="desc">How and why places change over time, and what that means for the people who live there.</p><span class="go">Open unit &rarr;</span></div></a>
+<a class="card" href="emp/index.html"><div class="pic" style="background-image:url(images/emp.webp)" role="img" aria-label=""></div><div class="in"><p class="lbl">Term 3</p><h2>Environmental Change and Management</h2><p class="desc">Choosing a local environmental issue and evaluating the best way to manage it - includes the full assessment task.</p><span class="go">Open unit &rarr;</span></div></a>
+<a class="card" href="humanwellbeing/index.html"><div class="pic" style="background-image:url(images/humanwellbeing.webp)" role="img" aria-label=""></div><div class="in"><p class="lbl">Term 4</p><h2>Human Wellbeing</h2><p class="desc">How wellbeing is measured and experienced differently across people and places.</p><span class="go">Open unit &rarr;</span></div></a>
 </div>
-<main>
-  <div class="intro">
-    Welcome! This site holds the weekly lessons, activities and assessment resources for Stage 5 Geography units.
-    Choose your topic below.
-  </div>
-  <div class="grid">
-    <div class="card c-sb soon">
-      <div class="fa">Unit</div>
-      <h2>Biomes and Sustainable Agriculture</h2>
-      <p>How biomes support life, and how they can be managed sustainably to feed a growing population.</p>
-      <span class="btn">Term 1, 2027</span>
-    </div>
-    <div class="card c-cp soon">
-      <div class="fa">Unit</div>
-      <h2>Changing Places</h2>
-      <p>How and why places change over time, and what that means for the people who live there.</p>
-      <span class="btn">Term 2, 2027</span>
-    </div>
-    <div class="card c-emp">
-      <div class="fa">Unit</div>
-      <h2>Environmental Change and Management</h2>
-      <p>Choosing a local environmental issue and evaluating the best way to manage it - includes the full assessment task.</p>
-      <a class="btn" href="emp/index.html">Open unit</a>
-    </div>
-    <div class="card c-hw">
-      <div class="fa">Unit</div>
-      <h2>Human Wellbeing</h2>
-      <p>How wellbeing is measured and experienced differently across people and places.</p>
-      <a class="btn" href="humanwellbeing/index.html">Open unit</a>
-    </div>
-  </div>
-</main>
-<footer>Stage 5 Geography - NSW Geography 7-10 Syllabus (2024)<div style="margin-top:6px;font-size:11px;color:rgba(0,0,0,.35)">This website is a guide only - your Assessment Task and Marking Guide, and your class teacher, are what you need to follow.</div></footer>
+<a class="wide" href="elective/index.html"><div class="pic" style="background-image:url(images/elective.webp)"></div><div><p class="lbl">Elective</p><h2>Stage 5 Geography Elective</h2><p style="font-size:13px">Oceanography, geopolitics, extreme environments, primary production and more.</p></div><span class="go">Explore &rarr;</span></a>
+<footer class="ft"><p class="enc" id="enc"></p><p class="nm">Mrs Perkins &middot; Stage 5 Geography &middot; NSW Geography 7-10 Syllabus (2024)</p><p class="note">This website is a guide only - your Assessment Task and Marking Guide, and your class teacher, are what you need to follow.</p><p class="cr">Artwork: Whimsical Landscapes and Hot Air Balloons by <a href="https://www.etsy.com/shop/DelightfulDigiArt">DelightfulDigiArt</a> &middot; World map by <a href="https://www.teacherspayteachers.com/store/cartokoen">cartoKoen</a></p></footer>
+</div>
+<script>(function(){var L=["Small steps every lesson add up to big understanding.", "Curious minds make great geographers.", "You do not have to be perfect - just keep going.", "Ask the question. Someone else is wondering too.", "Every map started as a blank page.", "Your effort today is tomorrow's confidence.", "Look closer. Geography is everywhere you go.", "Be kind, work hard, and enjoy the journey."];var e=document.getElementById("enc");if(e)e.textContent=L[Math.floor(Math.random()*L.length)];})();</script>
 </body>
 </html>
