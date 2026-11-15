@@ -25,13 +25,52 @@
 .metarow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.metarow>span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 12px;font-size:.82rem;line-height:1.4}.metarow b{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;opacity:.85;margin-right:6px}.kicker{display:flex;flex-wrap:wrap;gap:2px 10px}.kicker .nw{white-space:nowrap}.kicker .sep{opacity:.6}@media(max-width:560px){.kicker .sep{display:none}.kicker{flex-direction:column}}.nobr{white-space:nowrap}h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty} /* mp-tidy */
 </style>
 <style id="mp-trail-css">.mp-trail{margin:0 0 .6rem!important;padding:0!important;font-size:12px!important;line-height:1.5!important;letter-spacing:.02em!important;font-weight:400!important;text-transform:none!important;text-align:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;grid-column:1/-1;max-width:none}.mp-trail a{color:inherit!important;text-decoration:none!important;font:inherit!important}.mp-trail a:hover{text-decoration:underline!important}.mp-trail .mp-sep{margin:0 .45em}nav>.mp-trail{max-width:1100px;margin:0 auto!important;padding:.45rem 2rem 0!important}</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" id="mp-theme-fonts">
+<style id="mp-theme">
+html,body{background:#0f2a3a!important}
+body{font-family:Inter,system-ui,sans-serif!important;color:#f7eee9!important}
+h1,h2{font-family:"DM Serif Display",Georgia,serif!important;font-weight:400!important}
+.trailbar{max-width:1100px;margin:0 auto;padding:12px 16px 4px}
+.top{max-width:1100px;margin:0 auto!important;width:calc(100% - 32px);border-radius:18px;min-height:280px;display:flex!important;align-items:flex-end;background:url(../images/changingplaces.webp) center 45%/cover!important;padding:0!important;text-align:left!important;color:#f7eee9!important}
+.top .t{background:rgba(10,30,42,.82);margin:18px;padding:16px 22px;border-radius:12px;border:1px solid rgba(255,194,14,.55);max-width:620px}
+.top .kicker{color:#ffc20e!important;font-size:11px!important;font-weight:800;letter-spacing:.12em!important;opacity:1!important;justify-content:flex-start}
+.top h1{font-size:44px!important;line-height:1.05;margin:.2rem 0 .4rem!important;color:#f7eee9!important}
+.top p{opacity:1!important;margin:0}
+main{max-width:1100px!important;padding:0 16px 40px!important}
+a.back{display:inline-block;margin-top:14px;background:#173a4e;border:1px solid #9fd1d2;border-radius:99px;padding:5px 14px;color:#f7eee9!important;font-size:13px;font-weight:600;text-decoration:none}
+.intro{background:#173a4e!important;border:1px solid rgba(255,194,14,.35)!important;border-radius:16px!important;color:#f7eee9!important}
+.eq{background:#173a4e;border:1px solid rgba(255,194,14,.35)!important;border-left:8px solid #ffc20e!important;border-radius:16px;padding:14px 22px!important;font-style:normal!important;color:#f7eee9!important;font-family:"DM Serif Display",Georgia,serif;font-size:20px;line-height:1.3}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.card{background:#173a4e!important;border:1px solid #9fd1d2!important;border-radius:16px!important;overflow:hidden;color:#f7eee9;transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.card::before{content:'';display:block;height:80px;margin:-1.2rem -1.3rem .9rem;background:url(../images/changingplaces.webp) no-repeat;background-size:280%}
+.card:nth-child(7n+1)::before{background-position:5% 10%}.card:nth-child(7n+2)::before{background-position:45% 35%}.card:nth-child(7n+3)::before{background-position:90% 15%}.card:nth-child(7n+4)::before{background-position:20% 75%}.card:nth-child(7n+5)::before{background-position:65% 90%}.card:nth-child(7n+6)::before{background-position:95% 60%}.card:nth-child(7n)::before{background-position:35% 50%}
+.card .wk{color:#ffc20e!important;font-size:11px!important;font-weight:800;letter-spacing:.12em!important}
+.card h2{font-size:21px!important;color:#f7eee9!important;line-height:1.15}
+.card p{color:#f7eee9;opacity:.85;font-size:13px!important}
+.card a.btn{background:#ffc20e!important;color:#0f2a3a!important;border-radius:99px!important;font-weight:800;font-size:12px!important;padding:6px 13px!important}
+.card.soon{opacity:.55!important}.card.soon::before{filter:grayscale(.6)}
+.card.soon span.btn{background:rgba(255,255,255,.15)!important;color:#f7eee9!important;border-radius:99px!important;font-size:12px!important}
+.feature{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:16px 0;border-radius:16px;background:#173a4e;border:1px solid rgba(255,194,14,.45);border-left:8px solid #ffc20e;padding:16px 22px;text-decoration:none;color:#f7eee9;transition:transform .15s}
+.feature:hover{transform:translateY(-3px)}
+.feature .lbl{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ffc20e;margin:0}
+.feature h2{font-size:28px;margin:2px 0 4px;color:#f7eee9}
+.feature p{margin:0;font-size:14px;opacity:.9}
+.feature .go{background:#ffc20e;color:#0f2a3a;font-weight:800;font-size:17px;border-radius:99px;padding:12px 24px;white-space:nowrap;transform:rotate(-4deg);box-shadow:0 4px 10px rgba(0,0,0,.3);transition:transform .15s}
+.feature:hover .go{transform:rotate(0) scale(1.04)}
+footer{border-top:1px solid rgba(255,194,14,.25)!important;color:#f7eee9!important;opacity:.75;background:transparent!important}
+footer div{color:inherit!important;opacity:.7}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){.grid{grid-template-columns:1fr!important}.top h1{font-size:34px!important}.top .t{margin:10px}.feature{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
-<div class="top"><p class="mp-trail" style="color:rgb(255, 255, 255);opacity:0.85"><a href="https://mrsperkinsteacher.github.io/">Mrs Perkins home</a><span class="mp-sep">/</span><a href="https://mrsperkinsteacher.github.io/stage5geo/">Stage 5 Geography</a></p>
+<div class="trailbar"><p class="mp-trail" style="color:rgb(247, 238, 233);opacity:0.85"><a href="https://mrsperkinsteacher.github.io/">Mrs Perkins home</a><span class="mp-sep">/</span><a href="https://mrsperkinsteacher.github.io/stage5geo/">Stage 5 Geography</a></p></div>
+<div class="top"><div class="t">
   <div class="kicker"><span class="nw">Stage 5 Geography</span> <span class="sep">|</span> <span class="nw">Year 9</span></div>
   <h1>Changing Places</h1>
   <p>How do urbanisation and migration change the places we live?</p>
-</div>
+</div></div>
 <main>
   <div class="intro">
     <strong>About this unit.</strong> Despite the vague name, this topic is about two specific ways places change: <strong>urbanisation</strong> and <strong>migration</strong>. We investigate why the world is moving to the city, what happens inside megacities, why Australians live where they do, how Sydney is planning for growth, who moves within Australia (and China), and how people come to Australia from overseas. Along the way we build geography skills: choropleth maps, climate graphs, pie graphs, fieldwork and data analysis. Every page on this site is written so that a teacher who does not know the subject can pick up the lesson and teach it.
